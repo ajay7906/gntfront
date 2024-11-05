@@ -1,6 +1,8 @@
 // Navbar.js
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
+import Icon from '../../assets/images/GNTIND LOGO.png';
+import Vedio from '../../assets/videos/vedio.mp4';
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false); // For mobile menu
@@ -17,8 +19,8 @@ const Navbar = () => {
         <div className="flex items-center justify-between h-16">
           {/* Logo Section */}
           <div className="flex-shrink-0">
-            <a href="/" className="text-2xl font-bold">
-            <img src="/src/assets/images/GNTIND LOGO.png" alt="Logo" 
+            <a href="/./src/assets/images/GNTIND LOGO.png" className="text-2xl font-bold">
+            <img src={Icon} alt="Logo" 
             className="w-[66px] h-[66px] object-contain rounded-full" srcset="" />
             </a>
           </div>

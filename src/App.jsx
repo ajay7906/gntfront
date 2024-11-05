@@ -2,17 +2,19 @@ import React from 'react'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Navbar from "./componets/Navbar/navbar";
 import Footer from "./componets/Footer/footer";
-import HeroSection from "./pages/HeroSection/heroSection";
-import AboutPage from "./pages/AboutPage/aboutUs";
-import  Contact  from "./pages/Contact/contactUs";
+
+//import Hero from "./pages/HeroSection/HeroSection"
+import AboutPage from "./pages/AboutPage/AboutUs";
+import  Contact  from "./pages/Contact/ContactUs";
 import './styles.css';
+import Hero from './pages/hero/Hero';
 
 const App = () => {
   return (
     <Router>
       <Navbar />
       <Routes>
-        <Route path="/" element={<HeroSection />} />
+        <Route path="/" element={<Hero/>} />
         <Route path="/about" element={<AboutPage />} />
         <Route path="/contact" element={<Contact />} />
       </Routes>

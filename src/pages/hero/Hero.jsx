@@ -6,80 +6,105 @@ import image2 from '/src/assets/images/GNTINDdigital.png';
 import image3 from '/src/assets/images/GNTINDSocila.png';          
 import image4 from '/src/assets/images/GNTINDSoftware.png';
 import image5 from '/src/assets/images/GNTINDWeb.png';
-
-// const Heros = () => {
-//   return (
-//     <section className="pt-16 flex flex-col lg:flex-row items-center justify-center h-screen bg-[#F2F2F2] text-black">
-//       {/* Left Section (Content) */}
-//       <div className="lg:w-1/2 px-8 text-center lg:text-left">
-//         <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-4">
-//          Go to the Next Technology
-//         </h1>
-//         <p className="text-lg sm:text-xl lg:text-2xl mb-6 text-gray-500">
-//         We, at GNTINDIA, are not another technology company; we are your partner in growth,
-//         innovation, and transformation. With our ever-changing digital world, we are here 
-//         to bring forward your business.
-//         </p>
-//         <button className="mt-4 px-6 py-3 bg-blue-600 text-white font-semibold rounded-full hover:bg-blue-500 transition duration-200">
-//         Get Free Website 2 Min
-//         </button>
-//       </div>
-
-      
-//       {/* Right Section (Video) */}
-//       <div className="lg:w-1/2 p-8 flex justify-center lg:justify-end">
-//         <div className="relative w-full h-[356px] sm:h-64 md:h-80 lg:h-full lg:w-4/5 overflow-hidden rounded-lg shadow-lg">
-//         {/* relative w-[510px] h-[356px]  */}
-//          <iframe
-//             className="w-full h-auto rounded-lg shadow-lg"
-//             src="/src/assets/videos/gntindia.mp4"
-//             title="Hero Video"
-//             frameBorder="0"
-//             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-//             allowFullScreen
-//          ></iframe>
-//         </div>
-//       </div>
-//     </section>
-//   );
-// };
-
-
+import ReactPlayer from 'react-player';
+import Vedio from '../../assets/videos/vedio.mp4';
 
 const Heros = () => {
   return (
-    <section className="pt-16 flex flex-col lg:flex-row items-center justify-center bg-[#F2F2F2] text-black">
+    <section className="pt-16 flex flex-col lg:flex-row items-center justify-center h-screen bg-[#F2F2F2] text-black">
       {/* Left Section (Content) */}
       <div className="lg:w-1/2 px-8 text-center lg:text-left">
         <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-4">
-          Go to the Next Technology
+         Go to the Next Technology
         </h1>
         <p className="text-lg sm:text-xl lg:text-2xl mb-6 text-gray-500">
-          We, at GNTINDIA, are not another technology company; we are your partner in growth,
-          innovation, and transformation. With our ever-changing digital world, we are here
-          to bring forward your business.
+        We, at GNTINDIA, are not another technology company; we are your partner in growth,
+        innovation, and transformation. With our ever-changing digital world, we are here 
+        to bring forward your business.
         </p>
         <button className="mt-4 px-6 py-3 bg-blue-600 text-white font-semibold rounded-full hover:bg-blue-500 transition duration-200">
-          Get Free Website 2 Min
+        Get Free Website 2 Min
         </button>
       </div>
 
+      
       {/* Right Section (Video) */}
-      <div className="lg:w-1/2 p-8 flex justify-center lg:justify-end">
-        <div className="relative w-full h-full lg:w-4/5 lg:h-[480px] overflow-hidden rounded-lg shadow-lg">
-          <iframe
-            className="w-full h-full rounded-lg shadow-lg"
-            src="/src/assets/videos/gntindia.mp4"
+      {/* <div className="lg:w-1/2 p-8 flex justify-center lg:justify-end">
+        <div className="relative w-full h-[356px] sm:h-64 md:h-80 lg:h-full lg:w-4/5 overflow-hidden rounded-lg shadow-lg">
+      
+         <iframe
+            className="w-full h-auto rounded-lg shadow-lg"
+            src="../../assets/videos/vedio.mp4"
             title="Hero Video"
             frameBorder="0"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             allowFullScreen
-          ></iframe>
+         ></iframe>
+        </div>
+      </div> */}
+      <div className="lg:w-1/2 p-8 flex justify-center lg:justify-end">
+        <div className="relative w-full h-full lg:w-4/5 lg:h-[480px] overflow-hidden rounded-lg shadow-lg">
+        
+          {/* <ReactPlayer
+           src="https://drive.google.com/file/d/1qQlGcaExZGEijoNNT-fUGXwH--Yjjyfd/view"
+            width="100%"
+            height="100%"
+            controls
+            className="rounded-lg shadow-lg"
+          /> */}
+           <video
+                className="w-full h-full object-cover rounded-lg "
+                autoPlay
+                loop
+                muted
+                playsInline
+              >
+                {/* <source src="https://hpcpl.gntind.com/hpcpl/wp-content/uploads/2024/10/Untitled-%E2%80%91-Made-with-FlexClip-13-online-video-cutter.com_-5.mp4" type="video/mp4" /> */}
+                <source src={Vedio} type="video/mp4" />
+                Your browser does not support the video tag.
+              </video>
         </div>
       </div>
     </section>
   );
 };
+
+
+
+// const Heros = () => {
+//   return (
+//     <section className="pt-16 flex flex-col lg:flex-row items-center justify-center bg-[#F2F2F2] text-black">
+//       {/* Left Section (Content) */}
+//       <div className="lg:w-1/2 px-8 text-center lg:text-left">
+//         <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-4">
+//           Go to the Next Technology
+//         </h1>
+//         <p className="text-lg sm:text-xl lg:text-2xl mb-6 text-gray-500">
+//           We, at GNTINDIA, are not another technology company; we are your partner in growth,
+//           innovation, and transformation. With our ever-changing digital world, we are here
+//           to bring forward your business.
+//         </p>
+//         <button className="mt-4 px-6 py-3 bg-blue-600 text-white font-semibold rounded-full hover:bg-blue-500 transition duration-200">
+//           Get Free Website 2 Min
+//         </button>
+//       </div>
+
+//       {/* Right Section (Video) */}
+//       <div className="lg:w-1/2 p-8 flex justify-center lg:justify-end">
+//         <div className="relative w-full h-full lg:w-4/5 lg:h-[480px] overflow-hidden rounded-lg shadow-lg">
+//           <iframe
+//             className="w-full h-full rounded-lg shadow-lg"
+//             src="../../assets/videos/vedio.mp4"
+//             title="Hero Video"
+//             frameBorder="0"
+//             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+//             allowFullScreen
+//           ></iframe>
+//         </div>
+//       </div>
+//     </section>
+//   );
+// };
 
 
 
@@ -162,7 +187,7 @@ const OnDemandServices = () => {
       </div>
     );
 }; 
-
+import GntSohila from '../../assets/images/GNTINDSocila.png';
 const HalfSideCard = () => {
     return (
       <div className="max-w-4xl mx-auto my-8 bg-white shadow-lg rounded-lg overflow-hidden flex flex-col md:flex-row">
@@ -182,7 +207,7 @@ const HalfSideCard = () => {
         {/* Right Side - Image */}
         <div className="flex-shrink-0 md:w-1/2">
           <img
-            src="/src/assets/images/GNTINDSocila.png" // Replace with your image URL
+            src={GntSohila} // Replace with your image URL
             alt="Description"
             className="object-cover w-full h-full"
             style={{ width: '280px', height: '341px' }}
