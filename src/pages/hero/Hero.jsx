@@ -7,7 +7,7 @@ import image3 from '/src/assets/images/GNTINDSocila.png';
 import image4 from '/src/assets/images/GNTINDSoftware.png';
 import image5 from '/src/assets/images/GNTINDWeb.png';
 import ReactPlayer from 'react-player';
-import Vedio from '../../assets/videos/vedio.mp4';
+import Vedio from '../../assets/videos/vedio.mp4';     
 
 const Heros = () => {
   return (
