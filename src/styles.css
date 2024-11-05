@@ -1,0 +1,12 @@
+@keyframes autoSlide {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-50%);
+    }
+  }
+  
+  .animate-autoSlide {
+    animation: autoSlide 20s linear infinite; /* Adjust duration as needed */
+  }
