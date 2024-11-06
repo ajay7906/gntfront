@@ -6,9 +6,9 @@ import Footer from "./componets/Footer/footer";
 
 import './styles.css';
 import Hero from './pages/hero/Hero';
-//import AboutPage from "./pages/aboutPage/AboutUs"
+
 import AboutUs from './pages/aboutPage/AboutUs'
-//import ContactUs from './pages/contact/ContactUs'
+
 import ContactUs from './pages/contact/ContactUs'
 
 const App = () => {
