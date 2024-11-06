@@ -7,9 +7,9 @@ import Footer from "./componets/Footer/footer";
 import './styles.css';
 import Hero from './pages/hero/Hero';
 //import AboutPage from "./pages/aboutPage/AboutUs"
-import About from './pages/aboutPage/AboutUs'
+import AboutUs from './pages/aboutPage/AboutUs'
 //import ContactUs from './pages/contact/ContactUs'
-import Contact from './pages/contact/ContactUs'
+import ContactUs from './pages/contact/ContactUs'
 
 const App = () => {
   return (
@@ -17,8 +17,8 @@ const App = () => {
       <Navbar />
       <Routes>
         <Route path="/" element={<Hero/>} />
-        <Route path="/about" element={<About/>} />
-        <Route path="/contact" element={<Contact/>} />
+        <Route path="/about" element={<AboutUs/>} />
+        <Route path="/contact" element={<ContactUs/>} />
       </Routes>
       <Footer/>
     </Router>
