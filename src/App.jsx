@@ -8,6 +8,8 @@ import './styles.css';
 import Hero from './pages/hero/Hero';
 
 import AboutUs from './pages/about/AboutUs'
+// save changes in data with new category and new file categorywith new file structure with name and file struncute and asus file strucntue
+
 
 import ContactUs from './pages/contact/ContactUs'
 
