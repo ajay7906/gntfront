@@ -7,7 +7,6 @@ import Footer from "./componets/Footer/Footer";
 import './styles.css';
 import Hero from './pages/hero/Hero';
 
-//import AboutUs from './pages/About/AboutUs'
 import AboutUs from './pages/about/AboutUs'
 
 import ContactUs from './pages/contact/ContactUs'
