@@ -9,10 +9,7 @@ import Hero from './pages/hero/Hero';
 
 import AboutUs from './pages/contacts/ContactUs';
 
-// save changes in data with new category and new file categorywith new file structure with name and file struncute and asus file strucntue
-
-
-import ContactUs from './pages/contact/ContactUs'
+import ContactUs from './pages/contacts/ContactUs'
 
 const App = () => {
   return (
@@ -26,13 +23,7 @@ const App = () => {
       <Footer/>
     </Router>
     
-    // <div>
-    //   <Navbar />
-    //   <HeroSection />
-    //   <AboutPage />
-    //   <Footer />
-
-    // </div>
+  
   )
 }
 
