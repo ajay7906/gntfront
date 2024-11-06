@@ -1,13 +1,14 @@
 import React from 'react'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Navbar from "./componets/Navbar/navbar";
-import Footer from "./componets/Footer/footer";
+import Navbar from "./componets/Navbar/Navbar";
+import Footer from "./componets/Footer/Footer";
 
 
 import './styles.css';
 import Hero from './pages/hero/Hero';
 
-import AboutUs from './pages/aboutPage/AboutUs'
+//import AboutUs from './pages/About/AboutUs'
+import AboutUs from './pages/about/AboutUs'
 
 import ContactUs from './pages/contact/ContactUs'
 
