@@ -1,13 +1,14 @@
 import React from 'react'
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Navbar from './componets/navbar/Navbar'
-import Footer from './componets/footer/Footer'
+import Navbar from './component/nav/Navbar'
+import Footer from './component/footer/Footer'
 
 
 import './styles.css';
 import Hero from './pages/hero/Hero';
 
-import AboutUs from './pages/about/AboutUs'
+import AboutUs from './pages/about/AboutUs';
+
 // save changes in data with new category and new file categorywith new file structure with name and file struncute and asus file strucntue
 
 
