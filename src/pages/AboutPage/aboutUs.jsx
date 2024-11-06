@@ -2,7 +2,7 @@
 import React from 'react';
 // import AwardSection from './AwardSection';
 
-const AboutPage = () => {
+const AboutUs = () => {
   return (
     <div className="bg-gray-100 pt-16">
       {/* Hero Section */}
@@ -87,4 +87,4 @@ const AboutPage = () => {
   );
 };
 
-export default AboutPage;
+export default AboutUs;
