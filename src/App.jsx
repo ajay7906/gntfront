@@ -7,7 +7,7 @@ import Footer from './component/footer/Footer'
 import './styles.css';
 import Hero from './pages/hero/Hero';
 
-import AboutUs from './pages/about/AboutUs';
+import AboutUs from './pages/contacts/ContactUs';
 
 // save changes in data with new category and new file categorywith new file structure with name and file struncute and asus file strucntue
 
