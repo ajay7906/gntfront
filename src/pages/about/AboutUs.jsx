@@ -130,6 +130,7 @@
 
 import React from 'react';
 import { motion } from 'framer-motion';
+import Hero from '../../component/hero/Hero';
 
 const AboutUs = () => {
   // Fade in animation variant
@@ -164,6 +165,10 @@ const AboutUs = () => {
   };
 
   return (
+    <>
+{/* 
+  <Hero/> */}
+
     <div className="bg-gradient-to-b from-gray-50 to-white pt-16">
       {/* Hero Section */}
       <motion.section 
@@ -302,7 +307,7 @@ const AboutUs = () => {
           </div>
         </div>
       </motion.section>
-    </div>
+    </div> </>
   );
 };
 

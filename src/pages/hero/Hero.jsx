@@ -2,72 +2,56 @@
 import React from 'react';
 
 import image1 from '/src/assets/images/GNTIND1.png';
-import image2 from '/src/assets/images/GNTINDdigital.png';
-import image3 from '/src/assets/images/GNTINDSocila.png';          
-import image4 from '/src/assets/images/GNTINDSoftware.png';
-import image5 from '/src/assets/images/GNTINDWeb.png';
+import image2 from '/src/assets/images/marketing.jpeg';
+import image3 from '/src/assets/images/media.jpeg';          
+import image4 from '/src/assets/images/software.jpeg';
+import image5 from '/src/assets/images/website.jpeg';
 import ReactPlayer from 'react-player';
-import Vedio from '../../assets/videos/vedio.mp4';     
+import Vedio from '../../assets/videos/vedio2.mp4';     
 
-const Heros = () => {
-  return (
-    <section className="pt-16 flex flex-col lg:flex-row items-center justify-center h-screen bg-[#F2F2F2] text-black">
-      {/* Left Section (Content) */}
-      <div className="lg:w-1/2 px-8 text-center lg:text-left">
-        <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-4">
-         Go to the Next Technology
-        </h1>
-        <p className="text-lg sm:text-xl lg:text-2xl mb-6 text-gray-500">
-        We, at GNTINDIA, are not another technology company; we are your partner in growth,
-        innovation, and transformation. With our ever-changing digital world, we are here 
-        to bring forward your business.
-        </p>
-        <button className="mt-4 px-6 py-3 bg-blue-600 text-white font-semibold rounded-full hover:bg-blue-500 transition duration-200">
-        Get Free Website 2 Min
-        </button>
-      </div>
+
+
+// const Heros = () => {
+//   return (
+//     <section className="pt-16 flex flex-col lg:flex-row items-center justify-center h-screen bg-[#F2F2F2] text-black">
+//       {/* Left Section (Content) */}
+//       <div className="lg:w-1/2 px-8 text-center lg:text-left">
+//         <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-4">
+//          Go to the Next Technology
+//         </h1>
+//         <p className="text-lg sm:text-xl lg:text-2xl mb-6 text-gray-500">
+//         We, at GNTINDIA, are not another technology company; we are your partner in growth,
+//         innovation, and transformation. With our ever-changing digital world, we are here 
+//         to bring forward your business.
+//         </p>
+//         <button className="mt-4 px-6 py-3 bg-blue-600 text-white font-semibold rounded-full hover:bg-blue-500 transition duration-200">
+//         Get Free Website 2 Min
+//         </button>
+//       </div>
 
       
-      {/* Right Section (Video) */}
-      {/* <div className="lg:w-1/2 p-8 flex justify-center lg:justify-end">
-        <div className="relative w-full h-[356px] sm:h-64 md:h-80 lg:h-full lg:w-4/5 overflow-hidden rounded-lg shadow-lg">
-      
-         <iframe
-            className="w-full h-auto rounded-lg shadow-lg"
-            src="../../assets/videos/vedio.mp4"
-            title="Hero Video"
-            frameBorder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowFullScreen
-         ></iframe>
-        </div>
-      </div> */}
-      <div className="lg:w-1/2 p-8 flex justify-center lg:justify-end">
-        <div className="relative w-full h-full lg:w-4/5 lg:h-[480px] overflow-hidden rounded-lg shadow-lg">
+//       {/* Right Section (Video) */}
+     
+//       <div className="lg:w-1/2 p-8 flex justify-center lg:justify-end">
+//         <div className="relative w-full h-full lg:w-4/5 lg:h-[480px] overflow-hidden rounded-lg ">
         
-          {/* <ReactPlayer
-           src="https://drive.google.com/file/d/1qQlGcaExZGEijoNNT-fUGXwH--Yjjyfd/view"
-            width="100%"
-            height="100%"
-            controls
-            className="rounded-lg shadow-lg"
-          /> */}
-           <video
-                className="w-full h-full object-cover rounded-lg "
-                autoPlay
-                loop
-                muted
-                playsInline
-              >
-                {/* <source src="https://hpcpl.gntind.com/hpcpl/wp-content/uploads/2024/10/Untitled-%E2%80%91-Made-with-FlexClip-13-online-video-cutter.com_-5.mp4" type="video/mp4" /> */}
-                <source src={Vedio} type="video/mp4" />
-                Your browser does not support the video tag.
-              </video>
-        </div>
-      </div>
-    </section>
-  );
-};
+        
+//            <video
+//                 className="w-full h-full object-cover rounded-lg "
+//                 autoPlay
+//                 loop
+//                 muted
+//                 playsInline
+//               >
+//                 {/* <source src="https://hpcpl.gntind.com/hpcpl/wp-content/uploads/2024/10/Untitled-%E2%80%91-Made-with-FlexClip-13-online-video-cutter.com_-5.mp4" type="video/mp4" /> */}
+//                 <source src={Vedio} type="video/mp4" />
+//                 Your browser does not support the video tag.
+//               </video>
+//         </div>
+//       </div>
+//     </section>
+//   );
+// };
 
 
 
@@ -116,7 +100,7 @@ const ImageSlider = () => {
     const images = [image1, image2, image3, image4, image5];
   
     return (
-        <div className="overflow-hidden relative w-full h-[300px]">
+        <div className="overflow-hidden relative w-full h-[300px] pt-16 bg-[#f2f2f2]">
           {/* Carousel container with auto-scrolling animation */}
           <div className="flex animate-autoSlide space-x-2"> {/* Adding space-x-2 for horizontal gap */}
             {images.concat(images).map((img, index) => (
@@ -138,56 +122,60 @@ const ImageSlider = () => {
 };
 
 
-const services = [
-    {
-      title: "Mobile App Development",
-      description: "We build native and cross-platform mobile apps to help retailers grow.",
-    },
-    {
-      title: "CRM",
-      description: "We build native and cross-platform mobile apps to help retailers grow.",
-    },
-    {
-      title: "Cloud Solution",
-      description: "We build native and cross-platform mobile apps to help retailers grow.",
-    },
-    {
-      title: "Ai-Powered Tool",
-      description: "We build native and cross-platform mobile apps to help retailers grow.",
-    },
-    {
-      title: "Website Development",
-      description: "We build native and cross-platform mobile apps to help retailers grow.",
-    },
-    {
-      title: "UI/UX Desgin",
-      description: "We build native and cross-platform mobile apps to help retailers grow.",
-    },
-];
+// const services = [
+//     {
+//       title: "Mobile App Development",
+//       description: "We build native and cross-platform mobile apps to help retailers grow.",
+//     },
+//     {
+//       title: "CRM",
+//       description: "We build native and cross-platform mobile apps to help retailers grow.",
+//     },
+//     {
+//       title: "Cloud Solution",
+//       description: "We build native and cross-platform mobile apps to help retailers grow.",
+//     },
+//     {
+//       title: "Ai-Powered Tool",
+//       description: "We build native and cross-platform mobile apps to help retailers grow.",
+//     },
+//     {
+//       title: "Website Development",
+//       description: "We build native and cross-platform mobile apps to help retailers grow.",
+//     },
+//     {
+//       title: "UI/UX Desgin",
+//       description: "We build native and cross-platform mobile apps to help retailers grow.",
+//     },
+// ];
   
-const OnDemandServices = () => {
-    return (
-      <div className="py-10 px-4 bg-gray-300 ">
-        <h2 className="text-3xl font-bold text-center mb-6">On-Demand Services</h2>
-        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
-          {services.map((service, index) => (
-            <div
-              key={index}
-              className="bg-white p-4 rounded-lg shadow-md transition-transform transform hover:scale-105 flex flex-col justify-between"
-              style={{ width: '380px', height: '341px' }} // Fixed card size
-            >
-              <div>
-                <h3 className="text-xl font-semibold mb-2">{service.title}</h3>
-                <p className="text-gray-700 mb-4">{service.description}</p>
-              </div>
-              <a href="#" className="text-blue-500 hover:underline self-end">Read More</a>
-            </div>
-          ))}
-        </div>
-      </div>
-    );
-}; 
+// const OnDemandServices = () => {
+//     return (
+//       <div className="py-10 px-4 bg-gray-300 ">
+//         <h2 className="text-3xl font-bold text-center mb-6">On-Demand Services</h2>
+//         <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+//           {services.map((service, index) => (
+//             <div
+//               key={index}
+//               className="bg-white p-4 rounded-lg shadow-md transition-transform transform hover:scale-105 flex flex-col justify-between"
+//               style={{ width: '380px', height: '341px' }} // Fixed card size
+//             >
+//               <div>
+//                 <h3 className="text-xl font-semibold mb-2">{service.title}</h3>
+//                 <p className="text-gray-700 mb-4">{service.description}</p>
+//               </div>
+//               <a href="#" className="text-blue-500 hover:underline self-end">Read More</a>
+//             </div>
+//           ))}
+//         </div>
+//       </div>
+//     );
+// }; 
+
+
+
 import GntSohila from '../../assets/images/GNTINDSocila.png';
+
 const HalfSideCard = () => {
     return (
       <div className="max-w-4xl mx-auto my-8 bg-white shadow-lg rounded-lg overflow-hidden flex flex-col md:flex-row">
@@ -239,6 +227,11 @@ const awards = [
       title: 'Outstanding Achievement',
     },
 ];
+
+
+
+
+
   
 const AwardSection = () => {
     return (
@@ -265,12 +258,24 @@ const AwardSection = () => {
     );
 };
 
+
+
+
+
+
+
+
+import Heros from '../../component/hero/Hero';
+import ServiceComponent from '../../component/service/ServiceCompo';
+import OnDemandService from '../../component/demand/OnDemandService';
 const Hero = () => {
     return (
       <div>
-        <Heros />
+        <Heros/>
+        {/* <ServiceComponent/> */}
         <ImageSlider />
-        <OnDemandServices />
+        {/* <OnDemandServices /> */}
+        <OnDemandService />
         <AwardSection/>
         <HalfSideCard />
       </div>
@@ -278,3 +283,27 @@ const Hero = () => {
 }
 
 export default Hero;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
