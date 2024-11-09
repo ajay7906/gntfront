@@ -920,7 +920,13 @@ import {
   Palette, 
   Share2, 
   Code,
-  Database
+  Database,
+  Brain,
+  CloudDownload,
+  CodeIcon,
+  ShoppingBag,
+  ChartBarBig,
+  IndianRupee
 } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
@@ -956,11 +962,22 @@ const FloatingIcon = ({ Icon, color, size, initialX, duration, delay }) => {
 
 const Hero = () => {
   const services = [
-    { icon: Globe, color: "bg-blue-700", size: 24 },
+    { icon: Globe, color: "bg-blue-900", size: 24 },
     { icon: Smartphone, color: "bg-purple-700", size: 28 },
-    { icon: Palette, color: "bg-pink-700", size: 26 },
+    { icon: Palette, color: "bg-pink-900", size: 26 },
     { icon: Share2, color: "bg-indigo-700", size: 24 },
-    { icon: Code, color: "bg-blue-800", size: 30 },
+    { icon: Brain, color: "bg-red-700", size: 24 },
+    { icon: Code, color: "bg-red-800", size: 30 },
+    { icon: CloudDownload, color: "bg-red-800", size: 30 },
+    { icon: CodeIcon, color: "bg-red-800", size: 30 },
+    { icon: Code, color: "bg-red-800", size: 30 },
+    { icon: ShoppingBag, color: "bg-red-800", size: 30 },
+    { icon: Code, color: "bg-red-800", size: 30 },
+    { icon: ChartBarBig, color: "bg-red-800", size: 30 },
+    { icon: Code, color: "bg-red-800", size: 30 },
+    { icon: IndianRupee, color: "bg-red-800", size: 30 },
+    { icon: Code, color: "bg-red-800", size: 30 },
+    { icon: Code, color: "bg-red-800", size: 30 },
     { icon: Database, color: "bg-purple-800", size: 24 }
   ];
 
