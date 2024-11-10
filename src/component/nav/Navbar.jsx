@@ -326,7 +326,7 @@ const Navbar = () => {
       { title: 'Digital Marketing Tools', path: '/products/marketing' },
     ],
     Blog: [
-      { title: 'WhatsApp API', path: '/blog/tech-news' },
+      // { title: 'WhatsApp API', path: '/blog/tech-news' },
       { title: 'Educational Content', path: '/blog/design-trends' },
       { title: 'Regular Updates', path: '/blog/development-tips' },
       { title: 'SEO Benefits', path: '/blog/case-studies' },
