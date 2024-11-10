@@ -319,7 +319,8 @@ const Navbar = () => {
       { title: 'AI-Powered Tools', path: '/services/cloud-services' },
       { title: 'UI/UX Design', path: '/services/cloud-services' },
     ],
-    Products: [
+    Products: [ 
+        { title: 'WhatsApp API', path: '/blog/tech-news' },
       { title: 'ERP Solutions', path: '/products/ecommerce' },
       { title: 'E-Commerce Platforms', path: '/products/cms' },
       { title: 'Cybersecurity Solutions', path: '/products/analytics' },
