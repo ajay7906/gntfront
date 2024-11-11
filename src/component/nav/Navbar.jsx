@@ -660,9 +660,9 @@ const Navbar = () => {
       { title: 'Digital Marketing Tools', path: '/products/marketing' },
     ],
     Blog: [
-      { title: 'Educational Content', path: '/blog/design-trends' },
-      { title: 'Regular Updates', path: '/blog/development-tips' },
-      { title: 'SEO Benefits', path: '/blog/case-studies' },
+      { title: 'Educational Content', path: '/blog/education' },
+      { title: 'Regular Updates', path: '/blog/regular ' },
+      { title: 'SEO Benefits', path: '/blog/seo' },
     ],
   };
 

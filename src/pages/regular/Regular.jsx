@@ -44,7 +44,7 @@ const BlogCard = ({ post, onReadMore }) => (
 
 
 
-const EducationBlog = () => {
+const Regular = () => {
 
 
     const [isVisible, setIsVisible] = useState(false);
@@ -143,7 +143,7 @@ const EducationBlog = () => {
                     <motion.h1
                         className="text-lg md:text-3xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-purple-600 mt-20"
                     >
-                        Welcome to the Educational Blog
+                        Welcome to our regular update
                     </motion.h1>
 
                     <motion.p
@@ -213,4 +213,4 @@ const EducationBlog = () => {
     );
 }
 
-export default EducationBlog
+export default Regular;

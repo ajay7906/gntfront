@@ -14,6 +14,8 @@ import { ContactFormProvider } from './context/ContactFormContext';
 import ContactFormPopup from './component/popupform/ContactFormPopup';
 import BlogPage from './pages/blog/Blog';
 import EducationBlog from './pages/educational/EducationBlog';
+import Regular from './pages/regular/Regular';
+import Seo from './pages/seo/Seo';
 
 const App = () => {
   return (
@@ -25,7 +27,9 @@ const App = () => {
         <Route path="/" element={<Hero/>} />
         <Route path="/about" element={<AboutUs/>} />
         <Route path="/contact" element={<ContactUs/>} />
-        <Route path='/blog' element={<EducationBlog/>}/>
+        <Route path='/blog/education' element={<EducationBlog/>}/>
+        <Route path='/blog/regular' element={<Regular/>}/>
+        <Route path='/blog/seo' element={<Seo/>}/>
       </Routes>
       <Footer/>
     </Router>
