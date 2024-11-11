@@ -480,6 +480,11 @@ const AboutUs = () => {
         />
       </motion.section>
 
+
+
+
+      
+
       {/* Innovation Section */}
       <motion.section 
         className="py-16 md:py-24"

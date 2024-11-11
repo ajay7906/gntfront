@@ -16,7 +16,7 @@
 //         </div>
 //       </section>
 
-    
+
 //       <section className="py-16 bg-white">
 //         <div className="max-w-5xl mx-auto px-4">
 //           <h2 className="text-3xl font-bold text-center mb-8">Get In Touch</h2>
@@ -24,7 +24,7 @@
 //             <div className="text-center">
 //               <h3 className="text-xl font-semibold">Address</h3>
 //               <p className="text-gray-600">GNT INDIA B-96,Road NO. 9,Industrial Area, RaniBazar, Bikaner</p>
-           
+
 //             </div>
 //             <div className="text-center">
 //               <h3 className="text-xl font-semibold">Email</h3>
@@ -38,7 +38,7 @@
 //         </div>
 //       </section>
 
-   
+
 //       <section className="py-16 bg-gray-100">
 //         <div className="max-w-4xl mx-auto px-4">
 //           <h2 className="text-3xl font-bold text-center mb-8">Send Us a Message</h2>
@@ -224,7 +224,7 @@ const ContactUs = () => {
   return (
     <div className="bg-gradient-to-b from-gray-50 to-white pt-16 relative overflow-hidden">
       {/* Animated background elements */}
-      <motion.div 
+      <motion.div
         className="absolute top-0 left-0 w-96 h-96 bg-blue-100 rounded-full mix-blend-multiply filter blur-3xl opacity-30"
         animate={{
           x: [0, 100, 0],
@@ -236,7 +236,7 @@ const ContactUs = () => {
           ease: "linear"
         }}
       />
-      <motion.div 
+      <motion.div
         className="absolute bottom-0 right-0 w-96 h-96 bg-purple-100 rounded-full mix-blend-multiply filter blur-3xl opacity-30"
         animate={{
           x: [0, -100, 0],
@@ -250,7 +250,7 @@ const ContactUs = () => {
       />
 
       {/* Hero Section */}
-      <motion.section 
+      {/* <motion.section 
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true }}
@@ -273,10 +273,94 @@ const ContactUs = () => {
             get back to you shortly.
           </motion.p>
         </div>
+      </motion.section> */}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+      <motion.section
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true }}
+        variants={fadeIn}
+        className="bg-gradient-to-r from-blue-50 to-purple-50 text-black py-24 pt-32 text-center relative overflow-hidden"
+      >
+        <div className="max-w-4xl mx-auto px-4 relative z-10">
+          <motion.h1
+            className="text-4xl md:text-6xl font-bold mb-6 bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-purple-600"
+            variants={fadeIn}
+          >
+            How Can We Help?
+          </motion.h1>
+          <motion.p
+            className="text-lg md:text-xl leading-relaxed text-gray-700"
+            variants={fadeIn}
+          >
+            Happy to see you here. We are really glad to know that you had interest in our products or services.
+            Whether you have a query, question or have something interesting to share, reach us and one of us will
+            get back to you shortly.
+
+
+          </motion.p>
+        </div>
+
+        {/* Animated background elements */}
+        <motion.div
+          className="absolute top-0 left-0 w-64 h-64 bg-blue-200 rounded-full mix-blend-multiply filter blur-xl opacity-70"
+          animate={{
+            x: [0, 100, 0],
+            y: [0, 50, 0],
+          }}
+          transition={{
+            duration: 20,
+            repeat: Infinity,
+            ease: "linear"
+          }}
+        />
+        <motion.div
+          className="absolute bottom-0 right-0 w-64 h-64 bg-purple-200 rounded-full mix-blend-multiply filter blur-xl opacity-70"
+          animate={{
+            x: [0, -100, 0],
+            y: [0, -50, 0],
+          }}
+          transition={{
+            duration: 15,
+            repeat: Infinity,
+            ease: "linear"
+          }}
+        />
       </motion.section>
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
       {/* Get In Touch Section */}
-      <motion.section 
+      <motion.section
         className="py-20 relative z-10"
         initial="hidden"
         whileInView="visible"
@@ -284,7 +368,7 @@ const ContactUs = () => {
         variants={staggerContainer}
       >
         <div className="max-w-6xl mx-auto px-4">
-          <motion.h2 
+          <motion.h2
             className="text-3xl md:text-4xl font-bold text-center mb-16 bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-purple-600"
             variants={fadeIn}
           >
@@ -299,7 +383,7 @@ const ContactUs = () => {
                 whileHover={{ y: -5 }}
               >
                 <div className="bg-white rounded-xl shadow-lg p-8 text-center relative z-10 h-full">
-                  <motion.div 
+                  <motion.div
                     className="flex justify-center mb-6"
                     variants={floatAnimation}
                     animate="visible"
@@ -317,7 +401,7 @@ const ContactUs = () => {
       </motion.section>
 
       {/* Contact Form Section */}
-      <motion.section 
+      <motion.section
         className="py-20 bg-gradient-to-b from-gray-50 to-white relative z-10"
         initial="hidden"
         whileInView="visible"
@@ -325,13 +409,13 @@ const ContactUs = () => {
         variants={staggerContainer}
       >
         <div className="max-w-4xl mx-auto px-4">
-          <motion.h2 
+          <motion.h2
             className="text-3xl md:text-4xl font-bold text-center mb-12 bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-purple-600"
             variants={fadeIn}
           >
             Send Us a Message
           </motion.h2>
-          <motion.form 
+          <motion.form
             className="bg-white shadow-xl rounded-2xl p-8 md:p-12 space-y-6 relative z-10"
             variants={fadeIn}
           >
