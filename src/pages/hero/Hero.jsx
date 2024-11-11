@@ -313,6 +313,7 @@ import ServiceComponent from '../../component/service/ServiceCompo';
 import OnDemandService from '../../component/demand/OnDemandService';
 import CardSlider from '../../component/cardslider/CardSlider';
 import FounderIntroduction from '../../component/founder/FounderIntroduction';
+import WhatsAppAPISection from '../../component/whatsapp/WhatsApp';
 const Hero = () => {
     return (
       <div>
@@ -320,7 +321,7 @@ const Hero = () => {
         {/* <ServiceComponent/> */}
         {/* <ImageSlider /> */}
         <CardSlider/>
-        
+        <WhatsAppAPISection/>
         {/* <OnDemandServices /> */}
         <OnDemandService />
         {/* <AwardSection/> */}

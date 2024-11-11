@@ -1,212 +1,3 @@
-// import React, { useState, useEffect } from 'react';
-// import { ChevronDown, Menu, X, Search } from 'lucide-react';
-
-// const BlogPage = () => {
-//   const [isMenuOpen, setIsMenuOpen] = useState(false);
-//   const [isVisible, setIsVisible] = useState(false);
-
-//   useEffect(() => {
-//     setIsVisible(true);
-//   }, []);
-
-//   const blogPosts = [
-//     {
-//       id: 1,
-//       title: "The Future of Web Development",
-//       excerpt: "Exploring the latest trends and technologies shaping the future of web development...",
-//       category: "Technology",
-//       date: "March 15, 2024",
-//       readTime: "5 min read"
-//     },
-//     {
-//       id: 2,
-//       title: "Mastering React Hooks",
-//       excerpt: "A comprehensive guide to using React Hooks effectively in your applications...",
-//       category: "Programming",
-//       date: "March 12, 2024",
-//       readTime: "8 min read"
-//     },
-//     {
-//       id: 3,
-//       title: "Design Systems in 2024",
-//       excerpt: "How modern design systems are evolving to meet the needs of growing organizations...",
-//       category: "Design",
-//       date: "March 10, 2024",
-//       readTime: "6 min read"
-//     }
-//   ];
-
-//   return (
-//     <div className="min-h-screen bg-gray-50">
-//       {/* Navigation */}
-//       <nav className="fixed w-full bg-white shadow-sm z-50">
-//         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-//           <div className="flex justify-between h-16 items-center">
-//             <div className="flex-shrink-0 font-bold text-2xl text-blue-600">
-//               BlogSpace
-//             </div>
-
-//             {/* Desktop Navigation */}
-//             <div className="hidden md:flex items-center space-x-8">
-//               <a href="#" className="text-gray-700 hover:text-blue-600 transition-colors">Home</a>
-//               <a href="#" className="text-gray-700 hover:text-blue-600 transition-colors">Articles</a>
-//               <a href="#" className="text-gray-700 hover:text-blue-600 transition-colors">About</a>
-//               <a href="#" className="text-gray-700 hover:text-blue-600 transition-colors">Contact</a>
-//             </div>
-
-//             {/* Mobile menu button */}
-//             <div className="md:hidden">
-//               <button
-//                 onClick={() => setIsMenuOpen(!isMenuOpen)}
-//                 className="text-gray-700 hover:text-blue-600 transition-colors"
-//               >
-//                 {isMenuOpen ? <X size={24} /> : <Menu size={24} />}
-//               </button>
-//             </div>
-//           </div>
-//         </div>
-
-//         {/* Mobile Navigation */}
-//         <div className={`md:hidden transition-all duration-300 ease-in-out ${isMenuOpen ? 'max-h-64' : 'max-h-0'} overflow-hidden`}>
-//           <div className="px-4 pt-2 pb-3 space-y-1 bg-white">
-//             <a href="#" className="block px-3 py-2 text-gray-700 hover:text-blue-600 transition-colors">Home</a>
-//             <a href="#" className="block px-3 py-2 text-gray-700 hover:text-blue-600 transition-colors">Articles</a>
-//             <a href="#" className="block px-3 py-2 text-gray-700 hover:text-blue-600 transition-colors">About</a>
-//             <a href="#" className="block px-3 py-2 text-gray-700 hover:text-blue-600 transition-colors">Contact</a>
-//           </div>
-//         </div>
-//       </nav>
-
-//       {/* Hero Section */}
-//       <div className="pt-24 pb-12 md:pt-32 md:pb-20 px-4">
-//         <div className={`max-w-4xl mx-auto text-center transform transition-all duration-1000 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
-//           <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6">
-//             Welcome to BlogSpace
-//           </h1>
-//           <p className="text-xl text-gray-600 mb-8">
-//             Discover insightful articles about technology, design, and development
-//           </p>
-//           <div className="relative max-w-2xl mx-auto">
-//             <input
-//               type="text"
-//               placeholder="Search articles..."
-//               className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-//             />
-//             <Search className="absolute right-3 top-3 text-gray-400" size={24} />
-//           </div>
-//         </div>
-//       </div>
-
-//       {/* Blog Posts Grid */}
-//       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-20">
-//         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-//           {blogPosts.map((post, index) => (
-//             <div
-//               key={post.id}
-//               className={`bg-white rounded-lg shadow-md overflow-hidden transform transition-all duration-700 hover:scale-105 ${
-//                 isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
-//               }`}
-//               style={{ transitionDelay: `${index * 200}ms` }}
-//             >
-//               <div className="p-6">
-//                 <div className="flex items-center mb-4">
-//                   <span className="text-sm text-blue-600 font-semibold">{post.category}</span>
-//                   <span className="mx-2 text-gray-300">•</span>
-//                   <span className="text-sm text-gray-500">{post.date}</span>
-//                 </div>
-//                 <h2 className="text-xl font-bold text-gray-900 mb-3">{post.title}</h2>
-//                 <p className="text-gray-600 mb-4">{post.excerpt}</p>
-//                 <div className="flex items-center justify-between">
-//                   <span className="text-sm text-gray-500">{post.readTime}</span>
-//                   <button className="text-blue-600 hover:text-blue-700 font-medium transition-colors">
-//                     Read More
-//                   </button>
-//                 </div>
-//               </div>
-//             </div>
-//           ))}
-//         </div>
-//       </div>
-
-//       {/* Scroll to bottom indicator */}
-//       <div className="fixed bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce">
-//         <ChevronDown className="text-blue-600" size={32} />
-//       </div>
-//     </div>
-//   );
-// };
-
-// export default BlogPage;
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -216,6 +7,8 @@ import { ChevronDown, Menu, X, Search, ArrowLeft } from 'lucide-react';
 import { motion } from 'framer-motion';
 
 // Mock data with images
+
+
 const blogPosts = [
     {
         id: 1,
@@ -294,6 +87,9 @@ const fadeIn = {
 
 
 // BlogCard Component
+
+
+
 const BlogCard = ({ post, onReadMore }) => (
     <div className="bg-white rounded-lg shadow-md overflow-hidden transform transition-all duration-700 hover:scale-105">
         <img
@@ -391,31 +187,6 @@ const BlogPage = () => {
 
     return (
         <div className="min-h-screen bg-gray-50">
-            {/* Navigation */}
-
-
-            {/* Hero Section */}
-            {/* <div className="pt-24 pb-12 md:pt-32 md:pb-20 px-4 bg-gradient-to-r from-blue-50 to-purple-50">
-        <div className={`max-w-4xl mx-auto text-center transform transition-all duration-1000 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'}`}>
-          <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6">
-            Welcome to BlogSpace
-          </h1>
-          <p className="text-xl text-gray-600 mb-8">
-            Discover insightful articles about technology, design, and development
-          </p>
-          <div className="relative max-w-2xl mx-auto">
-            <input
-              type="text"
-              placeholder="Search articles..."
-              className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent"
-            />
-            <Search className="absolute right-3 top-3 text-gray-400" size={24} />
-          </div>
-        </div>
-      </div> */}
-
-
-
             <motion.section
                 initial="hidden"
                 whileInView="visible"

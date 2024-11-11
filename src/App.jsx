@@ -13,6 +13,7 @@ import ContactUs from './pages/contacts/ContactUs'
 import { ContactFormProvider } from './context/ContactFormContext';
 import ContactFormPopup from './component/popupform/ContactFormPopup';
 import BlogPage from './pages/blog/Blog';
+import EducationBlog from './pages/educational/EducationBlog';
 
 const App = () => {
   return (
@@ -24,7 +25,7 @@ const App = () => {
         <Route path="/" element={<Hero/>} />
         <Route path="/about" element={<AboutUs/>} />
         <Route path="/contact" element={<ContactUs/>} />
-        <Route path='/blog' element={<BlogPage/>}/>
+        <Route path='/blog' element={<EducationBlog/>}/>
       </Routes>
       <Footer/>
     </Router>
