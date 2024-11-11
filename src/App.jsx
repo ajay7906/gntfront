@@ -12,6 +12,7 @@ import AboutUs from './pages/about/AboutUs';
 import ContactUs from './pages/contacts/ContactUs'
 import { ContactFormProvider } from './context/ContactFormContext';
 import ContactFormPopup from './component/popupform/ContactFormPopup';
+import BlogPage from './pages/blog/Blog';
 
 const App = () => {
   return (
@@ -23,6 +24,7 @@ const App = () => {
         <Route path="/" element={<Hero/>} />
         <Route path="/about" element={<AboutUs/>} />
         <Route path="/contact" element={<ContactUs/>} />
+        <Route path='/blog' element={<BlogPage/>}/>
       </Routes>
       <Footer/>
     </Router>
