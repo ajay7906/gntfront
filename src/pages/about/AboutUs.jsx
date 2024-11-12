@@ -353,6 +353,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { ArrowRight, Globe2, Wrench, BookOpen, Users2 } from 'lucide-react'; // Fixed icon imports
+import FOunderImg from '../../assets/images/founder.jpeg';
 
 //import { ArrowRight, Globe, Tool, BookOpen, Users, Check } from 'lucide-react';
 
@@ -874,7 +875,7 @@ const AboutUs = () => {
                 {/* Image Container */}
                 <div className="relative bg-white p-3 rounded-3xl shadow-xl">
                   <img
-                    src="/api/placeholder/500/600"
+                    src={FOunderImg}
                     alt="Anand Gandhi - Founder & CEO"
                     className="w-full h-[400px] md:h-[500px] object-cover rounded-2xl"
                   />
