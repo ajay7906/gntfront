@@ -3,7 +3,7 @@ import FOunderImg from '../../assets/images/founder.jpeg';
 const FounderMessage = () => {
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-50 p-4 md:p-8">
-      <div className="max-w-6xl mx-auto pt-12 backdrop-blur-sm rounded-2xl shadow-xl">
+      <div className="max-w-6xl mx-auto pt-12 backdrop-blur-sm rounded-2xl ">
         <div className="p-6 md:p-10">
           {/* Header Section */}
           <div className="relative mb-8">
@@ -17,7 +17,7 @@ const FounderMessage = () => {
           <div className="flex flex-col md:flex-row gap-8 mb-10">
             <div className="w-full md:w-1/3">
               <div className="relative">
-                <div className="aspect-square bg-gradient-to-br from-blue-600 to-indigo-600 rounded-2xl overflow-hidden">
+                <div className="aspect-square  rounded-2xl overflow-hidden">
                   <img
                     src={FOunderImg}
                     alt="Anand Gandhi"

@@ -849,7 +849,7 @@ const AboutUs = () => {
                   </p>
                   
                   {/* Achievement Metrics */}
-                  <div className="grid grid-cols-2 gap-4">
+                  {/* <div className="grid grid-cols-2 gap-4">
                     <div className="bg-gradient-to-br from-blue-50 to-purple-50 p-4 rounded-xl">
                       <h5 className="text-2xl font-bold text-blue-600 mb-1">15+</h5>
                       <p className="text-sm text-gray-600">Years Experience</p>
@@ -858,7 +858,7 @@ const AboutUs = () => {
                       <h5 className="text-2xl font-bold text-purple-600 mb-1">500+</h5>
                       <p className="text-sm text-gray-600">Projects Delivered</p>
                     </div>
-                  </div>
+                  </div> */}
                 </div>
               </div>
             </motion.div>
