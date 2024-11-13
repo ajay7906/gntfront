@@ -17,6 +17,7 @@ import EducationBlog from './pages/educational/EducationBlog';
 import Regular from './pages/regular/Regular';
 import Seo from './pages/seo/Seo';
 import FounderMessage from './component/founderMessage/FounderMessage';
+import CareersPage from './component/carrier/CareerPage';
 
 const App = () => {
   return (
@@ -29,6 +30,7 @@ const App = () => {
         <Route path="/about/aboutus" element={<AboutUs/>} />
         <Route path="/about/founder" element={<FounderMessage/>} />
         <Route path="/contact" element={<ContactUs/>} />
+        <Route path="/careers" element={<CareersPage/>} />
         <Route path='/blog/education' element={<EducationBlog/>}/>
         <Route path='/blog/regular' element={<Regular/>}/>
         <Route path='/blog/seo' element={<Seo/>}/>
