@@ -38,6 +38,7 @@ const App = () => {
         <Route path='/admin/home' element={<AdminPanel/>}/>
       </Routes>
       <Footer/>
+      {/* <Route/> */}
     </Router>
     </ContactFormProvider>
     
