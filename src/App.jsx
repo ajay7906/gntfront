@@ -18,6 +18,7 @@ import Regular from './pages/regular/Regular';
 import Seo from './pages/seo/Seo';
 import FounderMessage from './component/founderMessage/FounderMessage';
 import CareersPage from './component/carrier/CareerPage';
+import AdminPanel from './admin/adminhome/AdminPage';
 
 const App = () => {
   return (
@@ -34,6 +35,7 @@ const App = () => {
         <Route path='/blog/education' element={<EducationBlog/>}/>
         <Route path='/blog/regular' element={<Regular/>}/>
         <Route path='/blog/seo' element={<Seo/>}/>
+        <Route path='/admin/home' element={<AdminPanel/>}/>
       </Routes>
       <Footer/>
     </Router>
