@@ -121,7 +121,8 @@ const WhatsAppAPISection = () => {
 
           {/* CTA Button */}
           <button className="bg-green-600 text-white px-8 py-4 rounded-full font-semibold transform hover:scale-105 transition-transform duration-300 hover:bg-green-700">
-            Chat Started Now
+            <a href="https://whatsapp.gntind.com">Chat Started Now</a>
+            
           </button>
         </div>
       </div>

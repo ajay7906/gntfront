@@ -217,36 +217,51 @@ const ImageSlider = () => {
 // export default CardSlider;
 
 
-import GntSohila from '../../assets/images/GNTINDSocila.png';
+// import GntSohila from '../../assets/images/GNTINDSocila.png';
 
-const HalfSideCard = () => {
-    return (
-      <div className="max-w-4xl mx-auto my-8 bg-white shadow-lg rounded-lg overflow-hidden flex flex-col md:flex-row">
-        {/* Left Side - Content */}
-        <div className="p-8 flex-1">
-          <h2 className="text-3xl font-bold mb-4">Are you ready to start a
-            project? We are eager to
-            hear from you</h2>
-          <p className="text-gray-700 mb-4">
-            We provide the best solutions for your business needs. Our team of experts is dedicated to delivering high-quality services tailored to your requirements.
-          </p>
-          <button className="bg-blue-600 text-white py-2 px-4 rounded hover:bg-blue-700 transition">
-            Start a Project
-          </button>
-        </div>
+// const HalfSideCard = () => {
+//     return (
+//       <div className="max-w-4xl mx-auto my-8 bg-white shadow-lg rounded-lg overflow-hidden flex flex-col md:flex-row">
+//         {/* Left Side - Content */}
+//         <div className="p-8 flex-1">
+//           <h2 className="text-3xl font-bold mb-4">Are you ready to start a
+//             project? We are eager to
+//             hear from you</h2>
+//           <p className="text-gray-700 mb-4">
+//             We provide the best solutions for your business needs. Our team of experts is dedicated to delivering high-quality services tailored to your requirements.
+//           </p>
+//           <button className="bg-blue-600 text-white py-2 px-4 rounded hover:bg-blue-700 transition">
+//             Start a Project
+//           </button>
+//         </div>
   
-        {/* Right Side - Image */}
-        <div className="flex-shrink-0 md:w-1/2">
-          <img
-            src={GntSohila} // Replace with your image URL
-            alt="Description"
-            className="object-cover w-full h-full"
-            style={{ width: '280px', height: '341px' }}
-          />
-        </div>
-      </div>
-    );
-};
+//         {/* Right Side - Image */}
+//         <div className="flex-shrink-0 md:w-1/2">
+//           <img
+//             src={GntSohila} // Replace with your image URL
+//             alt="Description"
+//             className="object-cover w-full h-full"
+//             style={{ width: '280px', height: '341px' }}
+//           />
+//         </div>
+//       </div>
+//     );
+// };
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 const awards = [
     {
@@ -314,6 +329,7 @@ import OnDemandService from '../../component/demand/OnDemandService';
 import CardSlider from '../../component/cardslider/CardSlider';
 import FounderIntroduction from '../../component/founder/FounderIntroduction';
 import WhatsAppAPISection from '../../component/whatsapp/WhatsApp';
+import HalfSideCard from '../../component/startproject/HalfSide';
 const Hero = () => {
     return (
       <div>

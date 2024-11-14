@@ -683,7 +683,7 @@ const Footer = () => {
             <h3 className="text-lg font-semibold mb-3">Follow Us</h3>
             <div className="flex space-x-4">
               <a
-                href="#"
+                href="https://www.facebook.com/thetimezone247"
                 className="hover:text-gray-100 transition-colors duration-200"
                 aria-label="Facebook"
               >
@@ -707,7 +707,7 @@ const Footer = () => {
                 </svg>
               </a>
               <a
-                href="#"
+                href="https://www.instagram.com/gotothenexttechnologyindia/?fbclid=IwZXh0bgNhZW0CMTEAAR11-fOUZHEKb0hKKeJGvQXpO1_P8-3Njlhh9bW0UL2VZ8ggZMzni025HtI_aem_y9No7rEjFws9tgxNk5xJDA"
                 className="hover:text-gray-100 transition-colors duration-200"
                 aria-label="Instagram"
               >
