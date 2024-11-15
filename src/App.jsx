@@ -127,6 +127,7 @@ import FounderMessage from './component/founderMessage/FounderMessage';
 import CareersPage from './component/carrier/CareerPage';
 import AdminPanel from './admin/adminhome/AdminPage';
 import LoginForm from './adminCompo/loginAdmin/LoginForm';
+import Service from './pages/whatsapppage/WhatsAppChat';
 //import LoginForm from './components/login/LoginForm'; // Import LoginForm
 
 // Protected Route Component
@@ -163,6 +164,7 @@ const App = () => {
           <Route path='/blog/education' element={<EducationBlog />} />
           <Route path='/blog/regular' element={<Regular />} />
           <Route path='/blog/seo' element={<Seo />} />
+          <Route path='/products/whatsapp' element={< Service/>} />
           
           {/* Login Route */}
           <Route path="/login" element={<LoginForm />} />

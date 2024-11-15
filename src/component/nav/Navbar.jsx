@@ -92,7 +92,7 @@ const Navbar = () => {
       { title: 'UI/UX Design', path: '/services/cloud-services' },
     ],
     Products: [
-      { title: 'WhatsApp API', path: '/blog/tech-news' },
+      { title: 'WhatsApp API', path: '/products/whatsapp' },
       { title: 'ERP Solutions', path: '/products/ecommerce' },
       { title: 'E-Commerce Platforms', path: '/products/cms' },
       { title: 'Cybersecurity Solutions', path: '/products/analytics' },
