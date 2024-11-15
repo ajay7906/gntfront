@@ -87,6 +87,7 @@
 
 import { useState } from 'react';
 import Start from '../../assets/images/start.jpeg'
+import { useContactForm } from '../../context/ContactFormContext';
 // const HalfSideCard = () => {
 //   return (
 //     <div className="w-full">
@@ -150,6 +151,7 @@ import Start from '../../assets/images/start.jpeg'
 
 
 const HalfSideCard = () => {
+  const { openForm } = useContactForm();
     return (
       <div 
         className="w-full min-h-[500px] bg-cover bg-center bg-no-repeat relative"
@@ -175,7 +177,10 @@ const HalfSideCard = () => {
               is dedicated to delivering high-quality services tailored to your requirements.
             </p>
   
-            <button className="bg-blue-600 hover:bg-blue-700 text-white font-bold px-8 py-3 rounded-lg transition-colors duration-300 flex items-center gap-2">
+            <button className="bg-blue-600 hover:bg-blue-700 text-white font-bold px-8 py-3 rounded-lg transition-colors duration-300 flex items-center gap-2"
+            onClick={openForm}
+            
+            >
               Start a Project
               <svg className="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M14 5l7 7m0 0l-7 7m7-7H3" />

@@ -1,68 +1,4 @@
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Menu, X, ChevronDown } from 'lucide-react';
@@ -95,7 +31,7 @@ const Navbar = () => {
       { title: 'WhatsApp API', path: '/products/whatsapp' },
       { title: 'ERP Solutions', path: '/products/ecommerce' },
       { title: 'E-Commerce Platforms', path: '/products/cms' },
-      { title: 'Cybersecurity Solutions', path: '/products/analytics' },
+      { title: 'Cybersecurity Solutions', path: '/products/cybersecurity' },
       { title: 'Digital Marketing Tools', path: '/products/digitalmarketing' },
     ],
     Blog: [

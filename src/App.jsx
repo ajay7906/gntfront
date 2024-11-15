@@ -130,6 +130,7 @@ import LoginForm from './adminCompo/loginAdmin/LoginForm';
 import Service from './pages/whatsapppage/WhatsAppChat';
 import WhatsAppChat from './pages/whatsapppage/WhatsAppChat';
 import DigitalMarketing from './component/digitalmarketing/DigitalMarketing';
+import Cybersecurity from './component/cybersecurity/CyberSecurity';
 //import LoginForm from './components/login/LoginForm'; // Import LoginForm
 
 // Protected Route Component
@@ -168,7 +169,7 @@ const App = () => {
           <Route path='/blog/seo' element={<Seo />} />
           <Route path='/products/whatsapp' element={< WhatsAppChat/>} />
           <Route path='/products/digitalmarketing' element={< DigitalMarketing/>} />
-          
+          <Route path='/products/cybersecurity' element={< Cybersecurity/>} />
           {/* Login Route */}
           <Route path="/login" element={<LoginForm />} />
           

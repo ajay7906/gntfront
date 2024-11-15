@@ -1,21 +1,16 @@
 import React, { useState } from 'react';
 import { ArrowDown, Search, ImageMinus, CodeXml, BookCheck, Server, SquareUserRound, Smartphone, Shield } from 'lucide-react';
-//import Card from "./CardIL";
-//import Cards from "./CardIR";
-//import FAQItem from "./FAQItem";
-import smple from "./images/1.png"
-import smple1 from "./images/2.png"
-import smple2 from "./images/3.png"
-import smple3 from "./images/4.png"
-import smple4 from "./images/5.png"
-import smple5 from "./images/6.png"
-import smple6 from "./images/7.png"
-//import FAQItem from '../../component/faq/FaqItem';
-import StyledCard from '../../component/whatsAppstyle/StyleCard';
-import CardIl from '../../component/cardIl/CardIl';
-import FAQItem from '../../component/faq/FAQItem';
-import HalfSideCard from '../../component/startproject/HalfSide';
-import { useContactForm } from '../../context/ContactFormContext';
+import Card from "./CardIL";
+import Cards from "./CardIR";
+import FAQItem from "./FAQItem";
+import smple from "./images/cyber 1.png"
+import smple1 from "./images/cyber 2.png"
+import smple2 from "./images/cyber 3.png"
+import smple3 from "./images/cyber 4.png"
+import smple4 from "./images/cyber 5.png"
+import smple5 from "./images/cyber 6.png"
+import smple6 from "./images/cyber 7.png"
+import HalfSideCard from '../startproject/HalfSide';
 
 
 
@@ -77,19 +72,19 @@ const CustomSoftware = () => {
   return (
     <div className="bg-white">
       {/* Hero Section */}
-      <section className="relative h-screen flex items-center justify-center text-center text-white bg-gradient-to-r from-[#dad6d6] to-indigo-600">
+      <section className="relative h-screen flex items-center justify-center text-center text-white bg-gradient-to-r from-[#dad6d6] to-indigo-500">
         {/* Pattern Overlay */}
         <div className="absolute inset-0 opacity-10 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxwYXRoIGQ9Ik0zNiAxOGMzLjMxNCAwIDYgMi42ODYgNiA2cy0yLjY4NiA2LTYgNi02LTIuNjg2LTYtNiAyLjY4Ni02IDYtNiIgZmlsbD0iI2ZmZiIvPjwvZz48L3N2Zz4=')]"></div>
         
         {/* Content */}
         <div className="relative z-10 px-4 max-w-4xl mx-auto">
           <h1 className="text-5xl md:text-7xl font-extrabold mb-6 leading-tight">
-            WhatsApp API Chatbot
+          Cyber Security Solutions
           </h1>
           <p className="text-xl md:text-2xl mb-10 max-w-2xl mx-auto text-blue-100">
-          GNTINDIA's automated WhatsApp solution 
-          engages customers instantly with real-time support, order tracking, and 
-          personalized notifications to streamline communication.
+          GNTINDIA offers the full spectrum of end-to-end 
+          comprehensive cybersecurity measures for your businesses through 
+          encryption, threat detection, and proactive cyber risk protection. 
           </p>
           <div className="flex flex-col sm:flex-row justify-center gap-4">
             <button className="px-8 py-4 bg-white text-blue-600 hover:bg-blue-50 font-semibold rounded-lg shadow-lg transition duration-300">
@@ -183,12 +178,11 @@ const CustomSoftware = () => {
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-16">
               <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-                Features of our WhatsApp API Chatbot Services
+                Features of our Cyber Security Solutions
               </h2>
               <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-              WhatsApp solution 
-              engages customers instantly with real-time support, order tracking, and 
-              personalized notifications to streamline communication.
+              At GNT INDIA, we offer advanced cybersecurity solutions designed to protect your business from evolving cyber threats while ensuring the integrity, confidentiality,
+              and availability of your sensitive data. Here are the key features of our comprehensive cybersecurity services
               </p>
             </div>
             
@@ -223,13 +217,12 @@ function Solution() {
 
   return (
     <div className="min-h-screen bg-gray-100 flex items-center justify-center p-0">
-      <CardIl
-        title="Whatsapp API Chatbot solution"
-        description="GNTINDIA provides the solid WhatsApp API solution for bringing the power of WhatsApp to even better 
-          communication with customers. The integration of WhatsApp API would be the first step toward 
-          reaching out, sending automated messages, personalized alerts, notifications, and updates directly to 
-          customers' WhatsApp accounts, thus providing instant and effective communication with your 
-          customers."
+      <Card
+        title="Cyber Security Solutions"
+        description="At GNTINDIA, we offer cutting-edge cybersecurity solutions designed
+        to protect your business from evolving cyber threats while ensuring the integrity,
+        confidentiality, and availability of your sensitive data.Get Started with GNTINDIA's Cybersecurity Solutions Today
+        Protect your business from cyber threats with GNTINDIA's state-of-the-art cybersecurity solutions. Contact us now to learn how we can help you develop a robust security strategy tailored to your unique needs."
         images={sampleImages}
       />
     </div>
@@ -240,18 +233,16 @@ function Solution() {
 
 function Websites() {
   const sampleImages = [
-    smple2,
+    smple6,
   ];
 
   return (
     <div className="min-h-screen bg-gray-100 flex items-center justify-center p-0">
-      <StyledCard
-        title="Whatsapp API Chatbot Website Development"
+      <Cards
+        title="Cyber Security Website Development"
         images={sampleImages}
-        description="As per the previous discussion, you may imagine that “creating an online marketplace is not an easy task right? ” Well, not really.
-                  Thanks to the open-source and FREE eCommerce platforms, it becomes easy to build a marketplace.
-                  Selling online not only helps to plot a giant selling gameplan but also helps retailers or suppliers to establish a continuous relationship with 
-                  their customers to provide them a seamless buying experience from anywhere including web and mobile."
+        description="GNTINDIA offers top-tier website development services designed to create dynamic, user-friendly, and highly functional websites that elevate your business presence online. 
+        Our comprehensive approach ensures that your website not only looks great but also performs optimally to meet your business goals."
       />
     </div> 
   );
@@ -264,14 +255,11 @@ function Mobiles() {
 
   return (
     <div className="min-h-screen bg-gray-100 flex items-center justify-center">
-      <CardIl
-        title="Whatsapp API Chatbot Mobile App Development"
+      <Card
+        title="Cyber Security App Development Solutions"
         images={sampleImages}
-        description="We specialize in designing and developing mobile apps for online shopping that are easy for customers to use. 
-                    Our goal is to give GNTINDIA's automated WhatsApp solution 
-
-                    engages customers instantly with real-time support, order tracking, and 
-                    personalized notifications to streamline communication."
+        description="At GNTINDIA, we provide modern app development solutions that help businesses build engaging, secure, and high-performing mobile applications.
+         Our comprehensive approach ensures your app meets the highest standards of functionality, user experience, and security, while also providing seamless integration with your existing systems and processes."
         
       />
     </div>
@@ -286,13 +274,12 @@ function Integration() {
   return (
     <div className="min-h-screen bg-gray-100 flex items-center justify-center">
         
-      <StyledCard
-        title="Whatsapp API Chatbot Platform Integration"
+      <Cards
+        title="Cyber Security Platform Integration"
         images={sampleImages}
-        description="With GNTINDA's WhatsApp API solution, companies can integrate any WhatsApp messaging into any of 
-        their existing systems such as CRM tools, eCommerce platforms or marketing automation systems, thus 
-        truly reviving customer engagement. Two-way messaging, order tracking, and real-time support - Our 
-        Solution allows customers to easily interact with your brand via the familiar WhatsApp system."
+        description="GNTINDIA delivers state-of-the-art cybersecurity solutions designed to protect businesses from evolving cyber threats
+         by ensuring the integrity, confidentiality, and availability of sensitive data. Our platform integration services ensure that your 
+         cybersecurity measures are seamlessly integrated with your existing systems, enhancing overall security posture and operational efficiency."
         
       />
     </div>
@@ -306,12 +293,14 @@ function SEO() {
 
   return (
     <div className="min-h-screen bg-gray-100 flex items-center justify-center p-0">
-      <CardIl
-        title="Whatsapp API Chatbot SEO Services"
+      <Card
+        title="Cyber Security SEO Services"
         images={sampleImages}
         description="
-        By providing real-time responses and personalized support, a WhatsApp API chatbot can increase customer interaction on your website, potentially reducing bounce rates. Bounce rates
-         and time on site are SEO factors, as search engines interpret them as indicators of valuable content."
+        At GNTINDIA, we understand the importance of maintaining a robust online presence 
+        while ensuring your business is protected from cyber threats. Our Cybersecurity SEO
+        services are designed to optimize your website for search engines while safeguarding
+        it against potential risks, enhancing both visibility and security."
         
       />
     </div>
@@ -320,16 +309,19 @@ function SEO() {
 
 function Support() {
   const sampleImages = [
-    smple6,
+    smple2,
   ];
 
   return (
     <div className="min-h-screen bg-gray-100 flex items-center justify-center p-0">
-      <StyledCard
-        title="Support and Maintenance Service for Whatsapp API Chatbot"
+      <Cards
+        title="Support and Maintenance Service for Cyber Security"
         images={sampleImages}
-        description="A WhatsApp API chatbot enables businesses to offer round-the-clock support, providing instant answers to frequently asked questions and support inquiries. This constant availability means customers 
-        can get the help they need outside of regular business hours, improving satisfaction and brand loyalty."
+        description="At GNTINDIA, we understand that maintaining robust cybersecurity 
+        measures is crucial for protecting your business from evolving cyber threats. 
+        Our Support and Maintenance Services are designed to ensure that your cybersecurity 
+        defenses remain strong, proactive, and effective, providing continuous protection for your 
+        sensitive data and IT infrastructure."
         
       />
     </div>
@@ -377,11 +369,14 @@ const  Texts = () => {
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-16">
               <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              WhatsApp Chatbot Design Cycle
+              Cyber Security Design Cycle
               </h2>
               <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-              We are an WhatsApp Api Chatbot design company, that uses the best creative skills to meet your business needs and ensure customer satisfaction.
-              We’re with you every step of the way, from the beginning of your project to its completion.
+              At GNTINDIA, we follow a meticulous Cybersecurity Design Cycle to develop 
+              comprehensive and customized security solutions that protect your business
+               from evolving cyber threats. This process ensures that we deliver solutions 
+               that maintain the integrity, confidentiality, and availability of your sensitive data,
+                while proactively addressing potential risks.
               </p>
             </div>
             
@@ -412,16 +407,16 @@ const  Texts = () => {
 const FAQPage = () => {
   const faqs = [
     {
-      question: "What is GNTINDIA's WhatsApp chatbot?",
-      answer: "GNTINDIA's automated WhatsApp solution engages customers instantly with real-time support, order tracking, and personalized notifications to streamline communication."
+      question: "What types of cybersecurity threats can GNTINDIA protect my business from?",
+      answer: "GNTINDIA's cybersecurity solutions shield your business from a wide range of cyber threats, including hacking attempts, malware, ransomware, phishing attacks, and other online risks. Our services ensure the integrity, confidentiality, and availability of your sensitive data."
     },
+    // {
+    //   question: "Can GNTINDIA ERP solutions be customized to meet specific business needs?",
+    //   answer: "Yes, our ERP solutions can be tailored specifically to meet the unique requirements of your business. We work closely with you to understand your needs and develop a solution that aligns perfectly with your business goals and processes."
+    // },
     {
-      question: "How can GNTINDIA's WhatsApp chatbot improve your customer service?",
-      answer: "GNTINDIA's WhatsApp chatbot offers instant autoresponder replies with customer questions, hence improving quick replies and increasing customer delight. "
-    },
-    {
-      question: "Is GNTINDIA's WhatsApp chatbot safe for sensitive information?",
-      answer: " GNTINDIA maintains proper safety measures so that no leakage occurs in the data and related conversations on the chatbot."
+      question: "How can I get started with GNTINDIA's cybersecurity solutions?",
+      answer: "To get started, you can contact us through our website or reach out to our sales team. We will discuss your business needs, conduct a thorough analysis, and develop a tailored cybersecurity solution to protect your business effectively."
     },
     // Add more FAQ items here
   ];
@@ -433,7 +428,7 @@ const FAQPage = () => {
         
         <div className="space-y-4">
           {faqs.map((faq, index) => (
-            <FAQItem key={index} question={faq.question} answer={faq.answer} /> 
+            <FAQItem key={index} question={faq.question} answer={faq.answer} />
           ))}
         </div>
       </div>
@@ -498,8 +493,7 @@ const EnhancedCTA = () => {
 };
 
 
-const WhatsAppChat = () => {
-   
+const Cybersecurity = () => {
   return (
     <div>
       <CustomSoftware />
@@ -517,4 +511,4 @@ const WhatsAppChat = () => {
   )
 };
 
-export default WhatsAppChat;
+export default Cybersecurity;
