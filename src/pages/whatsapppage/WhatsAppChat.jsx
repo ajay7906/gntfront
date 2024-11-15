@@ -10,9 +10,10 @@ import smple3 from "./images/4.png"
 import smple4 from "./images/5.png"
 import smple5 from "./images/6.png"
 import smple6 from "./images/7.png"
-import FAQItem from '../../component/faq/FaqItem';
+//import FAQItem from '../../component/faq/FaqItem';
 import StyledCard from '../../component/whatsAppstyle/StyleCard';
 import CardIl from '../../component/cardIl/CardIl';
+import FAQItem from '../../component/faq/FaqItem';
 
 
 
