@@ -13,7 +13,7 @@ import smple6 from "./images/7.png"
 //import FAQItem from '../../component/faq/FaqItem';
 import StyledCard from '../../component/whatsAppstyle/StyleCard';
 import CardIl from '../../component/cardIl/CardIl';
-import FAQItem from '../../component/faq/FaqItem';
+import FAQItem from '../../component/faq/FAQItem';
 
 
 
@@ -431,7 +431,7 @@ const FAQPage = () => {
         
         <div className="space-y-4">
           {faqs.map((faq, index) => (
-            <FAQItem key={index} question={faq.question} answer={faq.answer} />
+            <FAQItem key={index} question={faq.question} answer={faq.answer} /> 
           ))}
         </div>
       </div>
