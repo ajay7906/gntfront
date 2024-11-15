@@ -14,6 +14,7 @@ import smple6 from "./images/7.png"
 import StyledCard from '../../component/whatsAppstyle/StyleCard';
 import CardIl from '../../component/cardIl/CardIl';
 import FAQItem from '../../component/faq/FAQItem';
+import HalfSideCard from '../../component/startproject/HalfSide';
 
 
 
@@ -508,6 +509,7 @@ const WhatsAppChat = () => {
       <Support />
       <Texts />
       <FAQPage />
+      <HalfSideCard/>
       {/* <EnhancedCTA /> */}
     </div>
   )

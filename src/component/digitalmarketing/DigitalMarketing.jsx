@@ -10,6 +10,7 @@ import smple3 from "./images/digital 4.png"
 import smple4 from "./images/digital 5.png"
 import smple5 from "./images/digital 6.png"
 import smple6 from "./images/digital 7.png"
+import HalfSideCard from '../startproject/HalfSide';
 
 
 
@@ -500,6 +501,7 @@ const DigitalMarketing = () => {
       <Support />
       <Texts />
       <FAQPage />
+      <HalfSideCard/>
       {/* <EnhancedCTA /> */}
     </div>
   )
