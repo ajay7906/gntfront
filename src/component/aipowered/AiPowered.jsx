@@ -3,13 +3,13 @@ import { ArrowDown, Search, ImageMinus, CodeXml, BookCheck, Server, SquareUserRo
 import Card from "./CardIL";
 import Cards from "./CardIR";
 import FAQItem from "./FAQItem";
-import smple from "./images/cloud 1.png"
-import smple1 from "./images/cloud 2.png"
-import smple2 from "./images/cloud 3.png"
-import smple3 from "./images/cloud 4.png"
-import smple4 from "./images/cloud 5.png"
-import smple5 from "./images/cloud 6.png"
-import smple6 from "./images/cloud 7.png"
+import smple from "./images/ai 1.png"
+import smple1 from "./images/ai 2.png"
+import smple2 from "./images/ai 3.png"
+import smple3 from "./images/ai 4.png"
+import smple4 from "./images/ai 5.png"
+import smple5 from "./images/ai 6.png"
+import smple6 from "./images/ai 7.png"
 import smple7 from "./images/excellence.png"
 import smple8 from "./images/innovaton.png"
 import smple9 from "./images/leadership.png"
@@ -83,12 +83,12 @@ const CustomSoftware = () => {
         {/* Content */}
         <div className="relative z-10 px-4 max-w-4xl mx-auto">
           <h1 className="text-5xl md:text-7xl font-extrabold mb-6 leading-tight">
-          Cloud Solutions
+          AI-Powered Tools
           </h1>
           <p className="text-xl md:text-2xl mb-10 max-w-2xl mx-auto text-blue-100">
-          GNTINDIA provides a comprehensive suite of advanced cloud solutions designed
-          to transform business potential by improving scalability, efficiency, and security, 
-          all while reducing infrastructure costs.
+          GNTINDIA's intelligent tools support automation, 
+          predictive analytics, and personalized customer experiences, thereby 
+          driving operational efficiency. 
           </p>
           <div className="flex flex-col sm:flex-row justify-center gap-4">
             <button className="px-8 py-4 bg-white text-blue-600 hover:bg-blue-50 font-semibold rounded-lg shadow-lg transition duration-300">
@@ -182,13 +182,12 @@ const CustomSoftware = () => {
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-16">
               <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-                Features of our Cloud Solutions 
+                Features of our AI-Powered Tools 
               </h2>
               <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-              At GNTINDIA, we pride ourselves on providing advanced cloud solutions that 
-              help businesses transform their potential. Our cloud services are characterized 
-              by flexibility, reliability, and cost-effectiveness, designed to improve scalability, 
-              efficiency, and security while reducing infrastructure costs.
+              GNTINDIA provides a suite of AI-based tools for optimizing business operations, supporting intuitive 
+              decision-making, and driving growth. Our solutions apply the latest in artificial intelligence and machine 
+              learning technologies to automate processes, analyze data, and provide actionable insights.
               </p>
             </div>
             
@@ -224,12 +223,12 @@ function Solution() {
   return (
     <div className="min-h-screen bg-gray-100 flex items-center justify-center p-0">
       <Card
-        title="Cloud Solutions"
-        description="GNTINDIA provides a comprehensive suite of advanced cloud solutions 
-        designed to transform business potential by improving scalability, efficiency, and 
-        security, all while reducing infrastructure costs. Our cloud services are characterized 
-        by flexibility, reliability, and cost-effectiveness, making them the ideal choice for businesses 
-        looking to leverage the power of the cloud"
+        title=" AI-Powered Tools Solutions"
+        description="GNTINDIA provides a comprehensive suite of AI-based tools 
+        designed to optimize business operations, support intuitive decision-making,
+        and drive growth. Our cutting-edge solutions harness the power of artificial 
+        intelligence and machine learning to automate processes, analyze data, and deliver
+        actionable insights."
         images={sampleImages}
       />
     </div>
@@ -246,12 +245,13 @@ function Websites() {
   return (
     <div className="min-h-screen bg-gray-100 flex items-center justify-center p-0">
       <Cards
-        title="Cloud Solutions Website Development"
+        title="AI-Powered Tools Website Development"
         images={sampleImages}
-        description="Welcome to GNTINDIA, your trusted partner for advanced cloud solutions. 
-        Our comprehensive cloud services are designed to help businesses transform their potential 
-        by improving scalability, efficiency, and security while reducing infrastructure costs. Discover 
-        how our cloud solutions can enhance your business operations."
+        description="At GNTINDIA, we offer a powerful 
+        suite of AI-based tools designed to optimize your business operations, support 
+        intuitive decision-making, and drive unparalleled growth. Discover how our cutting-edge 
+        solutions harness the latest in artificial intelligence and machine learning technologies 
+        to transform your business."
       />
     </div> 
   );
@@ -265,12 +265,13 @@ function Mobiles() {
   return (
     <div className="min-h-screen bg-gray-100 flex items-center justify-center">
       <Card
-        title="Cloud Solutions App Development"
+        title="AI-Powered Tools App Development"
         images={sampleImages}
-        description="GNTINDIA offers advanced cloud solutions designed to empower businesses 
-        by enhancing scalability, efficiency, and security, while minimizing infrastructure costs. 
-        Our cloud app development services provide comprehensive support and expertise to help you build, 
-        migrate, and manage cloud-native applications seamlessly."
+        description="At GNTINDIA, we are committed
+        to revolutionizing business operations and enhancing growth through our suite 
+        of AI-powered tools. Our expertise in artificial intelligence and machine learning 
+        allows us to develop applications that automate processes, analyze data, and provide 
+        actionable insights to drive your business forward."
         
       />
     </div>
@@ -286,12 +287,12 @@ function Integration() {
     <div className="min-h-screen bg-gray-100 flex items-center justify-center">
         
       <Cards
-        title="Cloud Solutions Platform Integration"
+        title="AI-Powered Tools Platform Integration"
         images={sampleImages}
-        description="GNTINDIA offers advanced cloud platform integration services 
-        designed to help businesses seamlessly connect their cloud solutions with existing 
-        systems, ensuring a unified and efficient workflow. Our cloud platform integration 
-        services enhance scalability, efficiency, and security while reducing infrastructure costs."
+        description="At GNTINDIA, we recognize that seamless integration with existing
+        platforms is essential for optimizing business operations and achieving digital 
+        transformation. Our suite of AI-based tools is designed to easily integrate with 
+        various platforms, ensuring a smooth transition and maximizing the benefits of artificial intelligence."
         
       />
     </div>
@@ -306,13 +307,11 @@ function SEO() {
   return (
     <div className="min-h-screen bg-gray-100 flex items-center justify-center p-0">
       <Card
-        title="Cloud Solutions SEO Services "
+        title="AI-Powered Tools SEO Services "
         images={sampleImages}
-        description="GNTINDIA offers advanced cloud solutions designed to transform your 
-        business potential by enhancing scalability, efficiency, and security while reducing 
-        infrastructure costs. Our SEO services are tailored to optimize your online presence and 
-        drive organic traffic to your cloud solutions. Discover how our cloud-focused SEO services 
-        can propel your business."
+        description="At GNTINDIA, we offer cutting-edge AI-based tools designed to revolutionize
+        SEO services. Our advanced AI and machine learning technologies empower businesses to optimize 
+        their online presence, drive organic traffic, and achieve higher search engine rankings."
         
       />
     </div>
@@ -327,13 +326,14 @@ function Support() {
   return (
     <div className="min-h-screen bg-gray-100 flex items-center justify-center p-0">
       <Cards
-        title="Support and Maintenance Service for Cloud Solutions "
+        title="Support and Maintenance Service for AI-Powered Tools"
         images={sampleImages}
-        description="At GNTINDIA, we believe that implementing cloud solutions is just 
-        the beginning. To ensure continuous performance, security, and efficiency, we offer 
-        comprehensive support and maintenance services tailored to meet your specific business 
-        needs. Our dedicated team of experts provides ongoing assistance, ensuring that your cloud 
-        infrastructure operates at its best."
+        description="At GNTINDIA, we understand that implementing AI-powered tools is 
+        just the beginning. To ensure these tools continue to deliver optimal performance
+        and value, we offer comprehensive support and maintenance services tailored to your 
+        business needs. Our dedicated team of experts is committed to providing ongoing assistance, 
+        ensuring your AI solutions remain efficient, secure, and up-to-date."
+        
       />
     </div>
   );
@@ -380,11 +380,12 @@ const  Texts = () => {
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-16">
               <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              Cloud Solutions Design Cycle
+              AI-Powered Tools Design Cycle
               </h2>
               <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-              At GNTINDIA, we follow a structured design cycle to ensure our cloud solutions 
-              meet the highest standards of scalability, efficiency, security, and cost-effectiveness.
+              At GNTINDIA, we follow a meticulously planned design cycle to ensure that
+              our AI-powered tools are innovative, efficient, and tailored to meet the specific 
+              needs of our clients.
               </p>
             </div>
             
@@ -415,16 +416,16 @@ const  Texts = () => {
 const FAQPage = () => {
   const faqs = [
     {
-      question: "What are the main benefits of using GNTINDIA's cloud solutions?",
-      answer: "Data storage, backups, disaster recovery, collaboration by modern business teams-all secured and scalable."
+      question: "What are the main benefits of using GNTINDIA's AI-powered tools?",
+      answer: "Our AI-powered tools optimize business operations, support intuitive decision-making, and drive growth. They automate processes, analyze data for actionable insights, and enhance customer experience through intelligent chatbots, predictive analytics, and personalized marketing."
     },
     {
-      question: "How does GNTINDIA ensure the security of cloud solutions?",
-      answer: "GNTINDIA employs advanced security protocols and conducts regular security audits to protect your data and applications. Our solutions also include secure backup and disaster recovery to safeguard against potential threats."
+      question: "How can AI-powered chatbots and virtual assistants improve customer service?",
+      answer: "AI-powered chatbots and virtual assistants provide 24/7 customer support, answer inquiries, and offer personalized interactions. This ensures customers receive timely assistance and enhances their overall experience."
     },
     {
-      question: "How does GNTINDIA support existing cloud infrastructures?",
-      answer: "GNTINDIA provides comprehensive support and maintenance services for existing cloud infrastructures. This includes continuous monitoring, performance optimization, regular updates, and expert management."
+      question: "What kind of support and maintenance services does GNTINDIA offer?",
+      answer: "GNTINDIA provides comprehensive support and maintenance services, including 24/7 technical assistance, regular updates and upgrades, performance monitoring, security audits, and customer training. Our goal is to ensure the ongoing efficiency and reliability of your AI solutions."
     },
     // Add more FAQ items here
   ];
@@ -501,7 +502,7 @@ const EnhancedCTA = () => {
 };
 
 
-const CloudPage = () => {
+const AiPowered = () => {
   return (
     <div>
       <CustomSoftware />
@@ -514,10 +515,9 @@ const CloudPage = () => {
       <Texts />
       <FAQPage />
       <HalfSideCard/>
-     
       {/* <EnhancedCTA /> */}
     </div>
   )
 };
 
-export default CloudPage;
+export default AiPowered;

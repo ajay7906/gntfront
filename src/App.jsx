@@ -134,6 +134,7 @@ import Cybersecurity from './component/cybersecurity/CyberSecurity';
 import ErpSolution from './component/erp/ErpSolution';
 import Ecommerse from './component/ecommerse/Ecommerse';
 import CloudPage from './component/cloud/CloudPage';
+import AiPowered from './component/aipowered/AiPowered';
 //import LoginForm from './components/login/LoginForm'; // Import LoginForm
 
 // Protected Route Component
@@ -176,6 +177,7 @@ const App = () => {
           <Route path='/products/erp' element={< ErpSolution/>} />
           <Route path='/products/ecom' element={< Ecommerse/>} /> 
           <Route path='/services/cloud' element={< CloudPage/>} />
+          <Route path='/services/ai' element={< AiPowered/>} />
           {/* Login Route */}
           <Route path="/login" element={<LoginForm />} />
           

@@ -24,7 +24,7 @@ const Navbar = () => {
       { title: 'CRM', path: '/services/ui-ux-design' },
       { title: 'Cloud Solutions', path: '/services/cloud' },
       { title: 'Web Development', path: '/services/cloud-services' },
-      { title: 'AI-Powered Tools', path: '/services/cloud-services' },
+      { title: 'AI-Powered Tools', path: '/services/ai' },
       { title: 'UI/UX Design', path: '/services/cloud-services' },
     ],
     Products: [
