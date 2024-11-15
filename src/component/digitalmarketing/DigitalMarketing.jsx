@@ -1,18 +1,15 @@
 import React, { useState } from 'react';
 import { ArrowDown, Search, ImageMinus, CodeXml, BookCheck, Server, SquareUserRound, Smartphone, Shield } from 'lucide-react';
-//import Card from "./CardIL";
-//import Cards from "./CardIR";
-//import FAQItem from "./FAQItem";
-import smple from "./images/1.png"
-import smple1 from "./images/2.png"
-import smple2 from "./images/3.png"
-import smple3 from "./images/4.png"
-import smple4 from "./images/5.png"
-import smple5 from "./images/6.png"
-import smple6 from "./images/7.png"
-import FAQItem from '../../component/faq/FaqItem';
-import StyledCard from '../../component/whatsAppstyle/StyleCard';
-import CardIl from '../../component/cardIl/CardIl';
+import Card from "./CardIL";
+import Cards from "./CardIR";
+import FAQItem from "./FAQItem";
+import smple from "./images/digital 1.png"
+import smple1 from "./images/digital 2.png"
+import smple2 from "./images/digital 3.png"
+import smple3 from "./images/digital 4.png"
+import smple4 from "./images/digital 5.png"
+import smple5 from "./images/digital 6.png"
+import smple6 from "./images/digital 7.png"
 
 
 
@@ -74,19 +71,19 @@ const CustomSoftware = () => {
   return (
     <div className="bg-white">
       {/* Hero Section */}
-      <section className="relative h-screen flex items-center justify-center text-center text-white bg-gradient-to-r from-[#dad6d6] to-indigo-600">
+      <section className="relative h-screen flex items-center justify-center text-center text-white bg-gradient-to-r from-[#dad6d6] to-indigo-500">
         {/* Pattern Overlay */}
         <div className="absolute inset-0 opacity-10 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxwYXRoIGQ9Ik0zNiAxOGMzLjMxNCAwIDYgMi42ODYgNiA2cy0yLjY4NiA2LTYgNi02LTIuNjg2LTYtNiAyLjY4Ni02IDYtNiIgZmlsbD0iI2ZmZiIvPjwvZz48L3N2Zz4=')]"></div>
         
         {/* Content */}
         <div className="relative z-10 px-4 max-w-4xl mx-auto">
           <h1 className="text-5xl md:text-7xl font-extrabold mb-6 leading-tight">
-            WhatsApp API Chatbot
+          Digital Marketing Services
           </h1>
           <p className="text-xl md:text-2xl mb-10 max-w-2xl mx-auto text-blue-100">
-          GNTINDIA's automated WhatsApp solution 
-          engages customers instantly with real-time support, order tracking, and 
-          personalized notifications to streamline communication.
+           Data-driven GNTINDIA digital marketing tools 
+           maximize performance in SEO, PPC, and social media, improving online 
+           visibility and conversions.
           </p>
           <div className="flex flex-col sm:flex-row justify-center gap-4">
             <button className="px-8 py-4 bg-white text-blue-600 hover:bg-blue-50 font-semibold rounded-lg shadow-lg transition duration-300">
@@ -220,13 +217,12 @@ function Solution() {
 
   return (
     <div className="min-h-screen bg-gray-100 flex items-center justify-center p-0">
-      <CardIl
-        title="Whatsapp API Chatbot solution"
-        description="GNTINDIA provides the solid WhatsApp API solution for bringing the power of WhatsApp to even better 
-          communication with customers. The integration of WhatsApp API would be the first step toward 
-          reaching out, sending automated messages, personalized alerts, notifications, and updates directly to 
-          customers' WhatsApp accounts, thus providing instant and effective communication with your 
-          customers."
+      <Card
+        title="Digital marketing tools solution"
+        description="GNTINDIA is an all-rounder in providing digital marketing tools and solutions that can really help 
+                    develop online visibility, engagement, and increase business growth. The solutions we provide are 
+                    equipped with powerful tools such as social media management, email marketing automation, SEO 
+                    optimization, PPC campaign management, and analytics tracking."
         images={sampleImages}
       />
     </div>
@@ -237,18 +233,16 @@ function Solution() {
 
 function Websites() {
   const sampleImages = [
-    smple2,
+    smple6,
   ];
 
   return (
     <div className="min-h-screen bg-gray-100 flex items-center justify-center p-0">
-      <StyledCard
-        title="Whatsapp API Chatbot Website Development"
+      <Cards
+        title="Digital marketing Website Development"
         images={sampleImages}
-        description="As per the previous discussion, you may imagine that “creating an online marketplace is not an easy task right? ” Well, not really.
-                  Thanks to the open-source and FREE eCommerce platforms, it becomes easy to build a marketplace.
-                  Selling online not only helps to plot a giant selling gameplan but also helps retailers or suppliers to establish a continuous relationship with 
-                  their customers to provide them a seamless buying experience from anywhere including web and mobile."
+        description="At GNTINDIA, we excel in providing robust digital marketing tools and solutions tailored to amplify your online presence, drive engagement, and fuel business growth.
+        Get in Touch Ready to take your online presence to the next level? Contact us today and discover how GNTINDIA can transform your digital marketing strategy."
       />
     </div> 
   );
@@ -261,14 +255,11 @@ function Mobiles() {
 
   return (
     <div className="min-h-screen bg-gray-100 flex items-center justify-center">
-      <CardIl
-        title="Whatsapp API Chatbot Mobile App Development"
+      <Card
+        title="Digital marketing Mobile App Development"
         images={sampleImages}
-        description="We specialize in designing and developing mobile apps for online shopping that are easy for customers to use. 
-                    Our goal is to give GNTINDIA's automated WhatsApp solution 
-
-                    engages customers instantly with real-time support, order tracking, and 
-                    personalized notifications to streamline communication."
+        description="GNTINDIA stands out as a versatile provider of digital marketing tools and solutions, designed to boost your mobile app's visibility, engagement, and user growth. Our comprehensive suite is equipped with powerful tools that can streamline your marketing efforts and drive substantial business growth through mobile platforms.
+                    Get Started Today Transform your mobile app strategy with GNTINDIA all-encompassing digital marketing solutions. Contact us now to learn how we can help your app reach new heights."
         
       />
     </div>
@@ -283,13 +274,12 @@ function Integration() {
   return (
     <div className="min-h-screen bg-gray-100 flex items-center justify-center">
         
-      <StyledCard
-        title="Whatsapp API Chatbot Platform Integration"
+      <Cards
+        title="Digital marketing Platform Integration"
         images={sampleImages}
-        description="With GNTINDA's WhatsApp API solution, companies can integrate any WhatsApp messaging into any of 
-        their existing systems such as CRM tools, eCommerce platforms or marketing automation systems, thus 
-        truly reviving customer engagement. Two-way messaging, order tracking, and real-time support - Our 
-        Solution allows customers to easily interact with your brand via the familiar WhatsApp system."
+        description="GNTINDIA offers comprehensive platform integration solutions that streamline your digital marketing efforts, enhancing online visibility, engagement, and business growth. Our robust tools and technologies
+         ensure seamless integration across various platforms, providing a unified approach to digital marketing.
+         Get Started Today Transform your digital marketing strategy with GNTINDIA seamless platform integration solutions. Contact us now to learn how we can help integrate your digital marketing tools and enhance your online presence."
         
       />
     </div>
@@ -303,12 +293,12 @@ function SEO() {
 
   return (
     <div className="min-h-screen bg-gray-100 flex items-center justify-center p-0">
-      <CardIl
-        title="Whatsapp API Chatbot SEO Services"
+      <Card
+        title="Digital marketing tools SEO Services"
         images={sampleImages}
         description="
-        By providing real-time responses and personalized support, a WhatsApp API chatbot can increase customer interaction on your website, potentially reducing bounce rates. Bounce rates
-         and time on site are SEO factors, as search engines interpret them as indicators of valuable content."
+        At GNTINDIA, we specialize in providing comprehensive SEO solutions designed to enhance your website's visibility, drive organic traffic, and increase business growth. Our advanced SEO tools and strategies 
+        ensure that your website ranks higher on search engines, making it easier for potential customers to find you."
         
       />
     </div>
@@ -317,16 +307,18 @@ function SEO() {
 
 function Support() {
   const sampleImages = [
-    smple6,
+    smple2,
   ];
 
   return (
     <div className="min-h-screen bg-gray-100 flex items-center justify-center p-0">
-      <StyledCard
-        title="Support and Maintenance Service for Whatsapp API Chatbot"
+      <Cards
+        title="Support and Maintenance Service for Digital marketing tools"
         images={sampleImages}
-        description="A WhatsApp API chatbot enables businesses to offer round-the-clock support, providing instant answers to frequently asked questions and support inquiries. This constant availability means customers 
-        can get the help they need outside of regular business hours, improving satisfaction and brand loyalty."
+        description="At GNTINDIA, we understand that sustaining your digital marketing efforts is as crucial as initiating them. Our Support and Maintenance Services are designed to ensure
+        the seamless operation of your digital marketing tools, keeping your business running smoothly and efficiently.Get Started with GNTINDIA Support and Maintenance Services Today
+        Ensure the longevity and efficiency of your digital marketing efforts with our reliable support and maintenance services. Contact us now to learn how we can help maintain and enhance your
+        digital marketing tools for sustained business growth."
         
       />
     </div>
@@ -374,11 +366,12 @@ const  Texts = () => {
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div className="text-center mb-16">
               <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              WhatsApp Chatbot Design Cycle
+              Digital marketing tools Design Cycle
               </h2>
               <p className="text-xl text-gray-600 max-w-2xl mx-auto">
-              We are an WhatsApp Api Chatbot design company, that uses the best creative skills to meet your business needs and ensure customer satisfaction.
-              We’re with you every step of the way, from the beginning of your project to its completion.
+              At GNTINDIA, we follow a meticulously crafted Design Cycle to ensure that every digital 
+              marketing solution we create is effective, innovative, and perfectly aligned with our
+              clients' goals. Here’s a look at our comprehensive Design Cycle
               </p>
             </div>
             
@@ -409,16 +402,16 @@ const  Texts = () => {
 const FAQPage = () => {
   const faqs = [
     {
-      question: "What is GNTINDIA's WhatsApp chatbot?",
-      answer: "GNTINDIA's automated WhatsApp solution engages customers instantly with real-time support, order tracking, and personalized notifications to streamline communication."
+      question: "What digital marketing tools and solutions does GNTINDIA offer?",
+      answer: "GNTINDIA provides a comprehensive suite of digital marketing tools and solutions, including social media management, email marketing automation, SEO optimization, PPC campaign management, and analytics tracking. These tools help businesses enhance online visibility, engagement, and drive business growth."
     },
     {
-      question: "How can GNTINDIA's WhatsApp chatbot improve your customer service?",
-      answer: "GNTINDIA's WhatsApp chatbot offers instant autoresponder replies with customer questions, hence improving quick replies and increasing customer delight. "
+      question: "How can I get started with GNTINDIA digital marketing solutions?",
+      answer: "To get started with our digital marketing solutions, you can contact us through our website. Our team will provide a tailored strategy based on your business needs and goals."
     },
     {
-      question: "Is GNTINDIA's WhatsApp chatbot safe for sensitive information?",
-      answer: " GNTINDIA maintains proper safety measures so that no leakage occurs in the data and related conversations on the chatbot."
+      question: "Does GNTINDIA offer support and maintenance services for its tools?",
+      answer: "Yes, we offer comprehensive support and maintenance services to ensure that your digital marketing tools run smoothly. Our team is available 24/7 to assist with any technical issues and provide regular updates."
     },
     // Add more FAQ items here
   ];
@@ -495,7 +488,7 @@ const EnhancedCTA = () => {
 };
 
 
-const WhatsAppChat = () => {
+const DigitalMarketing = () => {
   return (
     <div>
       <CustomSoftware />
@@ -512,4 +505,4 @@ const WhatsAppChat = () => {
   )
 };
 
-export default WhatsAppChat;
+export default DigitalMarketing;

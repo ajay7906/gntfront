@@ -96,7 +96,7 @@ const Navbar = () => {
       { title: 'ERP Solutions', path: '/products/ecommerce' },
       { title: 'E-Commerce Platforms', path: '/products/cms' },
       { title: 'Cybersecurity Solutions', path: '/products/analytics' },
-      { title: 'Digital Marketing Tools', path: '/products/marketing' },
+      { title: 'Digital Marketing Tools', path: '/products/digitalmarketing' },
     ],
     Blog: [
       { title: 'Educational Content', path: '/blog/education' },
