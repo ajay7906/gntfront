@@ -20,10 +20,10 @@ const Navbar = () => {
 
     Services: [
       { title: 'Custom Software Development', path: '/services/web-development' },
-      { title: 'Social Media Management', path: '/services/mobile-development' },
+      { title: 'Social Media Management', path: '/services/social' },
       { title: 'CRM', path: '/services/crm' },
       { title: 'Cloud Solutions', path: '/services/cloud' },
-      { title: 'Web Development', path: '/services/cloud-services' },
+      { title: 'Web Development', path: '/services/web' },
       { title: 'AI-Powered Tools', path: '/services/ai' },
       // { title: 'UI/UX Design', path: '/services/cloud-services' },
     ],

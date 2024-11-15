@@ -136,6 +136,8 @@ import Ecommerse from './component/ecommerse/Ecommerse';
 import CloudPage from './component/cloud/CloudPage';
 import AiPowered from './component/aipowered/AiPowered';
 import CRMPage from './component/crm/CRMPage';
+import SocialMedia from './component/social/SocialMedia';
+import WebDevelopment from './component/webdevelopment/WebDevelopment';
 //import LoginForm from './components/login/LoginForm'; // Import LoginForm
 
 // Protected Route Component
@@ -180,6 +182,8 @@ const App = () => {
           <Route path='/services/cloud' element={< CloudPage/>} />
           <Route path='/services/ai' element={< AiPowered/>} />
           <Route path='/services/crm' element={< CRMPage/>} />
+          <Route path='/services/social' element={< SocialMedia/>} />
+          <Route path='/services/web' element={< WebDevelopment/>} />
           {/* Login Route */}
           <Route path="/login" element={<LoginForm />} />
           
