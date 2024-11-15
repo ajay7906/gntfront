@@ -135,6 +135,7 @@ import ErpSolution from './component/erp/ErpSolution';
 import Ecommerse from './component/ecommerse/Ecommerse';
 import CloudPage from './component/cloud/CloudPage';
 import AiPowered from './component/aipowered/AiPowered';
+import CRMPage from './component/crm/CRMPage';
 //import LoginForm from './components/login/LoginForm'; // Import LoginForm
 
 // Protected Route Component
@@ -178,6 +179,7 @@ const App = () => {
           <Route path='/products/ecom' element={< Ecommerse/>} /> 
           <Route path='/services/cloud' element={< CloudPage/>} />
           <Route path='/services/ai' element={< AiPowered/>} />
+          <Route path='/services/crm' element={< CRMPage/>} />
           {/* Login Route */}
           <Route path="/login" element={<LoginForm />} />
           

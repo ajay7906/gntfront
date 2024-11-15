@@ -21,11 +21,11 @@ const Navbar = () => {
     Services: [
       { title: 'Custom Software Development', path: '/services/web-development' },
       { title: 'Social Media Management', path: '/services/mobile-development' },
-      { title: 'CRM', path: '/services/ui-ux-design' },
+      { title: 'CRM', path: '/services/crm' },
       { title: 'Cloud Solutions', path: '/services/cloud' },
       { title: 'Web Development', path: '/services/cloud-services' },
       { title: 'AI-Powered Tools', path: '/services/ai' },
-      { title: 'UI/UX Design', path: '/services/cloud-services' },
+      // { title: 'UI/UX Design', path: '/services/cloud-services' },
     ],
     Products: [
       { title: 'WhatsApp API', path: '/products/whatsapp' },
@@ -188,13 +188,7 @@ const Navbar = () => {
             >
               Portfolio
             </Link>
-            <Link
-              to="/demo-project"
-              className={`nav-link transition-all duration-200 font-medium relative after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 hover:after:w-full after:bg-blue-600 after:transition-all after:duration-300 ${location.pathname === '/demo-project' ? 'text-blue-600' : 'hover:text-blue-600'
-                }`}
-            >
-              Demo Project
-            </Link>
+
             <Link
               to="/careers"
               className={`nav-link transition-all duration-200 font-medium relative after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 hover:after:w-full after:bg-blue-600 after:transition-all after:duration-300 ${location.pathname === '/careers' ? 'text-blue-600' : 'hover:text-blue-600'
@@ -202,6 +196,14 @@ const Navbar = () => {
             >
               Careers
             </Link>
+            <Link
+              to="/demo-project"
+              className={`nav-link transition-all duration-200 font-medium relative after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 hover:after:w-full after:bg-blue-600 after:transition-all after:duration-300 ${location.pathname === '/demo-project' ? 'text-blue-600' : 'hover:text-blue-600'
+                }`}
+            >
+               Project Demo
+            </Link>
+          
 
             <button
               onClick={openForm}
