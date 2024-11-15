@@ -22,7 +22,7 @@ const Navbar = () => {
       { title: 'Custom Software Development', path: '/services/web-development' },
       { title: 'Social Media Management', path: '/services/mobile-development' },
       { title: 'CRM', path: '/services/ui-ux-design' },
-      { title: 'Cloud Solutions', path: '/services/cloud-services' },
+      { title: 'Cloud Solutions', path: '/services/cloud' },
       { title: 'Web Development', path: '/services/cloud-services' },
       { title: 'AI-Powered Tools', path: '/services/cloud-services' },
       { title: 'UI/UX Design', path: '/services/cloud-services' },
