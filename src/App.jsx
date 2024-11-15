@@ -131,6 +131,7 @@ import Service from './pages/whatsapppage/WhatsAppChat';
 import WhatsAppChat from './pages/whatsapppage/WhatsAppChat';
 import DigitalMarketing from './component/digitalmarketing/DigitalMarketing';
 import Cybersecurity from './component/cybersecurity/CyberSecurity';
+import ErpSolution from './component/erp/ErpSolution';
 //import LoginForm from './components/login/LoginForm'; // Import LoginForm
 
 // Protected Route Component
@@ -170,6 +171,7 @@ const App = () => {
           <Route path='/products/whatsapp' element={< WhatsAppChat/>} />
           <Route path='/products/digitalmarketing' element={< DigitalMarketing/>} />
           <Route path='/products/cybersecurity' element={< Cybersecurity/>} />
+          <Route path='/products/erp' element={< ErpSolution/>} />
           {/* Login Route */}
           <Route path="/login" element={<LoginForm />} />
           
