@@ -30,7 +30,7 @@ const Navbar = () => {
     Products: [
       { title: 'WhatsApp API', path: '/products/whatsapp' },
       { title: 'ERP Solutions', path: '/products/erp' },
-      { title: 'E-Commerce Platforms', path: '/products/cms' },
+      { title: 'E-Commerce Platforms', path: '/products/ecom' },
       { title: 'Cybersecurity Solutions', path: '/products/cybersecurity' },
       { title: 'Digital Marketing Tools', path: '/products/digitalmarketing' },
     ],
