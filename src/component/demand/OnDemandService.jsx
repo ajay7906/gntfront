@@ -8,37 +8,44 @@ import {
   Globe, 
   Paintbrush
 } from 'lucide-react';
+import { Link } from 'react-router-dom';
 
 const services = [
   {
     title: "Mobile App Development",
     description: "We build native and cross-platform mobile apps to help retailers grow.",
-    icon: Smartphone
+    icon: Smartphone,
+    readMore:'/services/mobile'
   },
   {
     title: "CRM",
     description: "We build native and cross-platform mobile apps to help retailers grow.",
-    icon: Users
+    icon: Users ,
+    readMore:'/services/crm'
   },
   {
     title: "Cloud Solution",
     description: "We build native and cross-platform mobile apps to help retailers grow.",
-    icon: Cloud
+    icon: Cloud,
+    readMore:'/services/cloud'
   },
   {
     title: "AI-Powered Tool",
     description: "We build native and cross-platform mobile apps to help retailers grow.",
-    icon: Brain
+    icon: Brain,
+    readMore:'/services/ai'
   },
   {
     title: "Website Development",
     description: "We build native and cross-platform mobile apps to help retailers grow.",
-    icon: Globe
+    icon: Globe,
+    readMore:'/services/web'
   },
   {
     title: "UI/UX Design",
     description: "We build native and cross-platform mobile apps to help retailers grow.",
-    icon: Paintbrush
+    icon: Paintbrush,
+    readMore:'/services/web'
   },
 ];
 
@@ -65,11 +72,13 @@ const ServiceCard = ({ service, index }) => {
           {service.description}
         </p>
       </div>
-      <a 
-        href="#" 
+      <Link
+      to={service.readMore}
+        
         className="inline-flex items-center text-blue-600 font-semibold hover:text-blue-700 transition-colors duration-300"
+ 
       >
-        Read More
+      Read More
         <svg 
           className="w-4 h-4 ml-2 group-hover:translate-x-2 transition-transform duration-300" 
           fill="none" 
@@ -83,7 +92,12 @@ const ServiceCard = ({ service, index }) => {
             d="M9 5l7 7-7 7" 
           />
         </svg>
-      </a>
+
+      </Link>
+      {/* <a 
+           >
+       
+      </a> */}
     </div>
   );
 };

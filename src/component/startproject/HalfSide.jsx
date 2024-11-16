@@ -354,7 +354,7 @@ const SplitCard = () => {
               <img
                 src={Man} // Using placeholder for demo
                 alt="Business professional"
-                className="max-h-[500px] w-auto object-contain object-bottom"
+                className="max-h-[450px] w-auto object-contain object-bottom pb-8"
                 style={{ transform: 'scale(0.9)' }}
               />
             </div>
