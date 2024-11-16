@@ -19,7 +19,7 @@ const Navbar = () => {
     ],
 
     Services: [
-      { title: 'Custom Software Development', path: '/services/web-development' },
+      { title: 'Custom Software Development', path: '/services/custem' },
       { title: 'Social Media Management', path: '/services/social' },
       { title: 'CRM', path: '/services/crm' },
       { title: 'Cloud Solutions', path: '/services/cloud' },

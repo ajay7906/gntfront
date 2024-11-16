@@ -138,6 +138,7 @@ import AiPowered from './component/aipowered/AiPowered';
 import CRMPage from './component/crm/CRMPage';
 import SocialMedia from './component/social/SocialMedia';
 import WebDevelopment from './component/webdevelopment/WebDevelopment';
+import CustomSoftwares from './component/custem/CustemSoftware';
 //import LoginForm from './components/login/LoginForm'; // Import LoginForm
 
 // Protected Route Component
@@ -184,6 +185,7 @@ const App = () => {
           <Route path='/services/crm' element={< CRMPage/>} />
           <Route path='/services/social' element={< SocialMedia/>} />
           <Route path='/services/web' element={< WebDevelopment/>} />
+          <Route path='/services/custem' element={< CustomSoftwares/>} />
           {/* Login Route */}
           <Route path="/login" element={<LoginForm />} />
           
