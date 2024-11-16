@@ -1068,7 +1068,7 @@ const Hero = () => {
                   <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
                 </button>
                 <button className="px-8 py-4 bg-white text-gray-800 rounded-full font-semibold hover:shadow-lg transition-all border-2 border-gray-200">
-                  <Link to="/about">Learn More</Link>
+                  <Link to="/about/aboutus">Learn More</Link>
                 </button>
               </motion.div>
 

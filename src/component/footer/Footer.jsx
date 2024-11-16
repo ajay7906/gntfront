@@ -621,29 +621,33 @@ const Footer = () => {
             <h3 className="text-lg font-semibold mb-3">Services</h3>
             <ul>
               <li className="mb-2">
-                <a href="#" className="hover:underline text-gray-300">
-                  Mobile App Development
-                </a>
+                <Link to='/services/custem' className="hover:underline text-gray-300">
+                  Custem Software Development
+
+                </Link>
+                {/* <a href="#" >
+                  
+                </a> */}
               </li>
               <li className="mb-2">
-                <a href="#about" className="hover:underline text-gray-300">
+                <Link to='/services/web' className="hover:underline text-gray-300">
                   Website Development
-                </a>
+                </Link>
               </li>
               <li className="mb-2">
-                <a href="#" className="hover:underline text-gray-300">
+                <Link to='/products/ecom' className="hover:underline text-gray-300">
                   E-Commerce Platforms
-                </a>
+                </Link>
               </li>
               <li className="mb-2">
-                <a href="#contact" className="hover:underline text-gray-300">
+                <Link to='/services/crm' className="hover:underline text-gray-300">
                   Custom CRM Development
-                </a>
+                </Link>
               </li>
               <li className="mb-2">
-                <a href="#careers" className="hover:underline text-gray-300">
-                  UI/UX Design
-                </a>
+                <Link to='/services/social' className="hover:underline text-gray-300">
+                  Social Media Management
+                </Link>
               </li>
             </ul>
           </div>
@@ -652,19 +656,19 @@ const Footer = () => {
             <h3 className="text-lg font-semibold mb-3">Quick Links</h3>
             <ul>
               <li className="mb-2">
-                <a href="#home" className="hover:underline text-gray-300">
+                <Link to='/' className="hover:underline text-gray-300">
                   Home
-                </a>
+                </Link>
               </li>
               <li className="mb-2">
-                <a href="#about" className="hover:underline text-gray-300">
+                <Link to='/about/aboutus' className="hover:underline text-gray-300">
                   About Us
-                </a>
+                </Link>
               </li>
               <li className="mb-2">
-                <a href="#" className="hover:underline text-gray-300">
+                <Link to='/blog/education' className="hover:underline text-gray-300">
                   Blog
-                </a>
+                </Link>
               </li>
               <li className="mb-2">
                 <Link to="/contact" className="hover:underline text-gray-300">
@@ -672,9 +676,9 @@ const Footer = () => {
                 </Link>
               </li>
               <li className="mb-2">
-                <a href="#careers" className="hover:underline text-gray-300">
+                <Link to='/careers' className="hover:underline text-gray-300">
                   Careers
-                </a>
+                </Link>
               </li>
             </ul>
           </div>

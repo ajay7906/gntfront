@@ -12,10 +12,10 @@ import { Link } from 'react-router-dom';
 
 const services = [
   {
-    title: "Mobile App Development",
+    title: "Custem Software Development",
     description: "We build native and cross-platform mobile apps to help retailers grow.",
     icon: Smartphone,
-    readMore:'/services/mobile'
+    readMore:'/services/custem'
   },
   {
     title: "CRM",
@@ -42,10 +42,10 @@ const services = [
     readMore:'/services/web'
   },
   {
-    title: "UI/UX Design",
+    title: "Social Media Management",
     description: "We build native and cross-platform mobile apps to help retailers grow.",
     icon: Paintbrush,
-    readMore:'/services/web'
+    readMore:'/services/social'
   },
 ];
 
