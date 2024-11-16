@@ -13,6 +13,9 @@ import smple6 from "./images/cyber 7.png"
 import HalfSideCard from '../startproject/HalfSide';
 
 
+import InnovationImg from './images/innovaton.png'
+import ExcellenceImg from './images/excellence.png'
+import Leadership from './images/leadership.png'
 
 
 const CustomSoftware = () => {
@@ -47,7 +50,7 @@ const CustomSoftware = () => {
       id: 1,
       title: "Best Innovation Award 2024",
       description: "Recognized for groundbreaking technological advancement in software development and digital transformation.",
-      imageUrl: "/src/assets/images/GNTINDWeb.png",
+      imageUrl: InnovationImg,
       year: "2024",
       category: "Innovation"
     },
@@ -55,7 +58,7 @@ const CustomSoftware = () => {
       id: 2,
       title: "Excellence in Design",
       description: "Awarded for exceptional user experience and interface design across multiple digital platforms.",
-      imageUrl: "/src/assets/images/GNTINDWeb.png",
+      imageUrl: ExcellenceImg,
       year: "2023",
       category: "Design"
     },
@@ -63,7 +66,7 @@ const CustomSoftware = () => {
       id: 3,
       title: "Industry Leadership Award",
       description: "Acknowledged as a leading force in shaping the future of digital solutions and client success.",
-      imageUrl: "/src/assets/images/GNTINDWeb.png",
+      imageUrl: Leadership,
       year: "2023",
       category: "Leadership"
     }
