@@ -139,6 +139,7 @@ import CRMPage from './component/crm/CRMPage';
 import SocialMedia from './component/social/SocialMedia';
 import WebDevelopment from './component/webdevelopment/WebDevelopment';
 import CustomSoftwares from './component/custem/CustemSoftware';
+import PortFolio from './component/portfolio/PortFolio';
 
 const ProtectedRoute = ({ children }) => {
   const adminToken = localStorage.getItem('adminToken');
@@ -169,6 +170,7 @@ const App = () => {
           <Route path="/about/aboutus" element={<AboutUs />} />
           <Route path="/about/founder" element={<FounderMessage />} />
           <Route path="/contact" element={<ContactUs />} />
+          <Route path="/portfolio" element={<PortFolio />} />
           <Route path="/careers" element={<CareersPage />} />
           <Route path='/blog/education' element={<EducationBlog />} />
           <Route path='/blog/regular' element={<Regular />} />
