@@ -246,7 +246,7 @@ const Blog = () => {
 
       console.log([...formData]); // Debug: Check FormData content
 
-      await axios.post("http://localhost:5000/api/v1/blog/createblog", formData, {
+      await axios.post("http://88.222.213.80:5000/api/v1/blog/createblog", formData, {
         headers: {
           "Content-Type": "multipart/form-data",
         },
