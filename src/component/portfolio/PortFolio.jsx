@@ -4,6 +4,7 @@ import images1 from "./images/excellence.png";
 import images2 from "./images/innovaton.png";
 import images3 from "./images/leadership.png";
 import { motion } from 'framer-motion';
+import SplitCard from '../startproject/HalfSide';
 const PortFolio = () => {
     const [selectedFilter, setSelectedFilter] = useState('all');
     const [searchQuery, setSearchQuery] = useState('');
@@ -74,6 +75,7 @@ const PortFolio = () => {
     });
 
     return (
+        <>
         <div className="min-h-screen bg-gray-50">
             {/* Hero Section */}
             {/* Hero Section */}
@@ -291,6 +293,11 @@ const PortFolio = () => {
                 </div>
             </section>
         </div>
+
+
+
+        <SplitCard/>
+        </>
     );
 };
 
