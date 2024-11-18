@@ -64,6 +64,7 @@ const JobCard = ({ title, location, type, experience, department }) => (
     </div>
 );
 import { motion } from "framer-motion";
+import SplitCard from '../startproject/HalfSide';
 const CareersPage = () => {
     const [selectedDepartment, setSelectedDepartment] = useState('All');
     const [selectedLocation, setSelectedLocation] = useState('All');
@@ -96,6 +97,7 @@ const CareersPage = () => {
     ];
 
     return (
+        <>
         <div className="min-h-screen ">
             {/* Animated Background */}
             {/* <div className="fixed inset-0 -z-10 overflow-hidden">
@@ -307,7 +309,10 @@ const CareersPage = () => {
                     </button>
                 </div>
             </section>
-        </div>
+        </div> 
+        <SplitCard/>
+        
+        </>
     );
 };
 

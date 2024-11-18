@@ -613,7 +613,7 @@ const Footer = () => {
           <div className="w-full md:w-1/3 p-4 mb-6 md:mb-0">
             <h3 className="text-lg font-semibold mb-3">Locations</h3>
             <p className="text-gray-300 text-base leading-relaxed">
-              GNT INDIA B-96,Road NO. 9,Industrial Area, RaniBazar, Bikaner
+            1st Floor House No 25. Behind Chopra Katla rani Bazar Industrial Acea Rani Bazar, Bikaner, Bikaner. Rajasthan 334001
             </p>
           </div>
 
@@ -739,8 +739,8 @@ const Footer = () => {
         </div>
 
         {/* Bottom Section */}
-        <div className="mt-8 border-t border-gray-600 pt-4 text-center">
-          <p className="text-gray-300">&copy; {new Date().getFullYear()} GNTINDIA. All rights reserved.</p>
+        <div className="mt-8 border-t border-gray-600 pt-4 text-center ">
+          <p className="text-gray-300 ">&copy; {new Date().getFullYear()} HANNANTH DIGITAL INDIA PRIVATE LIMITED. All rights reserved.</p>
         </div>
       </div>
     </footer>

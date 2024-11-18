@@ -141,7 +141,7 @@ const Navbar = () => {
               className={`
       transition-all duration-500 ease-in-out
       transform group-hover:scale-110
-      ${scrolled ? 'w-32 h-28' : 'w-40 h-28'} 
+      ${scrolled ? 'w-32 h-24' : 'w-40 h-28'} 
       object-contain
       filter hover:brightness-110
       animate-fadeIn
