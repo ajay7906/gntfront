@@ -196,13 +196,14 @@ const Navbar = () => {
             >
               Careers
             </Link>
+{/*             
             <Link
               to="/demo-project"
               className={`nav-link transition-all duration-200 font-medium relative after:absolute after:bottom-0 after:left-0 after:h-0.5 after:w-0 hover:after:w-full after:bg-blue-600 after:transition-all after:duration-300 ${location.pathname === '/demo-project' ? 'text-blue-600' : 'hover:text-blue-600'
                 }`}
             >
                Project Demo
-            </Link>
+            </Link> */}
           
 
             <button
@@ -243,12 +244,12 @@ const Navbar = () => {
           >
             Home
           </Link>
-          <Link
+          {/* <Link
             to="/about"
             className="block px-3 py-2 hover:bg-blue-50 rounded-md transition-all duration-200 hover:translate-x-2"
           >
             About
-          </Link>
+          </Link> */}
 
           {Object.entries(menuItems).map(([title, items]) => (
             <MobileDropdown key={title} title={title} items={items} />
@@ -260,12 +261,12 @@ const Navbar = () => {
           >
             Portfolio
           </Link>
-          <Link
+          {/* <Link
             to="/demo-project"
             className="block px-3 py-2 hover:bg-blue-50 rounded-md transition-all duration-200 hover:translate-x-2"
           >
             Demo Project
-          </Link>
+          </Link> */}
           <Link
             to="/careers"
             className="block px-3 py-2 hover:bg-blue-50 rounded-md transition-all duration-200 hover:translate-x-2"
