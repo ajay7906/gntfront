@@ -263,8 +263,10 @@ const EducationBlog = () => {
   const [error, setError] = useState(null);
 
   // Fetch blog posts from API
+
+
   useEffect(() => {
-    const fetchBlogPosts = async () => {
+    const fetchBlogPosts = async () => {  
       try {
         setIsLoading(true);
         const response = await fetch('http://88.222.213.80:5000/api/v1/blog/getblog?option=Educational Content');
@@ -285,6 +287,12 @@ const EducationBlog = () => {
 
     fetchBlogPosts();
   }, []);
+
+
+
+
+
+  
 
   const handleReadMore = async (postId) => {
     try {
