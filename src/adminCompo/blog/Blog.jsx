@@ -1705,11 +1705,12 @@ const Blog = () => {
       alert("Failed to save blog post");
     }
   };
-
+  console.log(selectedBlog);
+  
   const handleDelete = async () => {
     try {
       await axios.delete(
-        `http://88.222.213.80:5000/api/v1/blog/deleteblog/${selectedBlog._id}`
+        `http://localhost:5000/api/v1/blog/deleteblog/${selectedBlog.id}`
       );
       setShowDeleteModal(false);
       fetchBlogs();
