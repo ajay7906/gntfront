@@ -140,7 +140,7 @@ import SocialMedia from './component/social/SocialMedia';
 import WebDevelopment from './component/webdevelopment/WebDevelopment';
 import CustomSoftwares from './component/custem/CustemSoftware';
 import PortFolio from './component/portfolio/PortFolio';
-
+import 'react-toastify/dist/ReactToastify.css';
 const ProtectedRoute = ({ children }) => {
   const adminToken = localStorage.getItem('adminToken');
   if (!adminToken) {

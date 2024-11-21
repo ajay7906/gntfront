@@ -269,6 +269,7 @@ import {
 } from 'lucide-react';
 import UsersCompo from '../../adminCompo/user/User';
 import Blog from '../../adminCompo/blog/Blog';
+import Career from '../../adminCompo/career/Career';
 
 // Reusable Animated Bubble component
 const AnimatedBubble = ({ color, size, duration, delay }) => (
@@ -373,15 +374,15 @@ const Dashboard = () => {
 // };
 
 // Career component
-const Career = () => {
-  // Career specific state and logic
-  return (
-    <div className="p-6 rounded-xl bg-white/10 backdrop-blur-lg border border-white/20">
-      <h2 className="text-2xl font-bold text-white mb-4">Career</h2>
-      <div className="h-96 bg-white/5 rounded-lg animate-pulse" />
-    </div>
-  );
-};
+// const Career = () => {
+//   // Career specific state and logic
+//   return (
+//     <div className="p-6 rounded-xl bg-white/10 backdrop-blur-lg border border-white/20">
+//       <h2 className="text-2xl font-bold text-white mb-4">Career</h2>
+//       <div className="h-96 bg-white/5 rounded-lg animate-pulse" />
+//     </div>
+//   );
+// };
 
 // Home Image Slider component
 const HomeImageSlider = () => {
@@ -453,7 +454,7 @@ const AdminPanel = () => {
       case 'blog':
         return <Blog />;
       case 'career':
-        return <Career />;
+        return <Career/>;
       case 'homeImageSlider':
         return <HomeImageSlider />;
       case 'calendar':
