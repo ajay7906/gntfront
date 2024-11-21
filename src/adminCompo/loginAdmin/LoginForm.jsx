@@ -23,7 +23,7 @@ const LoginForm = () => {
     setError('');
 
     try {
-      const response = await axios.post('http://88.222.213.80:5000/api/v1/userAdmin', {
+      const response = await axios.post('https://gntindia.com:5000/api/v1/userAdmin', {
         email,
         password
       });
