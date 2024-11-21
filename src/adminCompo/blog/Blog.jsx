@@ -1710,7 +1710,7 @@ const Blog = () => {
   const handleDelete = async () => {
     try {
       await axios.delete(
-        `http://localhost:5000/api/v1/blog/deleteblog/${selectedBlog.id}`
+        `http://88.222.213.80:5000/api/v1/blog/deleteblog/${selectedBlog.id}`
       );
       setShowDeleteModal(false);
       fetchBlogs();
