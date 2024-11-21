@@ -398,7 +398,7 @@ const Career = () => {
     const fetchJobs = async () => {
         try {
             setLoading(true);
-            const response = await axios.get("http://localhost:5000/api/v1/job/getJob", {
+            const response = await axios.get("http://88.222.213.80:5000/api/v1/job/getJob", {
                 params: {
                     department: departmentFilter,
                     location: locationFilter
@@ -438,11 +438,11 @@ const Career = () => {
             };
 
             if (isUpdate && selectedJob) {
-                await axios.put(`http://localhost:5000/api/v1/jobs/${selectedJob.id}`, jobData);
+                await axios.put(`http://88.222.213.80:5000/api/v1/jobs/updatejob/${selectedJob.id}`, jobData);
                 setShowUpdateModal(false);
                 toast.success("Job updated successfully!");
             } else {
-                await axios.post("http://localhost:5000/api/v1/jobs", jobData);
+                await axios.post("http://88.222.213.80:5000/api/v1/job/getjob", jobData);
                 setShowAddModal(false);
                 toast.success("Job added successfully!");
             }
@@ -458,7 +458,7 @@ const Career = () => {
 
     const handleDelete = async () => {
         try {
-            await axios.delete(`http://localhost:5000/api/v1/jobs/${selectedJob.id}`);
+            await axios.delete(`http://localhost:5000/api/v1/jobs/deletejob/${selectedJob.id}`);
             setShowDeleteModal(false);
             fetchJobs();
             toast.success("Job deleted successfully!");
