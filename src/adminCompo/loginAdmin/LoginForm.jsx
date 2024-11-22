@@ -45,11 +45,11 @@ const LoginForm = () => {
       <div className="absolute inset-0 bg-gradient-to-br from-sky-100 via-teal-50 to-blue-100">
         <div className="absolute inset-0 bg-grid-slate/[0.1] bg-[size:20px_20px]" />
       </div>
-      
+
       {/* Soft decorative circles */}
       <div className="absolute top-20 left-20 w-32 h-32 bg-teal-200 rounded-full blur-xl opacity-40 animate-pulse" />
       <div className="absolute bottom-20 right-20 w-32 h-32 bg-blue-200 rounded-full blur-xl opacity-40 animate-pulse" />
-      
+
       <div className="relative min-h-screen flex items-center justify-center p-4">
         <div className="max-w-md w-full bg-white/70 backdrop-blur-sm rounded-2xl shadow-lg p-8 
                      ">
@@ -111,10 +111,10 @@ const LoginForm = () => {
               disabled={isLoading}
               className={`w-full py-3 px-4 rounded-lg font-medium 
                        transition-all duration-300 
-                       ${isLoading 
-                         ? 'bg-sky-300 cursor-not-allowed' 
-                         : 'bg-sky-500 text-white hover:bg-sky-600 hover:shadow-lg transform hover:-translate-y-0.5'
-                       }
+                       ${isLoading
+                  ? 'bg-sky-300 cursor-not-allowed'
+                  : 'bg-sky-500 text-white hover:bg-sky-600 hover:shadow-lg transform hover:-translate-y-0.5'
+                }
                        flex items-center justify-center space-x-2`}
             >
               {isLoading && (
