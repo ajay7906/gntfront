@@ -141,6 +141,7 @@ import WebDevelopment from './component/webdevelopment/WebDevelopment';
 import CustomSoftwares from './component/custem/CustemSoftware';
 import PortFolio from './component/portfolio/PortFolio';
 import 'react-toastify/dist/ReactToastify.css';
+import TermsAndConditions from './pages/termsancondi/TermsAndCondition';
 const ProtectedRoute = ({ children }) => {
   const adminToken = localStorage.getItem('adminToken');
   if (!adminToken) {
@@ -186,6 +187,8 @@ const App = () => {
           <Route path='/services/social' element={< SocialMedia/>} />
           <Route path='/services/web' element={< WebDevelopment/>} />
           <Route path='/services/custem' element={< CustomSoftwares/>} />
+          <Route path='/termsandconditions' element={< TermsAndConditions/>} />
+
 
 
           {/* Login Route */}

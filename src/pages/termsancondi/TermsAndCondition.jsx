@@ -43,7 +43,7 @@ const TermsAndConditions = () => {
   ];
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-50">
+    <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-50 pt-20">
       <div className="max-w-4xl mx-auto p-4 sm:p-6 lg:p-8">
         {/* Header Section */}
         <div className="text-center mb-12 animate-fade-in">
@@ -90,11 +90,11 @@ const TermsAndConditions = () => {
         </div>
 
         {/* Footer Section */}
-        <div className="mt-12 text-center text-gray-600">
+        {/* <div className="mt-12 text-center text-gray-600">
           <p className="text-sm">
             Last updated: November 2024
           </p>
-        </div>
+        </div> */}
       </div>
     </div>
   );
