@@ -89,7 +89,7 @@ const Footer = () => {
                 </Link>
               </li>
               <li className="mb-2">
-                <Link to='/careers' className="hover:underline text-gray-300">
+                <Link to='/policy' className="hover:underline text-gray-300">
                   Privacy Policy
                 </Link>
               </li>
