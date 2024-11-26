@@ -92,6 +92,7 @@ const Blog = () => {
     }
   };
   console.log(selectedBlog);
+  console.log(image);
   
   const handleDelete = async () => {
     try {
@@ -154,7 +155,11 @@ const Blog = () => {
       </select>
       <input
         type="file"
-        onChange={(e) => setImage(e.target.files[0])}
+        accept="image/*"
+        onChange={(e) => {
+          console.log(e.target.files[0]); // Check if the file is being captured
+          setImage(e.target.files[0]);
+        }}
         className="w-full p-2"
       />
       <button
