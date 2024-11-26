@@ -367,7 +367,7 @@ const Seo = () => {
     const fetchBlogPosts = async () => {  
       try {
         setIsLoading(true);
-        const response = await fetch('https://gntindia.com:5000/api/v1/api/v1/blog/getblog?option=Educational Content');
+        const response = await fetch('https://gntindia.com:5000/api/v1/blog/getblog?option=regular');
         if (!response.ok) {
           throw new Error('Failed to fetch blog posts');
         }
