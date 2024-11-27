@@ -296,7 +296,11 @@ const EducationBlog = () => {
 
   const handleReadMore = async (postId) => {
     try {
-      const response = await fetch(`/api/blogs/${postId}`);
+      console.log(postId);
+      
+      const response = await fetch(`https://gntindia.com:5000/api/v1/blog/getblogbyId/${postId}`);
+      console.log(response);
+      
       if (!response.ok) {
         throw new Error('Failed to fetch blog post details');
       }
@@ -392,11 +396,14 @@ const EducationBlog = () => {
             {filteredBlogPosts.map((post, index) => (
               <div
                 key={post.id}
+                
+                
                 className={`transform transition-all duration-700 ${
                   isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
                 }`}
                 style={{ transitionDelay: `${index * 200}ms` }}
-              >
+              > 
+              
                 <BlogCard post={post} onReadMore={handleReadMore} />
               </div>
             ))}
