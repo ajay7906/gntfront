@@ -335,7 +335,12 @@ const BlogCard = ({ post, onReadMore }) => (
         </span>
       </div>
       <h2 className="text-xl font-bold text-gray-900 mb-3">{post.title}</h2>
-      <p className="text-gray-600 mb-4">{post.description}</p>
+      {/* <p className="text-gray-600 mb-4">{post.description}</p> */}
+      <p className="text-gray-600 mb-4">
+        {post.description.split(' ').length > 35
+          ? `${post.description.split(' ').slice(0, 35).join(' ')}...`
+          : post.description}
+      </p>
       <div className="flex items-center justify-between">
         <span className="text-sm text-gray-500">
           {Math.ceil(post.description.length / 1000)} min read
@@ -390,11 +395,55 @@ const Seo = () => {
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   
+
+  // const handleReadMore = async (postId) => {
+  //   try {
+  //     const response = await fetch(`/api/blogs/${postId}`);
+  //     if (!response.ok) {
+  //       throw new Error('Failed to fetch blog post details');
+  //     }
+  //     const data = await response.json();
+  //     setSelectedPost(data.data);
+  //     window.scrollTo(0, 0);
+  //   } catch (err) {
+  //     console.error('Error fetching blog post details:', err);
+  //   }
+  // };
+
+  // const handleSearch = (e) => {
+  //   const term = e.target.value.toLowerCase();
+  //   setSearchTerm(term);
+  //   const filtered = blogPosts.filter(post =>
+  //     post.title.toLowerCase().includes(term) ||
+  //     post.description.toLowerCase().includes(term) ||
+  //     post.option.toLowerCase().includes(term)
+  //   );
+  //   setFilteredBlogPosts(filtered);
+  // };
+
+
+
 
   const handleReadMore = async (postId) => {
     try {
-      const response = await fetch(`/api/blogs/${postId}`);
+      const response = await fetch(`https://gntindia.com:5000/api/v1/blog/getblogbyId/${postId}`);
       if (!response.ok) {
         throw new Error('Failed to fetch blog post details');
       }
@@ -404,6 +453,12 @@ const Seo = () => {
     } catch (err) {
       console.error('Error fetching blog post details:', err);
     }
+  };
+
+  const handleBackToBlogList = () => {
+    console.log('clicked');
+    
+    setSelectedPost(null);
   };
 
   const handleSearch = (e) => {
@@ -416,6 +471,44 @@ const Seo = () => {
     );
     setFilteredBlogPosts(filtered);
   };
+
+  // If a specific post is selected, render the details page
+  if (selectedPost) {
+    return (
+      <DetailsBlogPage 
+        post={selectedPost} 
+        onBack={handleBackToBlogList} 
+      />
+    );
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
   if (error) {
     return (
