@@ -584,6 +584,7 @@ import FAQ from "./FAQ";
 import LeadForm from "./LeadForm";
 import CRMInterface from "./CRMInterface";
 import Plan from "./PricingPlans";
+import { Link } from 'react-router-dom';
 
 {/* Hero section */}  
 const HeroSection = () => {
@@ -613,12 +614,12 @@ const HeroSection = () => {
 
         {/* CTA Buttons */}
         <div className="flex flex-col sm:flex-row justify-center items-center gap-4 p-4">
-          <a 
-            href="#demo" 
+          <Link 
+            to='https://whatsapp.gntindia.com/register.php'
             className="flex items-center gap-2 bg-emerald-500 text-white px-6 py-3 rounded-lg hover:bg-emerald-600 transition-colors"
           >
             Get a Free Trial
-          </a>         
+          </Link>         
         </div>
       </div>
     </div>

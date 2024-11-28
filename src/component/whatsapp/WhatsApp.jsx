@@ -293,7 +293,7 @@ const WhatsAppAPISection = () => {
             {/* CTA Section */}
             <div className="space-y-4">
               <button className="group w-full sm:w-auto bg-green-600 text-white px-8 py-4 rounded-full font-semibold hover:bg-green-700 transition-colors duration-300 flex items-center justify-center gap-2">
-                <Link to='https://whatsapp.gntind.com'> Start Chatting Now</Link>
+                <Link to='https://whatsapp.gntindia.com/'> Start Chatting Now</Link>
                
                 <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform duration-300" />
               </button>
