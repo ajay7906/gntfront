@@ -96,6 +96,14 @@ const CareersPage = () => {
         }
     ];
 
+    // Function to scroll to top
+    const scrollToTop = () => {
+        window.scrollTo({
+            top: 0,
+            behavior: 'smooth'
+        });
+    };
+
     return (
         <>
             <div className="min-h-screen ">
@@ -290,7 +298,9 @@ const CareersPage = () => {
                         <p className="text-xl text-gray-500 mb-8">
                             Take the first step towards an exciting career with us.
                         </p>
-                        <button className="px-8 py-4 bg-blue-600 hover:bg-blue-500 text-white rounded-xl font-medium transition-colors duration-300">
+                        <button className="px-8 py-4 bg-blue-600 hover:bg-blue-500 text-white rounded-xl font-medium transition-colors duration-300"
+                         onClick={scrollToTop}
+                        >
                             View All Positions
                         </button>
                     </div>
