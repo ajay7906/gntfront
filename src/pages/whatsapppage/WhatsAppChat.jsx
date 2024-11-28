@@ -585,6 +585,7 @@ import LeadForm from "./LeadForm";
 import CRMInterface from "./CRMInterface";
 import Plan from "./PricingPlans";
 import { Link } from 'react-router-dom';
+import SplitCard from '../../component/startproject/HalfSide';
 
 {/* Hero section */}  
 const HeroSection = () => {
@@ -641,6 +642,7 @@ const WhatsApps = () => {
         <WhatsAppAPIFeatures />        
         <FAQ />
         <CRMInterface />
+        <SplitCard/>
       </div>
     )
   };

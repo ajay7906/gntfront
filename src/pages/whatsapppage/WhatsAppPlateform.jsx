@@ -69,12 +69,12 @@ const WhatsappPlatforms  = () => {
                   </div>
                 </div>
     
-                <button 
+                {/* <button 
                   className="w-full sm:w-auto px-6 py-2 bg-green-600 hover:bg-green-700 text-white rounded-lg transition-colors duration-200"
                   onClick={() => console.log('Start chat clicked')}
                 >
                   Start Chat
-                </button>
+                </button> */}
               </div>
             </div>
           </div>
@@ -103,12 +103,12 @@ const WhatsappPlatforms  = () => {
                     </div>
                   </div>
       
-                  <button 
+                  {/* <button 
                     className="w-full sm:w-auto px-6 py-2 bg-green-600 hover:bg-green-700 text-white rounded-lg transition-colors duration-200"
                     onClick={() => console.log('Start chat clicked')}
                   >
                     Start Chat
-                  </button>
+                  </button> */}
                 </div>
 
                 {/* Left side - Chat Interface */}
@@ -200,12 +200,12 @@ const WhatsappPlatforms  = () => {
               </div>
             </div>
 
-            <button 
+            {/* <button 
               className="w-full sm:w-auto px-6 py-2 bg-green-600 hover:bg-green-700 text-white rounded-lg transition-colors duration-200"
               onClick={() => console.log('Start chat clicked')}
             >
               Start Chat
-            </button>
+            </button> */}
           </div>
 
           {/* Left side - Chat Interface */}
@@ -264,12 +264,12 @@ const WhatsappPlatforms  = () => {
               </div>
             </div>
 
-            <button 
+            {/* <button 
               className="w-full sm:w-auto px-6 py-2 bg-green-600 hover:bg-green-700 text-white rounded-lg transition-colors duration-200"
               onClick={() => console.log('Start chat clicked')}
             >
               Start Chat
-            </button>
+            </button> */}
           </div>
         </div>
       </div>
