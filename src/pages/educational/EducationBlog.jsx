@@ -69,11 +69,11 @@
 //       content: `Web development is evolving at an unprecedented pace. From new frameworks to innovative 
 //         design patterns, developers need to stay ahead of the curve. This article explores the 
 //         latest trends including serverless architecture, edge computing, and AI integration.
-        
+
 //         The rise of Web3 technologies is also transforming how we think about web applications.
 //         Decentralized apps (dApps) are becoming more prevalent, and blockchain integration is
 //         no longer just for cryptocurrency applications.
-        
+
 //         Furthermore, the emphasis on performance and user experience has never been stronger.
 //         Tools like Next.js and Remix are pushing the boundaries of what's possible in web development,
 //         while maintaining excellent developer experience.`,
@@ -92,7 +92,7 @@
 //         covers everything from basic useState and useEffect to creating custom hooks for
 //         specific use cases. Learn how to optimize your React applications and write
 //         cleaner, more maintainable code.
-        
+
 //         We'll explore advanced patterns like useCallback and useMemo, and understand
 //         when and why to use them. Real-world examples and best practices are included
 //         to help you master these powerful features.`,
@@ -110,7 +110,7 @@
 //       content: `Design systems have become crucial for maintaining consistency across large applications.
 //         This article explores how modern design systems are adapting to new challenges and
 //         evolving to meet the needs of growing organizations.
-        
+
 //         We'll look at tools like Figma, Storybook, and how they integrate with modern
 //         development workflows. Learn about atomic design principles and how to implement
 //         them effectively in your projects.`,
@@ -220,6 +220,7 @@
 import { motion } from "framer-motion";
 import { ChevronDown, Menu, X, Search, ArrowLeft } from 'lucide-react';
 import { useEffect, useState } from "react";
+import DetailsBlogPage from "../detailspage/DetailsBlogPage";
 
 const BlogCard = ({ post, onReadMore }) => (
   <div className="bg-white rounded-lg shadow-md overflow-hidden transform transition-all duration-700 hover:scale-105">
@@ -237,7 +238,16 @@ const BlogCard = ({ post, onReadMore }) => (
         </span>
       </div>
       <h2 className="text-xl font-bold text-gray-900 mb-3">{post.title}</h2>
-      <p className="text-gray-600 mb-4">{post.description}</p>
+      {/* <p className="text-gray-600 mb-4">{post.description}</p> */}
+
+      <p className="text-gray-600 mb-4">
+        {post.description.split(' ').length > 35
+          ? `${post.description.split(' ').slice(0, 35).join(' ')}...`
+          : post.description}
+      </p>
+
+
+
       <div className="flex items-center justify-between">
         <span className="text-sm text-gray-500">
           {Math.ceil(post.description.length / 1000)} min read
@@ -266,7 +276,7 @@ const EducationBlog = () => {
 
 
   useEffect(() => {
-    const fetchBlogPosts = async () => {  
+    const fetchBlogPosts = async () => {
       try {
         setIsLoading(true);
         const response = await fetch('https://gntindia.com:5000/api/v1/blog/getblog?option=Educational Content');
@@ -292,15 +302,48 @@ const EducationBlog = () => {
 
 
 
-  
+
+
+
+
+
+
+
+
+  // const handleReadMore = async (postId) => {
+  //   try {
+  //     console.log(postId);
+
+  //     const response = await fetch(`https://gntindia.com:5000/api/v1/blog/getblogbyId/${postId}`);
+  //     console.log(response);
+
+  //     if (!response.ok) {
+  //       throw new Error('Failed to fetch blog post details');
+  //     }
+  //     const data = await response.json();
+  //     setSelectedPost(data.data);
+  //     window.scrollTo(0, 0);
+  //   } catch (err) {
+  //     console.error('Error fetching blog post details:', err);
+  //   }
+  // };
+
+  // const handleSearch = (e) => {
+  //   const term = e.target.value.toLowerCase();
+  //   setSearchTerm(term);
+  //   const filtered = blogPosts.filter(post =>
+  //     post.title.toLowerCase().includes(term) ||
+  //     post.description.toLowerCase().includes(term) ||
+  //     post.option.toLowerCase().includes(term)
+  //   );
+  //   setFilteredBlogPosts(filtered);
+  // };
+
+
 
   const handleReadMore = async (postId) => {
     try {
-      console.log(postId);
-      
       const response = await fetch(`https://gntindia.com:5000/api/v1/blog/getblogbyId/${postId}`);
-      console.log(response);
-      
       if (!response.ok) {
         throw new Error('Failed to fetch blog post details');
       }
@@ -310,6 +353,12 @@ const EducationBlog = () => {
     } catch (err) {
       console.error('Error fetching blog post details:', err);
     }
+  };
+
+  const handleBackToBlogList = () => {
+    console.log('clicked');
+    
+    setSelectedPost(null);
   };
 
   const handleSearch = (e) => {
@@ -322,6 +371,29 @@ const EducationBlog = () => {
     );
     setFilteredBlogPosts(filtered);
   };
+
+  // If a specific post is selected, render the details page
+  if (selectedPost) {
+    return (
+      <DetailsBlogPage 
+        post={selectedPost} 
+        onBack={handleBackToBlogList} 
+      />
+    );
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
 
   if (error) {
     return (
@@ -345,7 +417,7 @@ const EducationBlog = () => {
           <motion.p className="text-lg md:text-xl leading-relaxed text-gray-700">
             Discover insightful articles about technology, design, and development
           </motion.p>
-          
+
           <div className="relative max-w-2xl mx-auto pt-8">
             <input
               type="text"
@@ -396,20 +468,19 @@ const EducationBlog = () => {
             {filteredBlogPosts.map((post, index) => (
               <div
                 key={post.id}
-                
-                
-                className={`transform transition-all duration-700 ${
-                  isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
-                }`}
+
+
+                className={`transform transition-all duration-700 ${isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
+                  }`}
                 style={{ transitionDelay: `${index * 200}ms` }}
-              > 
-              
+              >
+
                 <BlogCard post={post} onReadMore={handleReadMore} />
               </div>
             ))}
           </div>
         )}
-        
+
         {!isLoading && filteredBlogPosts.length === 0 && (
           <div className="text-center py-20">
             <h3 className="text-xl font-semibold text-gray-600">
