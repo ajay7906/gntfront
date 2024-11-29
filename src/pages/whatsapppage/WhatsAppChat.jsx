@@ -44,7 +44,7 @@
 //       title: "Secure & Reliable",
 //       description: "Enterprise-grade security and dependable performance"
 //     }
-    
+
 //   ];
 
 //   const [hoveredId, setHoveredId] = useState(null);
@@ -82,7 +82,7 @@
 //       <section className="relative h-screen flex items-center justify-center text-center text-white bg-gradient-to-r from-[#dad6d6] to-indigo-600">
 //         {/* Pattern Overlay */}
 //         <div className="absolute inset-0 opacity-10 bg-[url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNjAiIGhlaWdodD0iNjAiIHZpZXdCb3g9IjAgMCA2MCA2MCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48ZyBmaWxsPSJub25lIiBmaWxsLXJ1bGU9ImV2ZW5vZGQiPjxwYXRoIGQ9Ik0zNiAxOGMzLjMxNCAwIDYgMi42ODYgNiA2cy0yLjY4NiA2LTYgNi02LTIuNjg2LTYtNiAyLjY4Ni02IDYtNiIgZmlsbD0iI2ZmZiIvPjwvZz48L3N2Zz4=')]"></div>
-        
+
 //         {/* Content */}
 //         <div className="relative z-10 px-4 max-w-4xl mx-auto">
 //           <h1 className="text-5xl md:text-7xl font-extrabold mb-6 leading-tight">
@@ -97,7 +97,7 @@
 //             <button className="px-8 py-4 bg-white text-blue-600 hover:bg-blue-50 font-semibold rounded-lg shadow-lg transition duration-300">
 //               Start Your Project
 //             </button>
-           
+
 //           </div>
 //         </div>
 
@@ -179,7 +179,7 @@
 //           </div>
 //         </div>
 //       </section>  
-      
+
 //        {/* Project Showcase Section */}
 //         <section className="py-20">
 //           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -193,7 +193,7 @@
 //               personalized notifications to streamline communication.
 //               </p>
 //             </div>
-            
+
 //             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
 //               {features.map((feature, index) => (
 //                 <div 
@@ -274,7 +274,7 @@
 
 //                     engages customers instantly with real-time support, order tracking, and 
 //                     personalized notifications to streamline communication."
-        
+
 //       />
 //     </div>
 //   );
@@ -287,7 +287,7 @@
 
 //   return (
 //     <div className="min-h-screen bg-gray-100 flex items-center justify-center">
-        
+
 //       <StyledCard
 //         title="Whatsapp API Chatbot Platform Integration"
 //         images={sampleImages}
@@ -295,7 +295,7 @@
 //         their existing systems such as CRM tools, eCommerce platforms or marketing automation systems, thus 
 //         truly reviving customer engagement. Two-way messaging, order tracking, and real-time support - Our 
 //         Solution allows customers to easily interact with your brand via the familiar WhatsApp system."
-        
+
 //       />
 //     </div>
 //   );
@@ -314,7 +314,7 @@
 //         description="
 //         By providing real-time responses and personalized support, a WhatsApp API chatbot can increase customer interaction on your website, potentially reducing bounce rates. Bounce rates
 //          and time on site are SEO factors, as search engines interpret them as indicators of valuable content."
-        
+
 //       />
 //     </div>
 //   );
@@ -332,7 +332,7 @@
 //         images={sampleImages}
 //         description="A WhatsApp API chatbot enables businesses to offer round-the-clock support, providing instant answers to frequently asked questions and support inquiries. This constant availability means customers 
 //         can get the help they need outside of regular business hours, improving satisfaction and brand loyalty."
-        
+
 //       />
 //     </div>
 //   );
@@ -386,7 +386,7 @@
 //               We’re with you every step of the way, from the beginning of your project to its completion.
 //               </p>
 //             </div>
-            
+
 //             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
 //               {feature.map((feature, index) => (
 //                 <div 
@@ -432,7 +432,7 @@
 //     <div className="min-h-screen bg-gray-100 flex items-center justify-center p-6">
 //       <div className="max-w-3xl w-full bg-white shadow-lg rounded-lg p-8">
 //         <h1 className="text-3xl font-semibold text-center text-blue-600 mb-8">Frequently Asked Questions</h1>
-        
+
 //         <div className="space-y-4">
 //           {faqs.map((faq, index) => (
 //             <FAQItem key={index} question={faq.question} answer={faq.answer} /> 
@@ -501,7 +501,7 @@
 
 
 // const WhatsAppChat = () => {
-   
+
 //   return (
 //     <div>
 //       <CustomSoftware />
@@ -576,9 +576,9 @@ import React from 'react';
 import WhatsappPlatforms from "./WhatsAppPlateform";
 import AppShowcase from "./AppShowcase";
 import ChatbotFeatures from "./ChatbotFeatures";
-import WhatsAppIntegration  from "./WhatsAppIntegration";
+import WhatsAppIntegration from "./WhatsAppIntegration";
 import TeamMemberAccess from "./TeamMemberAccess";
-import WhatsAppBenefits  from "./WhatsAppBenefits";
+import WhatsAppBenefits from "./WhatsAppBenefits";
 import WhatsAppAPIFeatures from "./WhatsAppAPIFeatures";
 import FAQ from "./FAQ";
 import LeadForm from "./LeadForm";
@@ -586,65 +586,84 @@ import CRMInterface from "./CRMInterface";
 import Plan from "./PricingPlans";
 import { Link } from 'react-router-dom';
 import SplitCard from '../../component/startproject/HalfSide';
+import { Helmet } from 'react-helmet';
 
-{/* Hero section */}  
+{/* Hero section */ }
 const HeroSection = () => {
   return (
-    <div className="w-full bg-white py-24 px-4 sm:px-6 lg:px-8">
-      <div className="max-w-7xl mx-auto ">
-        {/* Yellow tag at top */}
-        <div className="flex justify-center mb-6 ">
-          <div className="bg-yellow-400 px-10 py-2 rounded-full">
-            <span className="text-gray-800 font-medium">
-              Business WhatsApp API Service Provider
-            </span>
+    <>
+      {/* Seo meta tag */}
+      <Helmet>
+        <title>GNTIndia WhatsApp API Chatbot | Simplify Business Communication</title>
+        <meta name="description" content="Transform your business communication with GNTIndia's WhatsApp API chatbot. Automate customer interactions and improve response times effortlessly." />
+        <meta name="keywords" content="WhatsApp Chatbot, Business Automation, Customer Engagement, GNTIndia" />
+        <meta property="og:title" content="GNTIndia WhatsApp API Chatbot | Simplify Business Communication" />
+        <meta property="og:description" content="Transform your business communication with GNTIndia's WhatsApp API chatbot. Automate customer interactions and improve response times effortlessly." />
+        <meta property="og:url" content="https://yourdomain.com/products/whatsapp" />
+        <meta property="og:image" content="https://yourdomain.com/assets/whatsapp-chatbot.jpg" />
+        <link rel="canonical" href="https://yourdomain.com/products/whatsapp" />
+      </Helmet>
+
+
+
+
+
+      <div className="w-full bg-white py-24 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto ">
+          {/* Yellow tag at top */}
+          <div className="flex justify-center mb-6 ">
+            <div className="bg-yellow-400 px-10 py-2 rounded-full">
+              <span className="text-gray-800 font-medium">
+                Business WhatsApp API Service Provider
+              </span>
+            </div>
+          </div>
+
+          {/* Main heading */}
+          <h1 className="text-center text-4xl sm:text-5xl font-bold mb-6">
+            <span className="text-gray-800">Seamless Business Communication with GNTINDIA's </span>
+            <span className="text-emerald-500">Whatsapp API</span>
+            <span className="text-gray-800"> Solutions.</span>
+          </h1>
+
+          {/* Subheading */}
+          <p className="text-center text-gray-600 max-w-3xl mx-auto mb-10">
+            Automate. Communicate. Accelerate Your Business Growth with Our Powerful API Solutions.
+          </p>
+
+          {/* CTA Buttons */}
+          <div className="flex flex-col sm:flex-row justify-center items-center gap-4 p-4">
+            <Link
+              to='https://whatsapp.gntindia.com/register.php'
+              className="flex items-center gap-2 bg-emerald-500 text-white px-6 py-3 rounded-lg hover:bg-emerald-600 transition-colors"
+            >
+              Get a Free Trial
+            </Link>
           </div>
         </div>
-
-        {/* Main heading */}
-        <h1 className="text-center text-4xl sm:text-5xl font-bold mb-6">
-          <span className="text-gray-800">Seamless Business Communication with GNTINDIA's </span>
-          <span className="text-emerald-500">Whatsapp API</span>
-          <span className="text-gray-800"> Solutions.</span>
-        </h1>
-
-        {/* Subheading */}
-        <p className="text-center text-gray-600 max-w-3xl mx-auto mb-10">
-        Automate. Communicate. Accelerate Your Business Growth with Our Powerful API Solutions.
-        </p>
-
-        {/* CTA Buttons */}
-        <div className="flex flex-col sm:flex-row justify-center items-center gap-4 p-4">
-          <Link 
-            to='https://whatsapp.gntindia.com/register.php'
-            className="flex items-center gap-2 bg-emerald-500 text-white px-6 py-3 rounded-lg hover:bg-emerald-600 transition-colors"
-          >
-            Get a Free Trial
-          </Link>         
-        </div>
       </div>
-    </div>
+    </>
   );
 };
 
 const WhatsApps = () => {
-    return (
-      <div>
-        <HeroSection />
-        <LeadForm />
-        <WhatsappPlatforms />
-        <Plan />
-        <AppShowcase />
-        <ChatbotFeatures />
-        <WhatsAppIntegration />
-        <TeamMemberAccess />
-        <WhatsAppBenefits />
-        <WhatsAppAPIFeatures />        
-        <FAQ />
-        <CRMInterface />
-        <SplitCard/>
-      </div>
-    )
-  };
-  
-  export default WhatsApps;
+  return (
+    <div>
+      <HeroSection />
+      <LeadForm />
+      <WhatsappPlatforms />
+      <Plan />
+      <AppShowcase />
+      <ChatbotFeatures />
+      <WhatsAppIntegration />
+      <TeamMemberAccess />
+      <WhatsAppBenefits />
+      <WhatsAppAPIFeatures />
+      <FAQ />
+      <CRMInterface />
+      <SplitCard />
+    </div>
+  )
+};
+
+export default WhatsApps;
