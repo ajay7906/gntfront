@@ -343,7 +343,22 @@ const Hero = () => {
         <meta name="keywords" content="GNTIndia, WhatsApp API, Business Chatbots, Automation, Customer Engagement" />
         <meta property="og:title" content="GNTIndia | WhatsApp Chatbot Solutions" />
         <meta property="og:description" content="Automate your business communication with GNTIndia's WhatsApp API chatbots. Improve engagement and streamline workflows with ease." />
-        <meta property="og:url" content="https://www.gntindia.com" />
+        <meta property="og:url" content="https://www.gntindia.com" /> 
+        <script type="application/ld+json">
+          {JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "Organization",
+            "name": "GNTIndia",
+            "url": "https://www.gntindia.com",
+            "logo": "https://www.gntindia.com/logo.png",
+            "description": "GNTIndia offers WhatsApp API chatbot solutions to automate business communication and improve customer engagement.",
+            "contactPoint": {
+              "@type": "ContactPoint",
+              "telephone": "+91-1234567890",
+              "contactType": "Customer Service"
+            }
+          })}
+        </script>
         <meta property="og:image" content="https://www.gntindia.com/logo.png" />
         <link rel="canonical" href="https://www.gntindia.com" />
       </Helmet>
