@@ -129,7 +129,12 @@ const Hero = () => {
           name="description"
           content="GNTIndia offers innovative WhatsApp API chatbot solutions to automate business communication, enhance customer engagement, and improve productivity."
         />
+        {/* <meta name="google-site-verification" content="CYZixTiJ3X3Dtr_3EtfdLYAyajyvboU267blv4x_mWc" /> */}
+
         <meta name="google-site-verification" content="CYZixTiJ3X3Dtr_3EtfdLYAyajyvboU267blv4x_mWc" />
+
+
+
         <meta name="keywords" content="GNTIndia, WhatsApp API, Business Chatbots, Automation, Customer Engagement" />
       </Helmet>
 
