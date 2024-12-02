@@ -509,9 +509,24 @@ const EnhancedCTA = () => {
 };
 
 import HalfSideCard from '../startproject/HalfSide'
+import { Helmet } from 'react-helmet';
 
 const WebDevelopment = () => {
   return (
+    <>
+    <Helmet>
+        <title>GNTIndia Website Development | Professional and Custom Solutions</title>
+        <meta name="description" content="GNTIndia specializes in creating custom sites that aren't just beautiful but are also developed to be highly usable and efficient." />
+        <meta name="keywords" content="Website Development, Custom Website Solutions, Professional Web Development, GNTIndia Web Services, Scalable Web Design" />
+        <meta property="og:title" content="GNTIndia Website Development | Professional and Custom Solutions" />
+        <meta property="og:description" content="Take your online presence to the next level with GNTIndia's website development services. Expect measurable results and guaranteed success." />
+        <meta property="og:url" content="https://yourdomain.com/services/web-development" />
+        <meta property="og:image" content="https://yourdomain.com/assets/web-development.jpg" />
+        <link rel="canonical" href="https://yourdomain.com/services/web-development" />
+      </Helmet>
+
+
+
     <div>
       <CustomSoftware />
       <Solution />
@@ -525,6 +540,7 @@ const WebDevelopment = () => {
       <HalfSideCard/>
       {/* <EnhancedCTA /> */}
     </div>
+    </>
   )
 };
 

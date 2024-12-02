@@ -509,6 +509,20 @@ import HalfSideCard from '../startproject/HalfSide'
 const SocialMedia = () => {
     
   return (
+    <>
+     <Helmet>
+        <title>Professional Social Media Management Service | GNTIndia</title>
+        <meta name="description" content="Let GNTIndia manage your social media. Increase your audience and engage clients with professional content, strategy, and analysis." />
+        <meta name="keywords" content="Social Media Management, GNTIndia Services, Social Media Strategy, Brand Engagement, Online Growth" />
+        <meta property="og:title" content="GNTIndia: Engagement and Growth through Social Media Management" />
+        <meta property="og:description" content="GNTIndia offers innovative social media solutions to increase engagement, improve branding, and win the hearts of customers." />
+        <meta property="og:url" content="https://yourdomain.com/services/social-media-management" />
+        <meta property="og:image" content="https://yourdomain.com/assets/social-media-management.jpg" />
+        <link rel="canonical" href="https://yourdomain.com/services/social-media-management" />
+      </Helmet>
+
+
+
     <div>
       <CustomSoftware />
       <Solution />
@@ -522,6 +536,7 @@ const SocialMedia = () => {
       <HalfSideCard/>
       {/* <EnhancedCTA /> */}
     </div>
+    </>
   )
 };
 
