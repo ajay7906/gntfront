@@ -14,6 +14,7 @@ import smple7 from "./images/excellence.png"
 import smple8 from "./images/innovaton.png"
 import smple9 from "./images/leadership.png"
 import HalfSideCard from '../startproject/HalfSide'
+import { Helmet } from 'react-helmet';
 
 const CustomSoftware = () => {
   const features = [
@@ -505,6 +506,17 @@ const EnhancedCTA = () => {
 
 const CRMPage = () => {
   return (
+    <>
+    <Helmet>
+        <title>GNTIndia | CRM Solutions | Manage Customers Better</title>
+        <meta name="description" content="GNTIndia's CRM solutions help you connect with customers, manage relationships, and enhance customer experiences with smarter interactions." />
+        <meta name="keywords" content="CRM Solutions, Customer Relationship Management, GNTIndia, Lead Tracking, Customer Retention, CRM Tools" />
+        <meta property="og:title" content="Streamline Relationships with GNTIndia’s CRM Tools" />
+        <meta property="og:description" content="Revolutionize customer management with GNTIndia's enhanced CRM tools. Simplify lead tracking, improve customer retention, and interact smarter." />
+        <meta property="og:url" content="https://yourdomain.com/services/crm-solutions" />
+        <meta property="og:image" content="https://yourdomain.com/assets/crm-solutions.jpg" />
+        <link rel="canonical" href="https://yourdomain.com/services/crm-solutions" />
+      </Helmet>
     <div>
       <CustomSoftware />
       <Solution />
@@ -518,6 +530,7 @@ const CRMPage = () => {
       <HalfSideCard/>
       {/* <EnhancedCTA /> */}
     </div>
+    </>
   )
 };
 

@@ -13,6 +13,7 @@ import smple6 from "./images/software 7.png"
 import smple7 from "./images/excellence.png"
 import smple8 from "./images/innovaton.png"
 import smple9 from "./images/leadership.png"
+import { Helmet } from 'react-helmet';
 
 
 const CustomSoftware = () => {
@@ -507,6 +508,17 @@ const EnhancedCTA = () => {
 
 const CustomSoftwares = () => {
   return (
+    <>
+     <Helmet>
+        <title>GNTIndia Custom Software Development | Personalized Software Solutions</title>
+        <meta name="description" content="We at GNTIndia develop custom software solutions tailored to your specific business needs, making your processes easier and scalable." />
+        <meta name="keywords" content="Custom Software Development, GNTIndia, Software Solutions, Scalable Business Tools, Automation Software" />
+        <meta property="og:title" content="GNTIndia – Intelligent, Scalable Software Solutions" />
+        <meta property="og:description" content="Revolutionize your workflow with GNTIndia's custom software development solutions, from automation to innovation." />
+        <meta property="og:url" content="https://yourdomain.com/services/custom-software-development" />
+        <meta property="og:image" content="https://yourdomain.com/assets/custom-software-development.jpg" />
+        <link rel="canonical" href="https://yourdomain.com/services/custom-software-development" />
+      </Helmet>
     <div>
       <CustomSoftware />
       <Solution />
@@ -520,6 +532,7 @@ const CustomSoftwares = () => {
       
       {/* <EnhancedCTA /> */}
     </div>
+    </>
   )
 };
 

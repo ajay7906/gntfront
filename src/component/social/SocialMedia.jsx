@@ -506,6 +506,7 @@ const EnhancedCTA = () => {
 };
 
 import HalfSideCard from '../startproject/HalfSide'
+import { Helmet } from 'react-helmet';
 const SocialMedia = () => {
     
   return (
