@@ -18,21 +18,21 @@ const Navbar = () => {
     
     ],
 
-    Services: [
-      { title: 'Custom Software Development', path: '/services/custem' },
-      { title: 'Social Media Management', path: '/services/social' },
-      { title: 'CRM', path: '/services/crm' },
-      { title: 'Cloud Solutions', path: '/services/cloud' },
-      { title: 'Web Development', path: '/services/web' },
-      { title: 'AI-Powered Tools', path: '/services/ai' },
-      // { title: 'UI/UX Design', path: '/services/cloud-services' },
-    ],
+    // Services: [
+    //   { title: 'Custom Software Development', path: '/services/custem' },
+    //   { title: 'Social Media Management', path: '/services/social' },
+    //   { title: 'CRM', path: '/services/crm' },
+    //   { title: 'Cloud Solutions', path: '/services/cloud' },
+    //   { title: 'Web Development', path: '/services/web' },
+    //   { title: 'AI-Powered Tools', path: '/services/ai' },
+     
+    // ],
     Products: [
       { title: 'WhatsApp API', path: '/products/whatsapp' },
-      { title: 'ERP Solutions', path: '/products/erp' },
-      { title: 'E-Commerce Platforms', path: '/products/ecom' },
-      { title: 'Cybersecurity Solutions', path: '/products/cybersecurity' },
-      { title: 'Digital Marketing Tools', path: '/products/digitalmarketing' },
+      // { title: 'ERP Solutions', path: '/products/erp' },
+      // { title: 'E-Commerce Platforms', path: '/products/ecom' },
+      // { title: 'Cybersecurity Solutions', path: '/products/cybersecurity' },
+      // { title: 'Digital Marketing Tools', path: '/products/digitalmarketing' },
     ],
     Blog: [
       { title: 'Educational Content', path: '/blog/education' },

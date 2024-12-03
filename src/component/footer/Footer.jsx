@@ -3,10 +3,38 @@
 
 
 import React from 'react';
+import {useState} from 'react'
 import { Link } from 'react-router-dom';
 import FooterImg from '../../assets/images/foot.png'
 const Footer = () => {
+  const [showRefundPolicy, setShowRefundPolicy] = useState(false);
   return (
+
+    <>
+
+{showRefundPolicy && (
+        <div className="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center">
+          <div className="bg-white rounded-lg p-6 max-w-md w-full m-4 relative">
+            <button 
+              onClick={() => setShowRefundPolicy(false)}
+              className="absolute top-4 right-4 text-gray-500 hover:text-gray-700"
+            >
+              ✕
+            </button>
+            <h3 className="text-xl font-semibold mb-4 text-gray-800">Return & Refund Policy</h3>
+            <p className="text-gray-700">We do not offer any refund for our service. All sales are final.</p>
+          </div>
+        </div>
+      )}
+
+
+
+
+
+    
+
+
+
     <footer className="bg-cover bg-center text-white  mt-8 border-t border-gray-600   " style={{
       backgroundImage: `url(${FooterImg})`
     }}>
@@ -20,6 +48,12 @@ const Footer = () => {
             </p>
           </div>
 
+
+
+
+{/* 
+
+
           <div className="w-full md:w-1/3 mb-6 md:mb-0">
             <h3 className="text-lg font-semibold mb-3">Services</h3>
             <ul>
@@ -28,9 +62,7 @@ const Footer = () => {
                   Custem Software Development
 
                 </Link>
-                {/* <a href="#" >
-                  
-                </a> */}
+             
               </li>
               <li className="mb-2">
                 <Link to='/services/web' className="hover:underline text-gray-300">
@@ -53,7 +85,12 @@ const Footer = () => {
                 </Link>
               </li>
             </ul>
-          </div>
+          </div> */}
+
+
+
+
+
 
           <div className="w-full md:w-1/3 mb-6 md:mb-0">
             <h3 className="text-lg font-semibold mb-3">Quick Links</h3>
@@ -89,10 +126,18 @@ const Footer = () => {
                 </Link>
               </li>
               <li className="mb-2">
-                <Link to='/policy' className="hover:underline text-gray-300">
+                <Link to='/policy' className="hover:underline text-gray-300">      
                   Privacy Policy
                 </Link>
               </li>
+              <li className="mb-2">
+                <button 
+                  onClick={() => setShowRefundPolicy(true)}
+                 className="hover:underline text-gray-300">      
+                Return & Refund Policy
+                </button>
+              </li>
+
             </ul>
           </div>
 
@@ -157,6 +202,7 @@ const Footer = () => {
         </div>
       </div>
     </footer>
+    </>
   );
 };
 
