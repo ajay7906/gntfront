@@ -16,7 +16,6 @@ import Vedio from '../../assets/videos/vedio2.mp4';
 
 
 
-
 const ImageSlider = () => {
   const images = [image1, image2, image3, image4, image5];
 
