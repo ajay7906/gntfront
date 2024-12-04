@@ -521,3 +521,275 @@ const WhatsAppWidget = () => {
 };
 
 export default WhatsAppWidget;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// import React, { useState, useEffect, useRef } from 'react';
+// import { MessageCircle, Send, X } from 'lucide-react';
+
+// const WhatsAppWidget = () => {
+//   const [isWidgetOpen, setIsWidgetOpen] = useState(false);
+//   const [messages, setMessages] = useState([
+//     {
+//       id: 1,
+//       text: "Hello! How can I help you today?",
+//       sender: 'system'
+//     }
+//   ]);
+//   const [inputMessage, setInputMessage] = useState('');
+//   const [isLoading, setIsLoading] = useState(false);
+//   const messagesEndRef = useRef(null);
+
+//   const widgetOptions = {
+//     Position: "right",
+//     Contact: "919784044883",
+//     SiteName: "GNT INDIA",
+//     SiteTag: "Go To The Next Technology India",
+//     SiteLogo: "https://datapartner.btpr.online/ProductPictures/47757954399_GNTINDLOGO.png",
+//     WidgetColor: "#128c7e",
+//     TextColor: "#ffffff"
+//   };
+
+//   const scrollToBottom = () => {
+//     messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
+//   };
+
+//   useEffect(() => {
+//     scrollToBottom();
+//   }, [messages]);
+
+//   const handleSubmit = async (e) => {
+//     e.preventDefault();
+//     if (!inputMessage.trim()) return;
+
+//     // Add user message
+//     const newUserMessage = {
+//       id: messages.length + 1,
+//       text: inputMessage,
+//       sender: 'user'
+//     };
+//     setMessages(prev => [...prev, newUserMessage]);
+//     setInputMessage('');
+//     setIsLoading(true);
+
+//     try {
+//       // Simulated API call 
+//       const response = await fetchBotResponse(inputMessage);
+      
+//       // Add bot response
+//       const botMessage = {
+//         id: messages.length + 2,
+//         text: response,
+//         sender: 'system'
+//       };
+//       setMessages(prev => [...prev, botMessage]);
+//     } catch (error) {
+//       const errorMessage = {
+//         id: messages.length + 2,
+//         text: "Sorry, I couldn't process your request. Please try again.",
+//         sender: 'system'
+//       };
+//       setMessages(prev => [...prev, errorMessage]);
+//     } finally {
+//       setIsLoading(false);
+//     }
+//   };
+
+//   const fetchBotResponse = async (message) => {
+//     // Simulated API call 
+//     const apiUrl = 'https://graph.facebook.com/v18.0/424107617463486/messages';
+    
+//     try {
+//       const response = await fetch(apiUrl, {
+//         method: 'POST',
+//         headers: {
+//           'Content-Type': 'application/json',
+//           'LicenseNumber': '47757954399',
+//           'APIKey': 'GfeYz42caOWXL7xhkjD5C8BHt'
+//         },
+//         body: JSON.stringify({
+//           message: message
+//         })
+//       });
+
+//       if (!response.ok) {
+//         throw new Error('Network response was not ok');
+//       }
+
+//       const data = await response.json();
+//       return data.response || "I'm processing your request.";
+//     } catch (error) {
+//       console.error("Error fetching response:", error);
+//       return "Sorry, there was an error processing your request.";
+//     }
+//   };
+
+//   return (
+//     <div className="fixed bottom-4 z-[9999]">
+//       {/* WhatsApp Button */}
+//       {!isWidgetOpen && (
+//         <button
+//           onClick={() => setIsWidgetOpen(true)}
+//           className="fixed bottom-4 rounded-full w-16 h-16 flex items-center justify-center shadow-lg"
+//           style={{ 
+//             backgroundColor: widgetOptions.WidgetColor, 
+//             color: widgetOptions.TextColor, 
+//             [widgetOptions.Position === 'left' ? 'left' : 'right']: '20px' 
+//           }}
+//         >
+//           <MessageCircle size={30} />
+//         </button>
+//       )}
+
+//       {/* Widget Container */}
+//       {isWidgetOpen && (
+//         <div 
+//           className="fixed bottom-24 w-96 max-w-full bg-white rounded-lg shadow-xl overflow-hidden"
+//           style={{ 
+//             [widgetOptions.Position === 'left' ? 'left' : 'right']: '30px' 
+//           }}
+//         >
+//           {/* Widget Header */}
+//           <div 
+//             className="p-4 flex items-center relative"
+//             style={{ 
+//               backgroundColor: widgetOptions.WidgetColor, 
+//               color: widgetOptions.TextColor 
+//             }}
+//           >
+//             <img 
+//               src={widgetOptions.SiteLogo} 
+//               alt={widgetOptions.SiteName} 
+//               className="w-12 h-12 rounded-full mr-3" 
+//             />
+//             <div>
+//               <div className="font-bold">{widgetOptions.SiteName}</div>
+//               <div className="text-sm">{widgetOptions.SiteTag}</div>
+//             </div>
+//             <button 
+//               onClick={() => setIsWidgetOpen(false)}
+//               className="absolute top-4 right-4"
+//             >
+//               <X size={20} color={widgetOptions.TextColor} />
+//             </button>
+//           </div>
+
+//           {/* Chat Messages */}
+//           <div 
+//             className="p-4 h-64 overflow-y-auto bg-cover flex flex-col space-y-2"
+//             style={{ 
+//               backgroundImage: "url('https://datapartner.btpr.online/chat-bg.svg')" 
+//             }}
+//           >
+//             {messages.map((msg) => (
+//               <div 
+//                 key={msg.id}
+//                 className={`max-w-[80%] p-2 rounded-lg ${
+//                   msg.sender === 'user' 
+//                     ? 'bg-blue-100 self-end' 
+//                     : 'bg-white self-start'
+//                 }`}
+//               >
+//                 {msg.text}
+//               </div>
+//             ))}
+//             {isLoading && (
+//               <div className="self-start bg-white p-2 rounded-lg">
+//                 Typing...
+//               </div>
+//             )}
+//             <div ref={messagesEndRef} />
+//           </div>
+
+//           {/* Message Input */}
+//           <form 
+//             onSubmit={handleSubmit} 
+//             className="p-4 bg-white flex items-center"
+//           >
+//             <input 
+//               type="text"
+//               value={inputMessage}
+//               onChange={(e) => setInputMessage(e.target.value)}
+//               placeholder="Send a message"
+//               required
+//               className="flex-grow rounded-full px-4 py-2 mr-2 border-none outline-none bg-gray-100"
+//             />
+//             <button 
+//               type="submit"
+//               className="w-10 h-10 rounded-full flex items-center justify-center"
+//               style={{ 
+//                 backgroundColor: widgetOptions.WidgetColor, 
+//                 color: widgetOptions.TextColor 
+//               }}
+//             >
+//               <Send size={18} />
+//             </button>
+//           </form>
+//         </div>
+//       )}
+//     </div>
+//   );
+// };
+
+// export default WhatsAppWidget;
