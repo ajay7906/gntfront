@@ -1,7 +1,14 @@
 import React, { useState } from 'react';
 import { Check, X, Eye, Gift } from 'lucide-react';
+import { Navigate, useNavigate } from 'react-router-dom';
 
 const PlanPreviewModal = ({ plan, onClose }) => {
+
+
+
+
+
+
   return (
     <div className="fixed inset-0 bg-black bg-opacity-50 z-50 flex items-center justify-center">
       <div className="bg-white rounded-xl p-8 max-w-md w-full relative">
@@ -52,6 +59,7 @@ const PlanPreviewModal = ({ plan, onClose }) => {
 const PricingPlans = () => {
   const [billingCycle, setBillingCycle] = useState('yearly');
   const [selectedPlan, setSelectedPlan] = useState(null);
+  const navigate  = useNavigate();
 
   const plans = {
     basic: {
@@ -117,6 +125,20 @@ const PricingPlans = () => {
     });
   };
 
+  const handleBuyNow = (planName, planDetails) => {
+    const planData = {
+      name: planName,
+      price: planDetails.monthly[billingCycle],
+      cycle: billingCycle
+    };
+    // Navigate to payment form with plan details
+    // If using React Router:
+    navigate('/payment', { state: { planDetails: planData } });
+    // Or manage with state if not using routing
+  };
+
+
+
   return (
     <div className="bg-gray-100 min-h-screen py-12 px-4">
       <div className="container mx-auto">
@@ -174,7 +196,9 @@ const PricingPlans = () => {
                 </ul>
                 
                 <div className="flex space-x-4">
-                  <button className="w-full bg-green-500 text-white py-3 rounded-lg hover:bg-green-600 transition">
+                  <button 
+                   onClick={() => handleBuyNow(planName, planDetails)}
+                   className="w-full bg-green-500 text-white py-3 rounded-lg hover:bg-green-600 transition">
                     Buy Now
                   </button>
                   <button 

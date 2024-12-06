@@ -1,7 +1,5 @@
 
 
-
-
 import React from 'react';
 import {useState} from 'react'
 import { Link } from 'react-router-dom';
@@ -47,10 +45,6 @@ const Footer = () => {
             1st Floor House No 25. Behind Chopra Katla rani Bazar Industrial Acea Rani Bazar, Bikaner, Bikaner. Rajasthan 334001
             </p>
           </div>
-
-
-
-
 
 
 

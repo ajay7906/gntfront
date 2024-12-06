@@ -39,6 +39,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import TermsAndConditions from './pages/termsancondi/TermsAndCondition';
 import PolicyPage from './pages/policy/PolicyPage';
 import NotFound from './component/notfound/NotFound';
+import PaymentForm from './pages/payment/PaymentForm';
 const ProtectedRoute = ({ children }) => {
   const adminToken = localStorage.getItem('adminToken');
   if (!adminToken) {
@@ -91,6 +92,7 @@ const App = () => {
           <Route path='/services/custem' element={< CustomSoftwares/>} />
           <Route path='/termsandconditions' element={< TermsAndConditions/>} />
           <Route path='/policy' element={< PolicyPage/>} />
+          <Route path='/payment' element={< PaymentForm/>} />
           <Route path='*' element={< NotFound/>} />
 
 
