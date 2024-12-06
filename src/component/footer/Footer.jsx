@@ -51,7 +51,7 @@ const Footer = () => {
 
 
 
-{/* 
+
 
 
           <div className="w-full md:w-1/3 mb-6 md:mb-0">
@@ -85,7 +85,7 @@ const Footer = () => {
                 </Link>
               </li>
             </ul>
-          </div> */}
+          </div> 
 
 
 
