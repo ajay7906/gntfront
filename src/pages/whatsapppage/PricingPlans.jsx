@@ -65,7 +65,7 @@ const PricingPlans = () => {
     basic: {
       name: 'Basic',
       monthly: {
-        'monthly': 1, 
+        'monthly': 800, 
         '3month': 2100,
         '6month': 3600,
         yearly: 5000
