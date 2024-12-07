@@ -168,9 +168,6 @@
 
 
 
-
-
-
 import React, { useState } from 'react';
 import { MessageCircle, Send, X } from 'lucide-react';
 
@@ -181,9 +178,9 @@ const WhatsAppWidget = () => {
     name: '',
     email: '',
     mobile: '',
-    message: ''
   });
   const [currentStep, setCurrentStep] = useState('welcome');
+  const [isUserRegistered, setIsUserRegistered] = useState(false);
   
   const widgetOptions = {
     Position: "right",
@@ -211,14 +208,13 @@ const WhatsAppWidget = () => {
       updateField: 'email'
     },
     getMobile: {
-      message: "Perfect! Now, what message would you like to send?",
-      next: 'getMessage',
+      message: "Perfect! Your details have been saved. You can now send 'hello' to start chatting on WhatsApp!",
+      next: 'awaitingHello',
       updateField: 'mobile'
     },
-    getMessage: {
-      message: "Thank you for providing your details! I'll connect you to WhatsApp now.",
-      next: 'complete',
-      updateField: 'message'
+    awaitingHello: {
+      message: "Send 'hello' to start chatting!",
+      next: 'awaitingHello',
     }
   };
 
@@ -226,40 +222,86 @@ const WhatsAppWidget = () => {
     { text: chatFlow.welcome.message, type: 'bot' }
   ]);
 
-  const handleSubmit = (e) => {
+  const saveUserToDatabase = async (userData) => {
+    try {
+      const response = await fetch('/api/users', {  // Replace with your actual API endpoint
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(userData)
+      });
+      
+      if (!response.ok) {
+        throw new Error('Failed to save user data');
+      }
+      
+      return await response.json();
+    } catch (error) {
+      console.error('Error saving user data:', error);
+      throw error;
+    }
+  };
+
+  const handleSubmit = async (e) => {
     e.preventDefault();
     if (!message.trim()) return;
 
     // Add user message to chat
     setMessages(prev => [...prev, { text: message, type: 'user' }]);
 
-    // Update user details based on current step
-    if (currentStep !== 'welcome') {
-      setUserDetails(prev => ({
-        ...prev,
-        [chatFlow[currentStep].updateField]: message
-      }));
-    }
+    if (!isUserRegistered) {
+      // Update user details based on current step
+      if (currentStep !== 'welcome') {
+        setUserDetails(prev => ({
+          ...prev,
+          [chatFlow[currentStep].updateField]: message
+        }));
 
-    // Get next step
-    const nextStep = chatFlow[currentStep].next;
+        // If we've collected mobile (last field), save to database
+        if (chatFlow[currentStep].updateField === 'mobile') {
+          try {
+            await saveUserToDatabase({
+              ...userDetails,
+              mobile: message
+            });
+            setIsUserRegistered(true);
+          } catch (error) {
+            setMessages(prev => [...prev, { 
+              text: "Sorry, there was an error saving your details. Please try again.", 
+              type: 'bot' 
+            }]);
+            return;
+          }
+        }
+      }
 
-    // Add bot response
-    if (nextStep !== 'complete') {
+      // Get next step
+      const nextStep = chatFlow[currentStep].next;
+      
+      // Add bot response
       setMessages(prev => [...prev, { text: chatFlow[nextStep].message, type: 'bot' }]);
       setCurrentStep(nextStep);
     } else {
-      // Redirect to WhatsApp
-      const fullMessage = `Name: ${userDetails.name}\nEmail: ${userDetails.email}\nMobile: ${userDetails.mobile}\nMessage: ${message}`;
-      const whatsappUrl = `https://wa.me/${widgetOptions.Contact}?text=${encodeURIComponent(fullMessage)}`;
-      window.open(whatsappUrl, '_blank');
-      
-      // Reset everything
-      setIsWidgetOpen(false);
-      setMessage('');
-      setUserDetails({ name: '', email: '', mobile: '', message: '' });
-      setCurrentStep('welcome');
-      setMessages([{ text: chatFlow.welcome.message, type: 'bot' }]);
+      // User is registered, check for 'hello' message
+      if (message.toLowerCase() === 'hello') {
+        // Redirect to WhatsApp
+        const whatsappUrl = `https://wa.me/${widgetOptions.Contact}?text=hello`;
+        window.open(whatsappUrl, '_blank');
+        
+        // Reset everything
+        setIsWidgetOpen(false);
+        setMessage('');
+        setUserDetails({ name: '', email: '', mobile: '' });
+        setCurrentStep('welcome');
+        setMessages([{ text: chatFlow.welcome.message, type: 'bot' }]);
+        setIsUserRegistered(false);
+      } else {
+        setMessages(prev => [...prev, { 
+          text: "Please send 'hello' to start chatting on WhatsApp!", 
+          type: 'bot' 
+        }]);
+      }
     }
 
     setMessage('');
@@ -311,9 +353,10 @@ const WhatsAppWidget = () => {
               onClick={() => {
                 setIsWidgetOpen(false);
                 setMessage('');
-                setUserDetails({ name: '', email: '', mobile: '', message: '' });
+                setUserDetails({ name: '', email: '', mobile: '' });
                 setCurrentStep('welcome');
                 setMessages([{ text: chatFlow.welcome.message, type: 'bot' }]);
+                setIsUserRegistered(false);
               }}
               className="absolute top-4 right-4"
             >
