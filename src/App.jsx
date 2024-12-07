@@ -93,7 +93,7 @@ const App = () => {
           <Route path='/termsandconditions' element={< TermsAndConditions/>} />
           <Route path='/policy' element={< PolicyPage/>} />
           <Route path='/payment' element={< PaymentForm/>} />
-          {/* <Route path='*' element={< NotFound/>} /> */}
+          <Route path='*' element={< NotFound/>} />
 
 
           {/* Login Route */}
