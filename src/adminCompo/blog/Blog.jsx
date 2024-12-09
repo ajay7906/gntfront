@@ -1,5 +1,5 @@
 
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import axios from "axios";
 
 const Blog = () => {
@@ -107,12 +107,52 @@ const Blog = () => {
     }
   };
 
+
+
+
+
+
+
+
+
+
+  // const Modal = ({ show, onClose, title, children }) => {
+  //   if (!show) return null;
+
+  //   return (
+  //     <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center pt-48 z-50">
+  //       <div className="bg-white rounded-lg w-full max-w-md">
+  //         <div className="flex justify-between items-center p-4 border-b">
+  //           <h3 className="text-xl font-semibold text-gray-900">{title}</h3>
+  //           <button
+  //             onClick={onClose}
+  //             className="text-gray-400 hover:text-gray-500"
+  //           >
+  //             ×
+  //           </button>
+  //         </div>
+  //         <div className="p-4">{children}</div>
+  //       </div>
+  //     </div>
+  //   );
+  // };
+
+
+
+
+
+
   const Modal = ({ show, onClose, title, children }) => {
     if (!show) return null;
-
+  
     return (
-      <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center pt-48 z-50">
-        <div className="bg-white rounded-lg w-full max-w-md">
+      <div
+        className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center pt-48 z-50"
+        onClick={(e) => {
+          if (e.target.classList.contains("modal-overlay")) onClose();
+        }}
+      >
+        <div className="modal-overlay bg-white rounded-lg w-full max-w-md">
           <div className="flex justify-between items-center p-4 border-b">
             <h3 className="text-xl font-semibold text-gray-900">{title}</h3>
             <button
@@ -127,49 +167,135 @@ const Blog = () => {
       </div>
     );
   };
+  
 
-  const BlogForm = ({ isUpdate = false }) => (
-    <div className="space-y-4">
-      <input
-        type="text"
-        placeholder="Title"
-        value={title}
-        onChange={(e) => setTitle(e.target.value)}
-        className="w-full p-2 rounded-md border border-gray-300"
-      />
-      <textarea
-        placeholder="Description"
-        value={description}
-        onChange={(e) => setDescription(e.target.value)}
-        className="w-full p-2 rounded-md border border-gray-300"
-      />
-      <select
-        value={option}
-        onChange={(e) => setOption(e.target.value)}
-        className="w-full p-2 rounded-md border border-gray-300"
-      >
-        <option value="">Select an option</option>
-        <option value="Educational Content">Educational Content</option>
-        <option value="Regular Update">Regular Update</option>
-        <option value="SEO Benefits">SEO Benefits</option>
-      </select>
-      <input
-        type="file"
-        accept="image/*"
-        onChange={(e) => {
-          console.log(e.target.files[0]); // Check if the file is being captured
-          setImage(e.target.files[0]);
-        }}
-        className="w-full p-2"
-      />
-      <button
-        onClick={() => handleSubmit(isUpdate)}
-        className="w-full bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded"
-      >
-        {isUpdate ? "Update" : "Submit"}
-      </button>
-    </div>
-  );
+
+
+
+
+
+
+
+
+
+  // const BlogForm = ({ isUpdate = false }) => (
+  //   <div className="space-y-4">
+  //     <input
+  //       type="text"
+  //       placeholder="Title"
+  //       value={title}
+  //       onChange={(e) => setTitle(e.target.value)}
+  //       className="w-full p-2 rounded-md border border-gray-300"
+  //     />
+  //     <textarea
+  //       placeholder="Description"
+  //       value={description}
+  //       onChange={(e) => setDescription(e.target.value)}
+  //       className="w-full p-2 rounded-md border border-gray-300"
+  //     />
+  //     <select
+  //       value={option}
+  //       onChange={(e) => setOption(e.target.value)}
+  //       className="w-full p-2 rounded-md border border-gray-300"
+  //     >
+  //       <option value="">Select an option</option>
+  //       <option value="Educational Content">Educational Content</option>
+  //       <option value="Regular Update">Regular Update</option>
+  //       <option value="SEO Benefits">SEO Benefits</option>
+  //     </select>
+  //     <input
+  //       type="file"
+  //       accept="image/*"
+  //       onChange={(e) => {
+  //         console.log(e.target.files[0]); // Check if the file is being captured
+  //         setImage(e.target.files[0]);
+  //       }}
+  //       className="w-full p-2"
+  //     />
+  //     <button
+  //       onClick={() => handleSubmit(isUpdate)}
+  //       className="w-full bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded"
+  //     >
+  //       {isUpdate ? "Update" : "Submit"}
+  //     </button>
+  //   </div>
+  // );
+
+
+  const BlogForm = ({ isUpdate = false }) => {
+    const titleInputRef = useRef(null); // Reference for title input
+    const descriptionInputRef = useRef(null); // Reference for description input
+    const [title, setTitle] = useState("");
+    const [description, setDescription] = useState("");
+    const [option, setOption] = useState("");
+    const [image, setImage] = useState(null);
+  
+    const handleFocus = (input) => {
+      // Manually set focus when needed
+      if (input === "title" && titleInputRef.current) {
+        titleInputRef.current.focus();
+      } else if (input === "description" && descriptionInputRef.current) {
+        descriptionInputRef.current.focus();
+      }
+    };
+  
+    return (
+      <div className="space-y-4">
+        <input
+          ref={titleInputRef}
+          type="text"
+          placeholder="Title"
+          value={title}
+          onChange={(e) => setTitle(e.target.value)}
+          onFocus={() => handleFocus("title")}
+          className="w-full p-2 rounded-md border border-gray-300"
+        />
+        <textarea
+          ref={descriptionInputRef}
+          placeholder="Description"
+          value={description}
+          onChange={(e) => setDescription(e.target.value)}
+          onFocus={() => handleFocus("description")}
+          className="w-full p-2 rounded-md border border-gray-300"
+        />
+        <select
+          value={option}
+          onChange={(e) => setOption(e.target.value)}
+          className="w-full p-2 rounded-md border border-gray-300"
+        >
+          <option value="">Select an option</option>
+          <option value="Educational Content">Educational Content</option>
+          <option value="Regular Update">Regular Update</option>
+          <option value="SEO Benefits">SEO Benefits</option>
+        </select>
+        <input
+          type="file"
+          accept="image/*"
+          onChange={(e) => setImage(e.target.files[0])}
+          className="w-full p-2"
+        />
+        <button
+          // onClick={() => {
+          //   // Handle form submission logic here
+          //   console.log({ title, description, option, image });
+          // }}
+          onClick={() => handleSubmit(isUpdate)}
+          className="w-full bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded"
+        >
+          {isUpdate ? "Update" : "Submit"}
+        </button>
+      </div>
+    );
+  };
+  
+
+
+
+
+
+
+
+
 
   return (
     <div className="p-6 rounded-xl bg-white/10 backdrop-blur-lg border border-white/20">
