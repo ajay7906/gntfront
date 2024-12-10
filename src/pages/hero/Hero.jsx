@@ -118,6 +118,7 @@ import WhatsAppAPISection from '../../component/whatsapp/WhatsApp';
 import HalfSideCard from '../../component/startproject/HalfSide';
 import { Helmet } from 'react-helmet';
 import ChatWidget from '../../component/chatwidth/ChatWidgit';
+import WhatsAppChatSupport from '../../component/chatwidth/WhatsAppChatSupport';
 const Hero = () => {
   return (
     <>
@@ -159,6 +160,7 @@ const Hero = () => {
         {/* <AwardSection/> */}
         <FounderIntroduction />
         <HalfSideCard />
+        {/* <WhatsAppChatSupport/> */}
         <ChatWidget/>
       </div>
     </>
