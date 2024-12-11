@@ -1276,6 +1276,8 @@ const WhatsAppWidget = () => {
   };
 
   const validateName = (name) => {
+    console.log(name);
+    
     if (!name.trim()) {
       return "Name is required";
     }
@@ -1483,14 +1485,20 @@ const WhatsAppWidget = () => {
   };
 
   // Chat flow configuration with validation
+  console.log(
+    userDetails
+  );
+  
   const chatFlow = {
     welcome: {
       message: "Hello! I'm here to help. Could you please share your name?",
       next: 'getName',
       validator: validateName,
     },
+    
     getName: {
-      message: 'Great! Could you please share your email address?',
+       message: 'Great! Could you please share your email address?',
+      //message: (name) => `Great ${name}! Could you please share your email address?`,
       next: 'getEmail',
       updateField: 'name',
       validator: validateEmail,
@@ -1588,7 +1596,11 @@ const WhatsAppWidget = () => {
       setUserDetails(prev => ({
         ...prev,
         [currentField]: message,
+       
+        
       }));
+      console.log([currentField], message,);
+      
 
       setErrors(prev => ({
         ...prev,
