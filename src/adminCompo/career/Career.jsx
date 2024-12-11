@@ -113,108 +113,280 @@ const Career = () => {
         setSkills("");
     };
 
+
+
+
+
+
+    // const Modal = ({ show, onClose, title, children }) => {
+    //     if (!show) return null;
+
+    //     return (
+    //         <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center pt-48 z-50">
+    //             <div className="bg-white rounded-lg w-full max-w-md">
+    //                 <div className="flex justify-between items-center p-4 border-b">
+    //                     <h3 className="text-xl font-semibold text-gray-900">{title}</h3>
+    //                     <button
+    //                         onClick={onClose}
+    //                         className="text-gray-400 hover:text-gray-500"
+    //                     >
+    //                         ×
+    //                     </button>
+    //                 </div>
+    //                 <div className="p-4">{children}</div>
+    //             </div>
+    //         </div>
+    //     );
+    // };
+   
+
     const Modal = ({ show, onClose, title, children }) => {
         if (!show) return null;
-
+    
         return (
-            <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center pt-48 z-50">
-                <div className="bg-white rounded-lg w-full max-w-md">
+            <div 
+                className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50 p-4 pt-64"
+                onClick={(e) => {
+                    // Close modal only if clicking on the overlay
+                    if (e.target === e.currentTarget) onClose();
+                }}
+            >
+                <div className="bg-white rounded-lg w-full max-w-md mx-auto relative">
                     <div className="flex justify-between items-center p-4 border-b">
                         <h3 className="text-xl font-semibold text-gray-900">{title}</h3>
                         <button
                             onClick={onClose}
-                            className="text-gray-400 hover:text-gray-500"
+                            className="absolute top-4 right-4 text-gray-400 hover:text-gray-500 text-2xl font-bold"
                         >
                             ×
                         </button>
                     </div>
-                    <div className="p-4">{children}</div>
+                    <div className="p-4">
+                        {children}
+                    </div>
                 </div>
             </div>
         );
     };
-    console.log(title);
 
-    const JobForm = ({ isUpdate = false }) => (
-        <div className="space-y-4">
-            <input
-                type="text"
-                placeholder="Job Title"
-                value={title}
-                onChange={(e) => {
-                    // Ensure you're directly setting the value
-                    setTitle(e.target.value);
-                }}
-                className="w-full p-2 rounded-md border border-gray-300"
-                onFocus={() => console.log('Input focused')}
-                required
-            />
-            <input
-                type="text"
-                placeholder="Location"
-                value={location}
-                onChange={(e) => setLocation(e.target.value)}
-                className="w-full p-2 rounded-md border border-gray-300"
-                required
-            />
-            <select
-                value={type}
-                onChange={(e) => setType(e.target.value)}
-                className="w-full p-2 rounded-md border border-gray-300"
-                required
-            >
-                <option value="">Job Type</option>
-                <option value="Full-time">Full-time</option>
-                <option value="Part-time">Part-time</option>
-                <option value="Contract">Contract</option>
-                <option value="Freelance">Freelance</option>
-            </select>
-            <input
-                type="text"
-                placeholder="Experience Level"
-                value={experience}
-                onChange={(e) => setExperience(e.target.value)}
-                className="w-full p-2 rounded-md border border-gray-300"
-                required
-            />
-            <select
-                value={department}
-                onChange={(e) => setDepartment(e.target.value)}
-                className="w-full p-2 rounded-md border border-gray-300"
-                required
-            >
-                <option value="">Select Department</option>
-                <option value="Engineering">Engineering</option>
-                <option value="Marketing">Marketing</option>
-                <option value="Sales">Sales</option>
-                <option value="HR">HR</option>
-                <option value="Finance">Finance</option>
-                <option value="Product">Product</option>
-            </select>
-            <textarea
-                placeholder="Job Description"
-                value={description}
-                onChange={(e) => setDescription(e.target.value)}
-                className="w-full p-2 rounded-md border border-gray-300"
-                required
-                rows={4}
-            />
-            <input
-                type="text"
-                placeholder="Skills (comma-separated)"
-                value={skills}
-                onChange={(e) => setSkills(e.target.value)}
-                className="w-full p-2 rounded-md border border-gray-300"
-                required
-            />
-            <button
-                onClick={() => handleSubmit(isUpdate)}
-                className="w-full bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded"
-            >
-                {isUpdate ? "Update Job" : "Post Job"}
-            </button>
-        </div>
-    );
+
+
+
+
+
+
+
+
+
+
+
+
+
+    // const JobForm = ({ isUpdate = false }) => (
+    //     <div className="space-y-4">
+    //         <input
+    //             type="text"
+    //             placeholder="Job Title"
+    //             value={title}
+    //             onChange={(e) => {
+                   
+    //                 setTitle(e.target.value);
+    //             }}
+              
+    //             className="w-full p-2 rounded-md border border-gray-300"
+    //             onFocus={() => console.log('Input focused')}
+    //             required
+    //         />
+    //         <input
+    //             type="text"
+    //             placeholder="Location"
+    //             value={location}
+    //             onChange={(e) => setLocation(e.target.value)}
+    //             className="w-full p-2 rounded-md border border-gray-300"
+    //             required
+    //         />
+    //         <select
+    //             value={type}
+    //             onChange={(e) => setType(e.target.value)}
+    //             className="w-full p-2 rounded-md border border-gray-300"
+    //             required
+    //         >
+    //             <option value="">Job Type</option>
+    //             <option value="Full-time">Full-time</option>
+    //             <option value="Part-time">Part-time</option>
+    //             <option value="Contract">Contract</option>
+    //             <option value="Freelance">Freelance</option>
+    //         </select>
+    //         <input
+    //             type="text"
+    //             placeholder="Experience Level"
+    //             value={experience}
+    //             onChange={(e) => setExperience(e.target.value)}
+    //             className="w-full p-2 rounded-md border border-gray-300"
+    //             required
+    //         />
+    //         <select
+    //             value={department}
+    //             onChange={(e) => setDepartment(e.target.value)}
+    //             className="w-full p-2 rounded-md border border-gray-300"
+    //             required
+    //         >
+    //             <option value="">Select Department</option>
+    //             <option value="Engineering">Engineering</option>
+    //             <option value="Marketing">Marketing</option>
+    //             <option value="Sales">Sales</option>
+    //             <option value="HR">HR</option>
+    //             <option value="Finance">Finance</option>
+    //             <option value="Product">Product</option>
+    //         </select>
+    //         <textarea
+    //             placeholder="Job Description"
+    //             value={description}
+    //             onChange={(e) => setDescription(e.target.value)}
+    //             className="w-full p-2 rounded-md border border-gray-300"
+    //             required
+    //             rows={4}
+    //         />
+    //         <input
+    //             type="text"
+    //             placeholder="Skills (comma-separated)"
+    //             value={skills}
+    //             onChange={(e) => setSkills(e.target.value)}
+    //             className="w-full p-2 rounded-md border border-gray-300"
+    //             required
+    //         />
+    //         <button
+    //             onClick={() => handleSubmit(isUpdate)}
+    //             className="w-full bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded"
+    //         >
+    //             {isUpdate ? "Update Job" : "Post Job"}
+    //         </button>
+    //     </div>
+    // );
+
+
+
+    const JobForm = ({ isUpdate = false }) => {
+        // Local state for form fields
+        const [localTitle, setLocalTitle] = useState(isUpdate && selectedJob ? selectedJob.title : "");
+        const [localLocation, setLocalLocation] = useState(isUpdate && selectedJob ? selectedJob.location : "");
+        const [localType, setLocalType] = useState(isUpdate && selectedJob ? selectedJob.type : "");
+        const [localExperience, setLocalExperience] = useState(isUpdate && selectedJob ? selectedJob.experience : "");
+        const [localDepartment, setLocalDepartment] = useState(isUpdate && selectedJob ? selectedJob.department : "");
+        const [localDescription, setLocalDescription] = useState(isUpdate && selectedJob ? selectedJob.description : "");
+        const [localSkills, setLocalSkills] = useState(isUpdate && selectedJob ? (selectedJob.skills ? selectedJob.skills.join(', ') : '') : '');
+    
+        const handleSubmitLocal = () => {
+            // Update parent component's state before submission
+            setTitle(localTitle);
+            setLocation(localLocation);
+            setType(localType);
+            setExperience(localExperience);
+            setDepartment(localDepartment);
+            setDescription(localDescription);
+            setSkills(localSkills);
+    
+            // Call the submit function with a slight delay to ensure state update
+            setTimeout(() => {
+                handleSubmit(isUpdate);
+            }, 0);
+        };
+    
+        return (
+            <div className="space-y-4 ">
+                <input
+                    type="text"
+                    placeholder="Job Title"
+                    value={localTitle}
+                    onChange={(e) => setLocalTitle(e.target.value)}
+                    className="w-full p-2 rounded-md border border-gray-300"
+                    required
+                />
+                <input
+                    type="text"
+                    placeholder="Location"
+                    value={localLocation}
+                    onChange={(e) => setLocalLocation(e.target.value)}
+                    className="w-full p-2 rounded-md border border-gray-300"
+                    required
+                />
+                <select
+                    value={localType}
+                    onChange={(e) => setLocalType(e.target.value)}
+                    className="w-full p-2 rounded-md border border-gray-300"
+                    required
+                >
+                    <option value="">Job Type</option>
+                    <option value="Full-time">Full-time</option>
+                    <option value="Part-time">Part-time</option>
+                    <option value="Contract">Contract</option>
+                    <option value="Freelance">Freelance</option>
+                </select>
+                <input
+                    type="text"
+                    placeholder="Experience Level"
+                    value={localExperience}
+                    onChange={(e) => setLocalExperience(e.target.value)}
+                    className="w-full p-2 rounded-md border border-gray-300"
+                    required
+                />
+                <select
+                    value={localDepartment}
+                    onChange={(e) => setLocalDepartment(e.target.value)}
+                    className="w-full p-2 rounded-md border border-gray-300"
+                    required
+                >
+                    <option value="">Select Department</option>
+                    <option value="Engineering">Engineering</option>
+                    <option value="Marketing">Marketing</option>
+                    <option value="Sales">Sales</option>
+                    <option value="HR">HR</option>
+                    <option value="Finance">Finance</option>
+                    <option value="Product">Product</option>
+                </select>
+                <textarea
+                    placeholder="Job Description"
+                    value={localDescription}
+                    onChange={(e) => setLocalDescription(e.target.value)}
+                    className="w-full p-2 rounded-md border border-gray-300"
+                    required
+                    rows={4}
+                />
+                <input
+                    type="text"
+                    placeholder="Skills (comma-separated)"
+                    value={localSkills}
+                    onChange={(e) => setLocalSkills(e.target.value)}
+                    className="w-full p-2 rounded-md border border-gray-300"
+                    required
+                />
+                <button
+                    onClick={handleSubmitLocal}
+                    className="w-full bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded"
+                >
+                    {isUpdate ? "Update Job" : "Post Job"}
+                </button>
+            </div>
+        );
+    };
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     return (
         <div className="p-6 rounded-xl bg-white/10 backdrop-blur-lg border border-white/20">
