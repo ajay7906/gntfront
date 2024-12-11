@@ -670,6 +670,556 @@
 
 
 
+// import React, { useState } from 'react';
+// import { MessageCircle, Send, X, Globe, Code, BarChart, Database } from 'lucide-react';
+
+// const WhatsAppWidget = () => {
+//   const [isWidgetOpen, setIsWidgetOpen] = useState(false);
+//   const [message, setMessage] = useState('');
+//   const [userDetails, setUserDetails] = useState({
+//     name: '',
+//     email: '',
+//     mobile: '',
+//   });
+//   const [currentStep, setCurrentStep] = useState('welcome');
+//   const [isUserRegistered, setIsUserRegistered] = useState(false);
+//   const [isInServiceQuery, setIsInServiceQuery] = useState(false);
+//   const [selectedService, setSelectedService] = useState(null);
+
+//   const widgetOptions = {
+//     Position: 'right',
+//     Contact: '919784044883',
+//     SiteName: 'GNT INDIA',
+//     SiteTag: 'Go To The Next Technology India',
+//     SiteLogo: 'https://datapartner.btpr.online/ProductPictures/47757954399_GNTINDLOGO.png',
+//     WidgetColor: '#128c7e',
+//     TextColor: '#ffffff',
+//   };
+
+//   const serviceDetails = {
+//     "Website_Development": {
+//       title: "Website Development Services",
+//       icon: Globe,
+//       detailedInfo: [
+//         {
+//           category: "Types of Websites",
+//           items: [
+//             "Corporate Websites",
+//             "E-commerce Platforms",
+//             "Portfolio Sites",
+//             "Blog Websites",
+//             "Educational Websites",
+//             "Restaurant & Hospitality Websites",
+//             "Real Estate Websites"
+//           ]
+//         },
+//         {
+//           category: "Key Features",
+//           items: [
+//             "Responsive Design",
+//             "Mobile-Friendly Layouts",
+//             "SEO Optimization",
+//             "Fast Loading Speed",
+//             "Security Integration",
+//             "Content Management System (CMS)"
+//           ]
+//         },
+//         {
+//           category: "SEO Services",
+//           items: [
+//             "Keyword Research",
+//             "On-Page SEO Optimization",
+//             "Meta Tag Optimization",
+//             "Content Strategy",
+//             "Local SEO",
+//             "Google Analytics Integration"
+//           ]
+//         },
+//         {
+//           category: "Pricing",
+//           items: [
+//             "Basic Website: ₹15,000 - ₹30,000",
+//             "Standard Website: ₹30,000 - ₹50,000",
+//             "Advanced Website: ₹50,000 - ₹1,00,000",
+//             "E-commerce Website: ₹75,000 - ₹2,00,000"
+//           ]
+//         },
+//         {
+//           category: "Turnaround Time",
+//           items: [
+//             "Basic Website: 7-15 days",
+//             "Standard Website: 15-30 days",
+//             "Complex Website: 30-60 days"
+//           ]
+//         }
+//       ]
+//     },
+//     "WhatsApp_API": {
+//       title: "WhatsApp API Services",
+//       icon: MessageCircle,
+//       detailedInfo: [
+//         {
+//           category: "API Features",
+//           items: [
+//             "Automated Messaging",
+//             "Customer Support Chatbots",
+//             "Message Templates",
+//             "Real-time Communication",
+//             "Bulk Messaging",
+//             "Integration Capabilities"
+//           ]
+//         },
+//         {
+//           category: "Pricing",
+//           items: [
+//             "Basic Plan: ₹5,000/month",
+//             "Standard Plan: ₹10,000/month",
+//             "Enterprise Plan: Custom Pricing"
+//           ]
+//         },
+//         {
+//           category: "Implementation Time",
+//           items: [
+//             "Basic Integration: 3-7 days",
+//             "Custom Solution: 15-30 days"
+//           ]
+//         }
+//       ]
+//     },
+//     "Social_Media": {
+//       title: "Social Media Management",
+//       icon: BarChart,
+//       detailedInfo: [
+//         {
+//           category: "Services Offered",
+//           items: [
+//             "Content Creation",
+//             "Content Calendar",
+//             "Social Media Strategy",
+//             "Engagement Monitoring",
+//             "Performance Analytics",
+//             "Ad Campaign Management"
+//           ]
+//         },
+//         {
+//           category: "Platforms Covered",
+//           items: [
+//             "Facebook",
+//             "Instagram",
+//             "LinkedIn",
+//             "Twitter",
+//             "YouTube"
+//           ]
+//         },
+//         {
+//           category: "Pricing",
+//           items: [
+//             "Basic Package: ₹15,000/month",
+//             "Standard Package: ₹25,000/month",
+//             "Advanced Package: ₹40,000/month"
+//           ]
+//         }
+//       ]
+//     },
+//     "Custom_Software": {
+//       title: "Custom Software Development",
+//       icon: Code,
+//       detailedInfo: [
+//         {
+//           category: "Software Types",
+//           items: [
+//             "Business Management Systems",
+//             "Enterprise Resource Planning (ERP)",
+//             "Customer Relationship Management (CRM)",
+//             "Inventory Management",
+//             "HR Management Systems",
+//             "Custom Mobile Applications"
+//           ]
+//         },
+//         {
+//           category: "Development Process",
+//           items: [
+//             "Requirements Analysis",
+//             "System Design",
+//             "Development",
+//             "Testing",
+//             "Deployment",
+//             "Ongoing Support"
+//           ]
+//         },
+//         {
+//           category: "Pricing",
+//           items: [
+//             "Small Project: ₹50,000 - ₹1,50,000",
+//             "Medium Project: ₹1,50,000 - ₹5,00,000",
+//             "Complex Enterprise Solution: ₹5,00,000+"
+//           ]
+//         }
+//       ]
+//     },
+//     "CRM": {
+//       title: "CRM Solutions",
+//       icon: Database,
+//       detailedInfo: [
+//         {
+//           category: "CRM Features",
+//           items: [
+//             "Contact Management",
+//             "Sales Pipeline Tracking",
+//             "Lead Scoring",
+//             "Email Integration",
+//             "Reporting & Analytics",
+//             "Task Management"
+//           ]
+//         },
+//         {
+//           category: "Customization Levels",
+//           items: [
+//             "Standard CRM",
+//             "Industry-Specific CRM",
+//             "Enterprise-Level CRM"
+//           ]
+//         },
+//         {
+//           category: "Pricing",
+//           items: [
+//             "Basic CRM: ₹5,000/month",
+//             "Advanced CRM: ₹10,000/month",
+//             "Enterprise CRM: Custom Pricing"
+//           ]
+//         }
+//       ]
+//     }
+//   };
+
+//   const chatFlow = {
+//     welcome: {
+//       message: "Hello! I'm here to help. Could you please share your name?",
+//       next: 'getName',
+//     },
+//     getName: {
+//       message: 'Great! Could you please share your email address?',
+//       next: 'getEmail',
+//       updateField: 'name',
+//     },
+//     getEmail: {
+//       message: 'Thank you! And your mobile number?',
+//       next: 'getMobile',
+//       updateField: 'email',
+//     },
+//     getMobile: {
+//       message: "Perfect! Your details have been saved. How can I help you today? We offer:\n- WhatsApp API\n- Website Development\n- Social Media Management\n- Custom Software Development\n- CRM Solutions",
+//       next: 'serviceQuery',
+//       updateField: 'mobile',
+//     },
+//     serviceQuery: {
+//       message: "Choose a service to learn more:",
+//       next: 'serviceDetails',
+//     },
+//     readyForWhatsApp: {
+//       message: "Would you like to continue this conversation on WhatsApp? Type 'yes' to connect.",
+//       next: 'awaitingYes',
+//     },
+//     awaitingYes: {
+//       message: "Great! Type 'hello' to start chatting on WhatsApp!",
+//       next: 'awaitingHello',
+//     },
+//   };
+
+//   const [messages, setMessages] = useState([
+//     { text: chatFlow.welcome.message, type: 'bot' },
+//   ]);
+
+//   const renderServiceButtons = () => {
+//     return (
+//       <div className="grid grid-cols-3 gap-2 p-2">
+//         {Object.keys(serviceDetails).map((service) => {
+//           const ServiceIcon = serviceDetails[service].icon;
+//           return (
+//             <button
+//               key={service}
+//               onClick={() => {
+//                 setSelectedService(service);
+//                 setMessages(prev => [
+//                   ...prev, 
+//                   { 
+//                     text: `Selected: ${serviceDetails[service].title}`, 
+//                     type: 'user' 
+//                   },
+//                   {
+//                     type: 'bot',
+//                     text: serviceDetails[service].detailedInfo.map(section => 
+//                       `${section.category}:\n${section.items.join('\n')}`
+//                     ).join('\n\n')
+//                   }
+//                 ]);
+//               }}
+//               className="flex flex-col items-center justify-center p-2 bg-gray-100 rounded-lg hover:bg-gray-200"
+//             >
+//               <ServiceIcon size={24} className="mb-2" />
+//               <span className="text-xs text-center">
+//                 {service.replace('_', ' ')}
+//               </span>
+//             </button>
+//           );
+//         })}
+//       </div>
+//     );
+//   };
+
+//   const handleSubmit = (e) => {
+//     e.preventDefault();
+//     if (!message.trim()) return;
+
+//     setMessages(prev => [...prev, { text: message, type: 'user' }]);
+
+//     if (!isUserRegistered) {
+//       if (currentStep !== 'welcome') {
+//         setUserDetails(prev => ({
+//           ...prev,
+//           [chatFlow[currentStep].updateField]: message,
+//         }));
+
+//         if (chatFlow[currentStep].updateField === 'mobile') {
+//           setIsUserRegistered(true);
+//           setIsInServiceQuery(true);
+//         }
+//       }
+
+//       const nextStep = chatFlow[currentStep].next;
+//       setMessages(prev => [...prev, { text: chatFlow[nextStep].message, type: 'bot' }]);
+//       setCurrentStep(nextStep);
+//     } else if (!selectedService) {
+//       // If no service is selected yet, show service buttons
+//       setMessages(prev => [
+//         ...prev, 
+//         { 
+//           text: "Please select a service you're interested in:", 
+//           type: 'bot' 
+//         }
+//       ]);
+//       setCurrentStep('serviceQuery');
+//     } else {
+//       // Handle follow-up questions or redirect to WhatsApp
+//       setMessages(prev => [...prev, {
+//         text: "Would you like to discuss this further on WhatsApp? Type 'yes' to connect.",
+//         type: 'bot'
+//       }]);
+//       setCurrentStep('readyForWhatsApp');
+//     }
+
+//     setMessage('');
+//   };
+
+//   const resetWidget = () => {
+//     setIsWidgetOpen(false);
+//     setMessage('');
+//     setUserDetails({ name: '', email: '', mobile: '' });
+//     setCurrentStep('welcome');
+//     setMessages([{ text: chatFlow.welcome.message, type: 'bot' }]);
+//     setIsUserRegistered(false);
+//     setIsInServiceQuery(false);
+//     setSelectedService(null);
+//   };
+
+//   return (
+//     <div className="fixed bottom-4 z-[9999]">
+//       {!isWidgetOpen && (
+//         <button
+//           onClick={() => setIsWidgetOpen(true)}
+//           className="fixed bottom-4 rounded-full w-16 h-16 flex items-center justify-center shadow-lg"
+//           style={{
+//             backgroundColor: widgetOptions.WidgetColor,
+//             color: widgetOptions.TextColor,
+//             [widgetOptions.Position === 'left' ? 'left' : 'right']: '20px',
+//           }}
+//         >
+//           <MessageCircle size={30} />
+//         </button>
+//       )}
+
+//       {isWidgetOpen && (
+//         <div
+//           className="fixed bottom-24 w-96 max-w-full bg-white rounded-lg shadow-xl overflow-hidden"
+//           style={{
+//             [widgetOptions.Position === 'left' ? 'left' : 'right']: '30px',
+//           }}
+//         >
+//           <div
+//             className="p-4 flex items-center relative"
+//             style={{
+//               backgroundColor: widgetOptions.WidgetColor,
+//               color: widgetOptions.TextColor,
+//             }}
+//           >
+//             <img
+//               src={widgetOptions.SiteLogo}
+//               alt={widgetOptions.SiteName}
+//               className="w-12 h-12 rounded-full mr-3"
+//             />
+//             <div>
+//               <div className="font-bold">{widgetOptions.SiteName}</div>
+//               <div className="text-sm">{widgetOptions.SiteTag}</div>
+//             </div>
+//             <button
+//               onClick={resetWidget}
+//               className="absolute top-4 right-4"
+//             >
+//               <X size={20} color={widgetOptions.TextColor} />
+//             </button>
+//           </div>
+
+//           <div
+//             className="p-4 h-64 overflow-y-auto bg-cover"
+//             style={{
+//               backgroundImage: "url('https://datapartner.btpr.online/chat-bg.svg')",
+//             }}
+//           >
+//             {messages.map((msg, index) => (
+//               <div
+//                 key={index}
+//                 className={`${
+//                   msg.type === 'bot'
+//                     ? 'bg-white ml-4 mr-auto'
+//                     : 'bg-green-100 ml-auto mr-4'
+//                 } p-3 rounded-lg max-w-[75%] mb-4 relative`}
+//               >
+//                 {msg.text}
+//               </div>
+//             ))}
+//           </div>
+
+//           {currentStep === 'serviceQuery' && renderServiceButtons()}
+
+//           <form onSubmit={handleSubmit} className="p-4 bg-white flex items-center">
+//             <input
+//               type="text"
+//               value={message}
+//               onChange={(e) => setMessage(e.target.value)}
+//               placeholder={
+//                 currentStep === 'awaitingHello'
+//                   ? "Type 'hello' to start chatting..."
+//                   : 'Type your response...'
+//               }
+//               required
+//               className="flex-grow rounded-full px-4 py-2 mr-2 border border-gray-300"
+//             />
+//             <button
+//               type="submit"
+//               className="w-10 h-10 rounded-full flex items-center justify-center"
+//               style={{
+//                 backgroundColor: widgetOptions.WidgetColor,
+//                 color: widgetOptions.TextColor,
+//               }}
+//             >
+//               <Send size={18} />
+//             </button>
+//           </form>
+//         </div>
+//       )}
+//     </div>
+//   );
+// };
+
+// export default WhatsAppWidget;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 import React, { useState } from 'react';
 import { MessageCircle, Send, X, Globe, Code, BarChart, Database } from 'lucide-react';
 
@@ -681,11 +1231,17 @@ const WhatsAppWidget = () => {
     email: '',
     mobile: '',
   });
+  const [errors, setErrors] = useState({
+    name: '',
+    email: '',
+    mobile: '',
+  });
   const [currentStep, setCurrentStep] = useState('welcome');
   const [isUserRegistered, setIsUserRegistered] = useState(false);
   const [isInServiceQuery, setIsInServiceQuery] = useState(false);
   const [selectedService, setSelectedService] = useState(null);
 
+  // Widget configuration options
   const widgetOptions = {
     Position: 'right',
     Contact: '919784044883',
@@ -696,6 +1252,40 @@ const WhatsAppWidget = () => {
     TextColor: '#ffffff',
   };
 
+  // Validation functions
+  const validateEmail = (email) => {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!email.trim()) {
+      return "Email is required";
+    }
+    if (!emailRegex.test(email)) {
+      return "Please enter a valid email address";
+    }
+    return "";
+  };
+
+  const validateMobile = (mobile) => {
+    const mobileRegex = /^[6-9]\d{9}$/;
+    if (!mobile.trim()) {
+      return "Mobile number is required";
+    }
+    if (!mobileRegex.test(mobile)) {
+      return "Please enter a valid 10-digit mobile number";
+    }
+    return "";
+  };
+
+  const validateName = (name) => {
+    if (!name.trim()) {
+      return "Name is required";
+    }
+    if (name.trim().length < 2) {
+      return "Name should be at least 2 characters long";
+    }
+    return "";
+  };
+
+  // Service details configuration
   const serviceDetails = {
     "Website_Development": {
       title: "Website Development Services",
@@ -892,20 +1482,24 @@ const WhatsAppWidget = () => {
     }
   };
 
+  // Chat flow configuration with validation
   const chatFlow = {
     welcome: {
       message: "Hello! I'm here to help. Could you please share your name?",
       next: 'getName',
+      validator: validateName,
     },
     getName: {
       message: 'Great! Could you please share your email address?',
       next: 'getEmail',
       updateField: 'name',
+      validator: validateEmail,
     },
     getEmail: {
       message: 'Thank you! And your mobile number?',
       next: 'getMobile',
       updateField: 'email',
+      validator: validateMobile,
     },
     getMobile: {
       message: "Perfect! Your details have been saved. How can I help you today? We offer:\n- WhatsApp API\n- Website Development\n- Social Media Management\n- Custom Software Development\n- CRM Solutions",
@@ -941,14 +1535,14 @@ const WhatsAppWidget = () => {
               onClick={() => {
                 setSelectedService(service);
                 setMessages(prev => [
-                  ...prev, 
-                  { 
-                    text: `Selected: ${serviceDetails[service].title}`, 
-                    type: 'user' 
+                  ...prev,
+                  {
+                    text: `Selected: ${serviceDetails[service].title}`,
+                    type: 'user'
                   },
                   {
                     type: 'bot',
-                    text: serviceDetails[service].detailedInfo.map(section => 
+                    text: serviceDetails[service].detailedInfo.map(section =>
                       `${section.category}:\n${section.items.join('\n')}`
                     ).join('\n\n')
                   }
@@ -971,36 +1565,55 @@ const WhatsAppWidget = () => {
     e.preventDefault();
     if (!message.trim()) return;
 
-    setMessages(prev => [...prev, { text: message, type: 'user' }]);
+    if (!isUserRegistered && currentStep !== 'welcome') {
+      const currentField = chatFlow[currentStep].updateField;
+      const validator = chatFlow[currentStep].validator;
 
-    if (!isUserRegistered) {
-      if (currentStep !== 'welcome') {
-        setUserDetails(prev => ({
-          ...prev,
-          [chatFlow[currentStep].updateField]: message,
-        }));
-
-        if (chatFlow[currentStep].updateField === 'mobile') {
-          setIsUserRegistered(true);
-          setIsInServiceQuery(true);
+      if (validator) {
+        const error = validator(message);
+        if (error) {
+          setErrors(prev => ({
+            ...prev,
+            [currentField]: error
+          }));
+          setMessages(prev => [...prev,
+          { text: message, type: 'user' },
+          { text: error, type: 'bot-error' }
+          ]);
+          setMessage('');
+          return;
         }
       }
 
+      setUserDetails(prev => ({
+        ...prev,
+        [currentField]: message,
+      }));
+
+      setErrors(prev => ({
+        ...prev,
+        [currentField]: ''
+      }));
+
+      if (chatFlow[currentStep].updateField === 'mobile') {
+        setIsUserRegistered(true);
+        setIsInServiceQuery(true);
+      }
+    }
+
+    setMessages(prev => [...prev, { text: message, type: 'user' }]);
+
+    if (!isUserRegistered) {
       const nextStep = chatFlow[currentStep].next;
       setMessages(prev => [...prev, { text: chatFlow[nextStep].message, type: 'bot' }]);
       setCurrentStep(nextStep);
     } else if (!selectedService) {
-      // If no service is selected yet, show service buttons
       setMessages(prev => [
-        ...prev, 
-        { 
-          text: "Please select a service you're interested in:", 
-          type: 'bot' 
-        }
+        ...prev,
+        { text: "Please select a service you're interested in:", type: 'bot' }
       ]);
       setCurrentStep('serviceQuery');
     } else {
-      // Handle follow-up questions or redirect to WhatsApp
       setMessages(prev => [...prev, {
         text: "Would you like to discuss this further on WhatsApp? Type 'yes' to connect.",
         type: 'bot'
@@ -1020,7 +1633,22 @@ const WhatsAppWidget = () => {
     setIsUserRegistered(false);
     setIsInServiceQuery(false);
     setSelectedService(null);
+    setErrors({ name: '', email: '', mobile: '' });
   };
+
+  const renderMessage = (msg, index) => (
+    <div
+      key={index}
+      className={`${msg.type === 'bot'
+          ? 'bg-white ml-4 mr-auto'
+          : msg.type === 'bot-error'
+            ? 'bg-red-100 ml-4 mr-auto'
+            : 'bg-green-100 ml-auto mr-4'
+        } p-3 rounded-lg max-w-[75%] mb-4 relative`}
+    >
+      {msg.text}
+    </div>
+  );
 
   return (
     <div className="fixed bottom-4 z-[9999]">
@@ -1075,18 +1703,7 @@ const WhatsAppWidget = () => {
               backgroundImage: "url('https://datapartner.btpr.online/chat-bg.svg')",
             }}
           >
-            {messages.map((msg, index) => (
-              <div
-                key={index}
-                className={`${
-                  msg.type === 'bot'
-                    ? 'bg-white ml-4 mr-auto'
-                    : 'bg-green-100 ml-auto mr-4'
-                } p-3 rounded-lg max-w-[75%] mb-4 relative`}
-              >
-                {msg.text}
-              </div>
-            ))}
+            {messages.map((msg, index) => renderMessage(msg, index))}
           </div>
 
           {currentStep === 'serviceQuery' && renderServiceButtons()}
