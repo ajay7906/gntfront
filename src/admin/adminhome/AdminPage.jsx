@@ -309,8 +309,8 @@ const Dashboard = () => {
   // Dashboard specific state and logic
   const dashboardCards = [
     { icon: Users, title: 'Total Users', value: '8,249', change: 12.5, color: 'bg-blue-500' },
-    { icon: DollarSign, title: 'Revenue', value: '$23,456', change: 8.2, color: 'bg-green-500' },
-    { icon: Activity, title: 'Active Sessions', value: '1,234', change: -3.8, color: 'bg-purple-500' },
+    // { icon: DollarSign, title: 'Revenue', value: '$23,456', change: 8.2, color: 'bg-green-500' },
+    // { icon: Activity, title: 'Active Sessions', value: '1,234', change: -3.8, color: 'bg-purple-500' },
     { icon: BarChart2, title: 'Total Products', value: '456', change: 5.3, color: 'bg-orange-500' },
   ];
 
@@ -442,7 +442,7 @@ const AdminPanel = () => {
     { id: 'homeImageSlider', icon: ImagePlus, label: 'Images' },
     { id: 'calendar', icon: Calendar, label: 'Calendar' },
     { id: 'messages', icon: MessageSquare, label: 'Messages' },
-    { id: 'settings', icon: Settings, label: 'Settings' },
+    // { id: 'settings', icon: Settings, label: 'Settings' },
   ];
 
   const renderPageContent = () => {
