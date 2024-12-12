@@ -1484,7 +1484,7 @@ const WhatsAppWidget = () => {
     }
   };
 
-  // Chat flow configuration with validation
+  // Chat flow configuration with valiatation
   console.log(
     userDetails
   );

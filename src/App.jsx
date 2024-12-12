@@ -36,6 +36,8 @@ import TermsAndConditions from './pages/termsancondi/TermsAndCondition';
 import PolicyPage from './pages/policy/PolicyPage';
 import NotFound from './component/notfound/NotFound';
 import PaymentForm from './pages/payment/PaymentForm';
+import SuccessPaymentPage from './pages/successpayment/SuccessPaymentPage';
+import FailurePaymentPage from './pages/failurepayment/FailurePaymentPage';
 const ProtectedRoute = ({ children }) => {
   const adminToken = localStorage.getItem('adminToken');
   if (!adminToken) {
@@ -89,6 +91,9 @@ const App = () => {
           <Route path='/termsandconditions' element={< TermsAndConditions/>} />
           <Route path='/policy' element={< PolicyPage/>} />
           <Route path='/payment' element={< PaymentForm/>} />
+          <Route path='/success' element={< SuccessPaymentPage/>} />
+          <Route path='/failure' element={< FailurePaymentPage/>} />
+
           <Route path='*' element={< NotFound/>} />
 
 
