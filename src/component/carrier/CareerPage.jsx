@@ -375,6 +375,7 @@ import React, { useState } from 'react';
 import { Search, MapPin, Briefcase, Clock, ChevronRight, Users, Heart, X, Upload, FilePlus, User, Mail, FileText, Check } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import WhyJoinUs from '../careerCompo/WhyJoinUs';
+import ApplicationForm from '../careerCompo/ApplicationForm';
 
 // Job Application Popup Component
 const JobApplicationPopup = ({ isOpen, onClose, jobTitle }) => {
@@ -582,16 +583,21 @@ const JobCard = ({ title, location, type, experience, department }) => {
                         onClick={() => setIsPopupOpen(true)}
                         className="flex items-center text-blue-400 hover:text-blue-300 transition-colors"
                     >
-                        Apply Now <ChevronRight size={16} className="ml-1" />
+                        Apply Now <ChevronRight size={16} className="ml-1" />      
                     </button>
                 </div>
             </div>
 
-            <JobApplicationPopup
+            {/* <JobApplicationPopup
                 isOpen={isPopupOpen}
                 onClose={() => setIsPopupOpen(false)}
                 jobTitle={title}
-            />
+            /> */} 
+            <ApplicationForm   
+            isOpen={isPopupOpen}
+            onClose={() => setIsPopupOpen(false)}
+            // jobTitle={title}
+            /> 
         </>
     );
 };
