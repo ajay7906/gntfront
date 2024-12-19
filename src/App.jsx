@@ -38,6 +38,7 @@ import NotFound from './component/notfound/NotFound';
 import PaymentForm from './pages/payment/PaymentForm';
 import SuccessPaymentPage from './pages/successpayment/SuccessPaymentPage';
 import FailurePaymentPage from './pages/failurepayment/FailurePaymentPage';
+import ApplicationForm from './component/careerCompo/ApplicationForm';
 const ProtectedRoute = ({ children }) => {
   const adminToken = localStorage.getItem('adminToken');
   if (!adminToken) {
@@ -67,7 +68,8 @@ const App = () => {
         
         <ContactFormPopup />
         
-        <Routes>
+        <Routes> 
+          <Route path='/form' element={<ApplicationForm/>}/>
           <Route path="/" element={<Hero />} />
           <Route path="/about/aboutus" element={<AboutUs />} />
           <Route path="/about/founder" element={<FounderMessage />} />

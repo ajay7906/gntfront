@@ -374,6 +374,7 @@
 import React, { useState } from 'react';
 import { Search, MapPin, Briefcase, Clock, ChevronRight, Users, Heart, X, Upload, FilePlus, User, Mail, FileText, Check } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
+import WhyJoinUs from '../careerCompo/WhyJoinUs';
 
 // Job Application Popup Component
 const JobApplicationPopup = ({ isOpen, onClose, jobTitle }) => {
@@ -692,7 +693,8 @@ const CareersPage = () => {
                         }}
                     />
                 </div>
-            </section>
+            </section> 
+            <WhyJoinUs/>
 
             {/* Filters Section */}
             <section className="py-12 px-6 bg-[#f2f2f2] rounded-md">
