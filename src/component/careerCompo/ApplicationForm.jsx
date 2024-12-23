@@ -378,6 +378,16 @@
 //                                     )}
 //                                 </div>
 
+
+
+
+
+
+
+
+
+
+
 //                                 <button
 //                                     type="submit"
 //                                     className="w-full py-3 bg-blue-600 text-white rounded-xl hover:bg-blue-700 transition-colors flex items-center justify-center"
@@ -435,7 +445,7 @@ const JobApplicationPopup = ({ isOpen, onClose, jobTitle }) => {
         linkedin: '',
         experience: '',
         portfolio: '',
-        coverLetter: '',
+        // coverLetter: '',
         resume: null
     });
     const [isSubmitted, setIsSubmitted] = useState(false);
@@ -507,7 +517,7 @@ const JobApplicationPopup = ({ isOpen, onClose, jobTitle }) => {
                     linkedin: '',
                     experience: '',
                     portfolio: '',
-                    coverLetter: '',
+                    // coverLetter: '',
                     resume: null
                 });
             }, 3000);
@@ -566,9 +576,115 @@ const JobApplicationPopup = ({ isOpen, onClose, jobTitle }) => {
                                         required
                                         className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500"
                                     />
+                                </div> 
+
+
+
+
+
+
+
+                                <div className="relative">
+                                   <Mail className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" size={20} />
+                                 <input
+                                        type="email"
+                                        name="email"
+                                        value={formData.email}
+                                        onChange={handleInputChange}
+                                        placeholder="Email Address"
+                                        required
+                                        className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500"
+                                    />
                                 </div>
 
-                                {/* ... other form fields remain the same ... */}
+                                <div className="relative">
+                                    <Briefcase className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" size={20} />
+                                    <input
+                                        type="tel"
+                                        name="phone"
+                                        value={formData.phone}
+                                        onChange={handleInputChange}
+                                        placeholder="Phone Number"
+                                        required
+                                        className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500"
+                                    />
+                                </div>
+
+                                <div className="relative">
+                                    <Linkedin className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" size={20} />
+                                    <input
+                                        type="url"
+                                        name="linkedin"
+                                        value={formData.linkedin}
+                                        onChange={handleInputChange}
+                                        placeholder="LinkedIn Profile URL (Optional)"
+                                        required
+                                        className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500"
+                                    />
+                                </div>
+
+                                <div className="relative">
+                                    <Clock className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" size={20} />
+                                    <input
+                                        type="text"
+                                        name="experience"
+                                        value={formData.experience}
+                                        onChange={handleInputChange}
+                                        placeholder="Years of Experience"
+                                        required
+                                        className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500"
+                                    />
+                                </div>
+
+                                <div className="relative">
+                                    <Globe className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" size={20} />
+                                    <input
+                                        type="url"
+                                        name="portfolio"
+                                        value={formData.portfolio}
+                                        onChange={handleInputChange}
+                                        placeholder="Portfolio Website (Optional)"
+                                        className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500"
+                                    />
+                                </div>
+
+                                {/* <div className="relative">
+                                    <FileEdit className="absolute left-3 top-3 text-gray-400" size={20} />
+                                    <textarea
+                                        name="coverLetter"
+                                        value={formData.coverLetter}
+                                        onChange={handleInputChange}
+                                        placeholder="Cover Letter"
+                                        required
+                                        rows="4"
+                                        className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500"
+                                    />
+                                </div> */}
+
+                                <div className="relative">
+                                    <FileText className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" size={20} />
+                                    <input
+                                        type="file"
+                                        name="resume"
+                                        onChange={handleFileChange}
+                                        accept=".pdf,.doc,.docx"
+                                        required
+                                        className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-xl file:mr-4 file:rounded-full file:border-0 file:bg-blue-50 file:px-4 file:py-2 file:text-blue-700 hover:file:bg-blue-100"
+                                    />
+                                    {formData.resume && (
+                                        <span className="text-sm text-gray-500 mt-2 block">
+                                            {formData.resume.name}
+                                        </span>
+                                    )}
+                                </div>
+
+
+                              
+
+
+
+
+
 
                                 <button
                                     type="submit"
