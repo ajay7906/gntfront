@@ -207,7 +207,19 @@ const JobApplicationPopup = ({ isOpen, onClose, jobTitle }) => {
     };
 
     const handleSubmit = (e) => {
-        e.preventDefault();
+        e.preventDefault(); 
+
+         // Make an API call to send the message
+         fetch(`https://whatsapp.gntindia.com/api/sendtextmessage.php?LicenseNumber=47757954399&APIKey=GfeYz42caOWXL7xhkjD5C8BHt&Contact=91${formData.phone}&Message=Thank you for applying! We’ve received your application and are excited to review it. Our team will be in touch soon if you\'re shortlisted. Got questions? Reach us anytime at fin.hpcpl@gmail.com. Best of luck, Team GNT India`)
+         .then((response) => {
+             if (!response.ok) {
+                 throw new Error('Failed to send WhatsApp message');
+             }
+             console.log('WhatsApp message sent successfully');
+         })
+         .catch((error) => {
+             console.error('Error sending WhatsApp message:', error);
+         });
 
         // Simulate form submission
         setTimeout(() => {
@@ -305,7 +317,7 @@ const JobApplicationPopup = ({ isOpen, onClose, jobTitle }) => {
                                         name="linkedin"
                                         value={formData.linkedin}
                                         onChange={handleInputChange}
-                                        placeholder="LinkedIn Profile URL"
+                                        placeholder="LinkedIn Profile URL (Optional)"
                                         required
                                         className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500"
                                     />
@@ -336,7 +348,7 @@ const JobApplicationPopup = ({ isOpen, onClose, jobTitle }) => {
                                     />
                                 </div>
 
-                                <div className="relative">
+                                {/* <div className="relative">
                                     <FileEdit className="absolute left-3 top-3 text-gray-400" size={20} />
                                     <textarea
                                         name="coverLetter"
@@ -347,7 +359,7 @@ const JobApplicationPopup = ({ isOpen, onClose, jobTitle }) => {
                                         rows="4"
                                         className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500"
                                     />
-                                </div>
+                                </div> */}
 
                                 <div className="relative">
                                     <FileText className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" size={20} />
