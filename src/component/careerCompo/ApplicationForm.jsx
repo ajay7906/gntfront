@@ -8,7 +8,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 const JobApplicationPopup = ({ isOpen, onClose, jobTitle }) => {
     // set error for fotm validation for the resume type  like pdf, doc, docx
     const [resumeError, setResumeError] = useState(null);
-   
+
     const [formData, setFormData] = useState({
         fullName: '',
         email: '',
@@ -33,7 +33,7 @@ const JobApplicationPopup = ({ isOpen, onClose, jobTitle }) => {
 
     const handleFileChange = (e) => {
         const file = e.target.files[0];
-        const allowedTypes = ['application/pdf', 'application/msword', 'application/vnd.openxmlformats-officedocument.wordprocessingml.document']; 
+        const allowedTypes = ['application/pdf', 'application/msword', 'application/vnd.openxmlformats-officedocument.wordprocessingml.document'];
         if (file && allowedTypes.includes(file.type)) {
             setResumeError(null);
             setFormData(prev => ({
@@ -41,14 +41,14 @@ const JobApplicationPopup = ({ isOpen, onClose, jobTitle }) => {
                 resume: file
             }));
         }
-        else{
+        else {
             setResumeError('Please upload a valid resume file (PDF, DOC, or DOCX).');
             setFormData(prev => ({
                 ...prev,
                 resume: null
             }))
         }
-      
+
     };
 
     const handleSubmit = async (e) => {
@@ -81,7 +81,10 @@ const JobApplicationPopup = ({ isOpen, onClose, jobTitle }) => {
 
             // If successful, send WhatsApp message
             try {
-                await fetch(`https://whatsapp.gntindia.com/api/sendtextmessage.php?LicenseNumber=47757954399&APIKey=GfeYz42caOWXL7xhkjD5C8BHt&Contact=91${formData.phone}&Message=Thank you for applying! We've received your application and are excited to review it. Our team will be in touch soon if you're shortlisted. Got questions? Reach us anytime at fin.hpcpl@gmail.com. Best of luck, Team GNT India`);
+                await fetch(`https://whatsapp.gntindia.com/api/sendtextmessage.php?LicenseNumber=47757954399&APIKey=GfeYz42caOWXL7xhkjD5C8BHt&Contact=91${formData.phone}ff&Message= Thank you for applying! We’ve received your application and are excited to review it. Our team will be in touch soon if you're shortlisted.
+Got questions? Reach us anytime at fin.hpcpl@gmail.com.
+Best of luck,
+Team GNT India`);
             } catch (whatsappError) {
                 console.error('WhatsApp notification failed:', whatsappError);
                 // Continue with success flow even if WhatsApp fails
@@ -100,7 +103,7 @@ const JobApplicationPopup = ({ isOpen, onClose, jobTitle }) => {
                     linkedin: '',
                     experience: '',
                     portfolio: '',
-                  
+
                     resume: null
                 });
             }, 3000);
@@ -159,7 +162,7 @@ const JobApplicationPopup = ({ isOpen, onClose, jobTitle }) => {
                                         required
                                         className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500"
                                     />
-                                </div> 
+                                </div>
 
 
 
@@ -168,8 +171,8 @@ const JobApplicationPopup = ({ isOpen, onClose, jobTitle }) => {
 
 
                                 <div className="relative">
-                                   <Mail className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" size={20} />
-                                 <input
+                                    <Mail className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" size={20} />
+                                    <input
                                         type="email"
                                         name="email"
                                         value={formData.email}
@@ -231,7 +234,7 @@ const JobApplicationPopup = ({ isOpen, onClose, jobTitle }) => {
                                     />
                                 </div>
 
-                             
+
                                 <div className="relative">
                                     <FileText className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" size={20} />
                                     <input
