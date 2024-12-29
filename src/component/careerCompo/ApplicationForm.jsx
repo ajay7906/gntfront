@@ -13,7 +13,7 @@ const JobApplicationPopup = ({ isOpen, onClose, jobTitle }) => {
         fullName: '',
         email: '',
         phone: '',
-        linkedin: '',
+        // linkedin: '',
         experience: '',
         portfolio: '',
         // coverLetter: '',
@@ -62,7 +62,7 @@ const JobApplicationPopup = ({ isOpen, onClose, jobTitle }) => {
             formDataToSend.append('fullName', formData.fullName);
             formDataToSend.append('email', formData.email);
             formDataToSend.append('phone', formData.phone);
-            formDataToSend.append('linkedin', formData.linkedin);
+            // formDataToSend.append('linkedin', formData.linkedin);
             formDataToSend.append('experience', formData.experience);
             formDataToSend.append('portfolio', formData.portfolio);
             formDataToSend.append('jobTitle', jobTitle);
@@ -100,7 +100,7 @@ Team GNT India`);
                     fullName: '',
                     email: '',
                     phone: '',
-                    linkedin: '',
+                    // linkedin: '',
                     experience: '',
                     portfolio: '',
 
@@ -196,7 +196,7 @@ Team GNT India`);
                                     />
                                 </div>
 
-                                <div className="relative">
+                                {/* <div className="relative">
                                     <Linkedin className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" size={20} />
                                     <input
                                         type="url"
@@ -207,7 +207,7 @@ Team GNT India`);
                                         required
                                         className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500"
                                     />
-                                </div>
+                                </div> */}
 
                                 <div className="relative">
                                     <Clock className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" size={20} />
