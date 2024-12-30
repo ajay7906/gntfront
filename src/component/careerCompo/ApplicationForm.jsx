@@ -81,10 +81,7 @@ const JobApplicationPopup = ({ isOpen, onClose, jobTitle }) => {
 
             // If successful, send WhatsApp message
             try {
-                await fetch(`https://whatsapp.gntindia.com/api/sendtextmessage.php?LicenseNumber=47757954399&APIKey=GfeYz42caOWXL7xhkjD5C8BHt&Contact=91${formData.phone}ff&Message= Thank you for applying! We’ve received your application and are excited to review it. Our team will be in touch soon if you're shortlisted.
-Got questions? Reach us anytime at fin.hpcpl@gmail.com.
-Best of luck,
-Team GNT India`, {mode:'no-cors'});
+                await fetch(`https://whatsapp.gntindia.com/api/sendtemplate.php?LicenseNumber=47757954399&APIKey=GfeYz42caOWXL7xhkjD5C8BHt&Contact=91${formData.phone}&Template=jobapply`, {mode:'no-cors'});
             } catch (whatsappError) {
                 console.error('WhatsApp notification failed:', whatsappError);
                 // Continue with success flow even if WhatsApp fails
