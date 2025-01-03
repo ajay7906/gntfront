@@ -33,7 +33,7 @@ const Career = () => {
     const fetchJobs = async () => {
         try {
             setLoading(true);
-            const response = await axios.get("https://gntindia.com:5000/api/v1/job/getJob", {
+            const response = await axios.get("https://gntindia.com:5000/api/v1/job/getjob", {
                 params: {
                     department: departmentFilter,
                     location: locationFilter
@@ -77,7 +77,7 @@ const Career = () => {
                 setShowUpdateModal(false);
                 toast.success("Job updated successfully!");
             } else {
-                await axios.post("https://gntindia.com:5000/api/v1/job/getjob", jobData);
+                await axios.post("https://gntindia.com:5000/api/v1/job/createjob", jobData);
                 setShowAddModal(false);
                 toast.success("Job added successfully!");
             }
