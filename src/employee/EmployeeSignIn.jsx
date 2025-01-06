@@ -2,16 +2,17 @@
 // Updated LoginPage.jsx
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { useAuth } from '../context/useAuth';
+// import { useAuth } from '../context/useAuth';
+import { useContactForm } from '../context/ContactFormContext';
  //import { useAuth } from './AuthContext';
 
-const LoginPage = () => {
+const EmployerSignin = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [error, setError] = useState('');
   const [isLoading, setIsLoading] = useState(false);
   const navigate = useNavigate();
-  const { login } = useAuth();
+  const { login } = useContactForm();
 
   const handleLogin = async (e) => {
     e.preventDefault();
@@ -20,7 +21,7 @@ const LoginPage = () => {
 
     try {
       await login(email, password);
-      navigate('/');
+      navigate('/employeer/home');
     } catch (err) {
       setError(err.message || 'Login failed. Please try again.');
     } finally {
@@ -89,4 +90,4 @@ const LoginPage = () => {
 
 
 
-export default LoginPage;
+export default EmployerSignin;

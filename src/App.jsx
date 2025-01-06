@@ -1,5 +1,3 @@
-
-
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import Navbar from './component/nav/Navbar';
@@ -39,6 +37,12 @@ import PaymentForm from './pages/payment/PaymentForm';
 import SuccessPaymentPage from './pages/successpayment/SuccessPaymentPage';
 import FailurePaymentPage from './pages/failurepayment/FailurePaymentPage';
 import ApplicationForm from './component/careerCompo/ApplicationForm';
+import EmployerSignin from './employee/EmployeeSignIn';
+import EmployeersProtectedRoute from './employee/protective/ProtectiveRoute';
+import EmployeeNavbar from './employee/EmployeeNavbar';
+import AdminDashboard from './employee/AdminDashboard';
+import EmployeeTable from './employee/EmployeeTable';
+import AdminTaskTable from './employee/TaskTable';
 const ProtectedRoute = ({ children }) => {
   const adminToken = localStorage.getItem('adminToken');
   if (!adminToken) {
@@ -49,7 +53,9 @@ const ProtectedRoute = ({ children }) => {
 
 const App = () => {
   // Check if current path is admin route or login route
-  const isAdminRoute = window.location.pathname.includes('/admin') || window.location.pathname.includes('/login');
+  const isAdminRoute = window.location.pathname.includes('/admin');
+  const isEmployeeRoute = window.location.pathname.includes('/employee');
+  const isLoginRoute = window.location.pathname.includes('/login');
 
  
 
@@ -60,11 +66,7 @@ const App = () => {
     <ContactFormProvider>
       <Router>
         {/* Conditionally render Navbar for non-admin routes */}
-        {!isAdminRoute && (
-          <>
-            <Navbar />
-          </>
-        )}
+        {!isAdminRoute && !isEmployeeRoute && !isLoginRoute && <Navbar />}
         
         <ContactFormPopup />
         
@@ -100,7 +102,10 @@ const App = () => {
 
 
           {/* Login Route */}
-          <Route path="/login" element={<LoginForm />} />
+          <Route path="/login" element={<LoginForm />} /> 
+
+          {/* employeer login page */} 
+          <Route path="/employeer/login" element={<EmployerSignin/>} />
           
           {/* Protected Admin Route */}
           <Route
@@ -110,8 +115,75 @@ const App = () => {
                 <AdminPanel />
               </ProtectedRoute>
             }
+          />  
+
+
+
+
+
+
+
+          {/* Employeer admin panel */} 
+
+          <Route
+            path="/employeer/home"
+            element={
+              <EmployeersProtectedRoute>
+                <>
+                  <EmployeeNavbar />
+                  <AdminDashboard />
+                </>
+              </EmployeersProtectedRoute>
+            }
           />
-        </Routes>
+
+          <Route
+            path="/employeer/user"
+            element={
+              <EmployeersProtectedRoute> 
+                <>
+                <EmployeeNavbar />
+                  <EmployeeTable />
+                </>
+              </EmployeersProtectedRoute>
+            }
+          />
+
+          <Route
+            path="/employeer/task"
+            element={
+              <EmployeersProtectedRoute>
+                <>
+                <EmployeeNavbar />
+                  <AdminTaskTable />
+                </>
+              </EmployeersProtectedRoute>
+            }
+          />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        </Routes>  
+
+      
+
+
+
 
         {/* Conditionally render Footer for non-admin routes */}
         {!isAdminRoute && (

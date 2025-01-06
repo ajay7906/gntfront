@@ -2,8 +2,10 @@
 
 import React, { useEffect, useState } from 'react';
 import { Search, Plus, Edit2, Trash2, ChevronLeft, ChevronRight, UserPlus } from 'lucide-react';
-import AssignmentModal from '../../components/AssignmentDialog';
-import { useAuth } from '../../context/useAuth';
+// import AssignmentModal from '../../components/AssignmentDialog';
+//import { useAuth } from '../../context/useAuth';
+import { useContactForm } from '../context/ContactFormContext';
+import AssignmentDialog from './AssignmentDialog';
 
 const INITIAL_TASK = {
   title: '',
@@ -46,7 +48,7 @@ const AdminTaskTable = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const [isAssignmentOpen, setIsAssignmentOpen] = useState(false);
   const [selectedTaskForAssignment, setSelectedTaskForAssignment] = useState(null);
-  const {getAllTask, allTask, setAllTask} = useAuth();
+  const {getAllTask, allTask, setAllTask} = useContactForm();
   useEffect(()=>{
     getAllTask();
 
@@ -320,7 +322,7 @@ const AdminTaskTable = () => {
         </table>
       </div>
 
-      <AssignmentModal
+      <AssignmentDialog
         isOpen={isAssignmentOpen}
         onClose={() => {
           setIsAssignmentOpen(false);

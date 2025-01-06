@@ -2,7 +2,8 @@
 
 import React, { useState, useEffect } from 'react';
 import { Search, Plus, Edit2, Trash2, ChevronLeft, ChevronRight, Eye, EyeOff } from 'lucide-react';
-import { useAuth } from '../../context/useAuth';
+import { useContactForm } from '../context/ContactFormContext';
+//import { useAuth } from '../../context/useAuth';
 //import { useAuth } from './AuthContext';
 
 const INITIAL_EMPLOYEE = {
@@ -21,7 +22,7 @@ const STATUS_COLORS = {
 const ITEMS_PER_PAGE = 10;
 
 const EmployeeTable = () => {
-  const { employees, fetchEmployees, addEmployee, updateEmployee, deleteEmployee } = useAuth();
+  const { employees, fetchEmployees, addEmployee, updateEmployee, deleteEmployee } = useContactForm();
   const [searchTerm, setSearchTerm] = useState('');
   const [isEditing, setIsEditing] = useState(false);
   const [showForm, setShowForm] = useState(false);

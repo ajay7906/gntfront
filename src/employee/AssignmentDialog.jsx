@@ -9,7 +9,7 @@ const SAMPLE_EMPLOYEES = [
   { id: 4, name: 'Sarah Williams', department: 'Engineering', email: 'sarah@example.com' },
 ];
 
-const AssignmentModal = ({ isOpen, onClose, onAssign, currentAssignee }) => {
+const AssignmentDialog = ({ isOpen, onClose, onAssign, currentAssignee }) => {
   const [searchTerm, setSearchTerm] = useState('');
   const [selectedEmployee, setSelectedEmployee] = useState(null);
 
@@ -122,4 +122,4 @@ const AssignmentModal = ({ isOpen, onClose, onAssign, currentAssignee }) => {
 
 
 
-export default AssignmentModal;
+export default AssignmentDialog;

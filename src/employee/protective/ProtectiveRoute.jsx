@@ -1,15 +1,18 @@
 import { Navigate } from 'react-router-dom';
-import { useAuth } from '../context/useAuth';
+import { useContactForm } from '../../context/ContactFormContext';
+//import { useAuth } from '../context/useAuth';
 // import { useAuth } from './AuthContext';
 
-const ProtectedRoute = ({ children }) => {
-  const { isAuthenticated } = useAuth();
+const EmployeersProtectedRoute = ({ children }) => {
+  const { isAuthenticated } = useContactForm();
+  console.log(isAuthenticated);
+  
   
   if (!isAuthenticated) {
-    return <Navigate to="/login" replace />;
+    return <Navigate to="/employeer/login" replace />;
   }
 
   return children;
 };
 
-export default ProtectedRoute;
+export default EmployeersProtectedRoute;

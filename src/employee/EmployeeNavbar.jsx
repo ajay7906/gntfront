@@ -29,8 +29,8 @@ const EmployeeNavbar = () => {
 
   const navItems = [
     { icon: <Home size={20} />, label: 'Dashboard', href: '/' },
-    { icon: <Users size={20} />, label: 'Users', href: '/user' },
-    { icon: <FileText size={20} />, label: 'Tasks', href: '/task' }
+    { icon: <Users size={20} />, label: 'Users', href: '/employeer/user' },
+    { icon: <FileText size={20} />, label: 'Tasks', href: '/employeer/task' }
   ];
 
   return (
@@ -56,14 +56,14 @@ const EmployeeNavbar = () => {
             {/* Desktop Navigation Items */}
             <div className="hidden md:flex items-center ml-10 space-x-4">
               {navItems.map((item, index) => (
-                <a
+                <Link
                   key={index}
-                  href={item.href}
+                  to={item.href}
                   className="flex items-center px-3 py-2 rounded-md text-gray-600 hover:bg-gray-100 hover:text-blue-600"
                 >
                   {item.icon}
                   <span className="ml-2">{item.label}</span>
-                </a>
+                </Link>
               ))}
             </div>
           </div>
@@ -153,14 +153,14 @@ const EmployeeNavbar = () => {
         <div className="md:hidden bg-white border-t">
           <div className="px-2 pt-2 pb-3 space-y-1">
             {navItems.map((item, index) => (
-              <a
+              <Link
                 key={index}
-                href={item.href}
+                to={item.href}
                 className="flex items-center px-3 py-2 rounded-md text-gray-600 hover:bg-gray-100"
               >
                 {item.icon}
                 <span className="ml-2">{item.label}</span>
-              </a>
+              </Link>
             ))}
           </div>
         </div>
