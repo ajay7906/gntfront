@@ -14,7 +14,7 @@ export const ContactFormProvider = ({ children }) => {
 
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [loading, setLoading] = useState(true);
-  const [token, setToken] = useState(localStorage.getItem('token'));
+  const [token, setToken] = useState(localStorage.getItem('employeeToken'));
   const [employees, setEmployees] = useState([]);
   const [allTask, setAllTask] = useState([]);
 
