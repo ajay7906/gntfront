@@ -31,7 +31,7 @@ export const ContactFormProvider = ({ children }) => {
 
   const fetchEmployees = async () => {
     try {
-      const response = await fetch('http://localhost:3000/api/employees', {
+      const response = await fetch('https://gntindia.com:3000/api/v1/emplyeers/admins/allemplyees', {
         headers: { 'Authorization': `Bearer ${token}` }
       });
       if (response.ok) {
@@ -45,7 +45,7 @@ export const ContactFormProvider = ({ children }) => {
 
   const addEmployee = async (employeeData) => {
     try {
-      const response = await fetch('http://localhost:3000/api/employees', {
+      const response = await fetch('https://gntindia.com:3000/api/v1/emplyeers/admins/createEmployee', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -66,7 +66,7 @@ export const ContactFormProvider = ({ children }) => {
 
   const updateEmployee = async (id, employeeData) => {
     try {
-      const response = await fetch(`http://localhost:3000/api/employees/${id}`, {
+      const response = await fetch(`https://gntindia.com:3000/api/v1/emplyeers/${id}`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',
@@ -87,7 +87,7 @@ export const ContactFormProvider = ({ children }) => {
 
   const deleteEmployee = async (id) => {
     try {
-      const response = await fetch(`http://localhost:3000/api/employees/${id}`, {
+      const response = await fetch(`https://gntindia.com:3000/api/v1/emplyeers/${id}`, {
         method: 'DELETE',
         headers: { 'Authorization': `Bearer ${token}` }
       });
@@ -103,7 +103,7 @@ export const ContactFormProvider = ({ children }) => {
   };
   const getAllTask = async () =>{
     try {
-      const response = await fetch('http://localhost:3000/api/task/alltask', { 
+      const response = await fetch('https://gntindia.com:3000/api/v1/emplyeers/admins/getalltask', { 
         method:'GET',
         headers: { 'Authorization': `Bearer ${token}` } 
 
@@ -122,7 +122,7 @@ export const ContactFormProvider = ({ children }) => {
 
   const login = async (email, password) => {
     try {
-      const response = await fetch('http://localhost:3000/api/login', {
+      const response = await fetch('https://gntindia.com:3000/api/v1/emplyeers/adminsemployee/login', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ email, password }),
