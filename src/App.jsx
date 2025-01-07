@@ -186,11 +186,12 @@ const App = () => {
 
 
         {/* Conditionally render Footer for non-admin routes */}
-        {!isAdminRoute && (
+        {/* {!isAdminRoute && (
           <>
             <Footer />
           </>
-        )}
+        )} */}
+         {!isAdminRoute && !isEmployeeRoute && !isLoginRoute && <Footer/>}
       </Router>
     </ContactFormProvider>
   );
