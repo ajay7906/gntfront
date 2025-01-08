@@ -1,177 +1,16 @@
 
 
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Search, MapPin, Briefcase, Clock, ChevronRight, Users, Heart, X, Upload, FilePlus, User, Mail, FileText, Check } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 import WhyJoinUs from '../careerCompo/WhyJoinUs';
 import ApplicationForm from '../careerCompo/ApplicationForm';
 
-// Job Application Popup Component
-const JobApplicationPopup = ({ isOpen, onClose, jobTitle }) => {
-    const [formData, setFormData] = useState({
-        fullName: '',
-        email: '',
-        phone: '',
-        resume: null
-    });
-    const [isSubmitted, setIsSubmitted] = useState(false);
-
-    const handleInputChange = (e) => {
-        const { name, value } = e.target;
-        setFormData(prev => ({
-            ...prev,
-            [name]: value
-        }));
-    };
-
-    const handleFileChange = (e) => {
-        const file = e.target.files[0];
-        setFormData(prev => ({
-            ...prev,
-            resume: file
-        }));
-    };
-
-    const handleSubmit = (e) => {
-        e.preventDefault();
-
-        // Simulate form submission
-        setTimeout(() => {
-            setIsSubmitted(true);
-
-            // Reset form after 3 seconds
-            setTimeout(() => {
-                setIsSubmitted(false);
-                onClose();
-                setFormData({
-                    fullName: '',
-                    email: '',
-                    phone: '',
-                    resume: null
-                });
-            }, 3000);
-        }, 1000);
-    };
-
-    if (!isOpen) return null;
-
-    return (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/50 backdrop-blur-sm">
-            <AnimatePresence>
-                {!isSubmitted ? (
-                    <motion.div
-                        initial={{ opacity: 0, scale: 0.9 }}
-                        animate={{ opacity: 1, scale: 1 }}
-                        exit={{ opacity: 0, scale: 0.9 }}
-                        className="bg-white w-full max-w-md mx-4 rounded-2xl shadow-2xl relative"
-                    >
-                        <button
-                            onClick={onClose}
-                            className="absolute top-4 right-4 text-gray-500 hover:text-gray-700 transition-colors"
-                        >
-                            <X size={24} />
-                        </button>
-
-                        <div className="p-8">
-                            <h2 className="text-2xl font-bold text-black mb-2">
-                                Apply for {jobTitle}
-                            </h2>
-                            <p className="text-gray-500 mb-6">
-                                Fill out the form below to submit your application.
-                            </p>
-
-                            <form onSubmit={handleSubmit} className="space-y-4">
-                                <div className="relative">
-                                    <User className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" size={20} />
-                                    <input
-                                        type="text"
-                                        name="fullName"
-                                        value={formData.fullName}
-                                        onChange={handleInputChange}
-                                        placeholder="Full Name"
-                                        required
-                                        className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500"
-                                    />
-                                </div>
-
-                                <div className="relative">
-                                    <Mail className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" size={20} />
-                                    <input
-                                        type="email"
-                                        name="email"
-                                        value={formData.email}
-                                        onChange={handleInputChange}
-                                        placeholder="Email Address"
-                                        required
-                                        className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500"
-                                    />
-                                </div>
-
-                                <div className="relative">
-                                    <Briefcase className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" size={20} />
-                                    <input
-                                        type="tel"
-                                        name="phone"
-                                        value={formData.phone}
-                                        onChange={handleInputChange}
-                                        placeholder="Phone Number"
-                                        required
-                                        className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-xl focus:outline-none focus:ring-2 focus:ring-blue-500"
-                                    />
-                                </div>
-
-                                <div className="relative">
-                                    <FileText className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-400" size={20} />
-                                    <input
-                                        type="file"
-                                        name="resume"
-                                        onChange={handleFileChange}
-                                        accept=".pdf,.doc,.docx"
-                                        required
-                                        className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-xl file:mr-4 file:rounded-full file:border-0 file:bg-blue-50 file:px-4 file:py-2 file:text-blue-700 hover:file:bg-blue-100"
-                                    />
-                                    {formData.resume && (
-                                        <span className="text-sm text-gray-500 mt-2 block">
-                                            {formData.resume.name}
-                                        </span>
-                                    )}
-                                </div>
-
-                                <button
-                                    type="submit"
-                                    className="w-full py-3 bg-blue-600 text-white rounded-xl hover:bg-blue-700 transition-colors flex items-center justify-center"
-                                >
-                                    <Upload className="mr-2" size={20} /> Submit Application
-                                </button>
-                            </form>
-                        </div>
-                    </motion.div>
-                ) : (
-                    <motion.div
-                        initial={{ opacity: 0, scale: 0.9 }}
-                        animate={{ opacity: 1, scale: 1 }}
-                        exit={{ opacity: 0, scale: 0.9 }}
-                        className="bg-white w-full max-w-md mx-4 rounded-2xl shadow-2xl p-8 text-center"
-                    >
-                        <div className="bg-green-100 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6">
-                            <Check size={48} className="text-green-600" />
-                        </div>
-                        <h2 className="text-2xl font-bold text-black mb-4">
-                            Application Submitted!
-                        </h2>
-                        <p className="text-gray-500">
-                            Thank you for your interest. We will review your application soon.
-                        </p>
-                    </motion.div>
-                )}
-            </AnimatePresence>
-        </div>
-    );
-};
-
 // Job Card Component
-const JobCard = ({ title, location, type, experience, department }) => {
+const JobCard = ({ title, location, type, experience, department, allJobList }) => {
     const [isPopupOpen, setIsPopupOpen] = useState(false);
+    console.log(title);
+    
 
     return (
         <>
@@ -202,7 +41,7 @@ const JobCard = ({ title, location, type, experience, department }) => {
                 </div>
                 <div className="flex justify-between items-center">
                     <div className="flex gap-2">
-                        {['React', 'Node.js', 'TypeScript'].map((skill) => (
+                    {['marketing'].map((skill) => (
                             <span key={skill} className="px-3 py-1 rounded-full bg-white/10 text-sm text-black">
                                 {skill}
                             </span>
@@ -212,7 +51,7 @@ const JobCard = ({ title, location, type, experience, department }) => {
                         onClick={() => setIsPopupOpen(true)}
                         className="flex items-center text-blue-400 hover:text-blue-300 transition-colors"
                     >
-                        Apply Now <ChevronRight size={16} className="ml-1" />      
+                        Apply Now <ChevronRight size={16} className="ml-1" />
                     </button>
                 </div>
             </div>
@@ -221,12 +60,12 @@ const JobCard = ({ title, location, type, experience, department }) => {
                 isOpen={isPopupOpen}
                 onClose={() => setIsPopupOpen(false)}
                 jobTitle={title}
-            /> */} 
-            <ApplicationForm   
-            isOpen={isPopupOpen}
-            onClose={() => setIsPopupOpen(false)}
-            // jobTitle={title}
-            /> 
+            /> */}
+            <ApplicationForm
+                isOpen={isPopupOpen}
+                onClose={() => setIsPopupOpen(false)}
+                jobTitle={title}
+            />
         </>
     );
 };
@@ -236,9 +75,12 @@ const CareersPage = () => {
     const [selectedDepartment, setSelectedDepartment] = useState('All');
     const [selectedLocation, setSelectedLocation] = useState('All');
     const [searchQuery, setSearchQuery] = useState('');
+    const [allJobList, setAllJobList] = useState([]);
+
 
     const departments = ['All', 'Engineering', 'Design', 'Marketing', 'Sales', 'Product'];
     const locations = ['All', 'Remote', 'Work from office'];
+    console.log(allJobList);
 
     const jobs = [
         {
@@ -264,8 +106,26 @@ const CareersPage = () => {
         }
     ];
 
+
+    async function getAllJObs() {
+        const response = await fetch('https://gntindia.com:5000/api/v1/job/getjob', {
+            method: 'GET',
+
+        });
+        if (response.ok) {
+            const data = await response.json();
+            console.log(data);
+            setAllJobList(data)
+
+        }
+        else {
+            const errorData = await response.json();
+            throw new Error(errorData.message || 'Failed to get data');
+        }
+
+    }
     // Filter jobs based on department, location, and search query
-    const filteredJobs = jobs.filter(job =>
+    const filteredJobs = allJobList.filter(job =>
         (selectedDepartment === 'All' || job.department === selectedDepartment) &&
         (selectedLocation === 'All' || job.location === selectedLocation) &&
         (searchQuery === '' || job.title.toLowerCase().includes(searchQuery.toLowerCase()))
@@ -278,6 +138,9 @@ const CareersPage = () => {
             behavior: 'smooth'
         });
     };
+    useEffect(() => {
+        getAllJObs();
+    }, [])
 
     return (
         <div className="min-h-screen">
@@ -328,8 +191,8 @@ const CareersPage = () => {
                         }}
                     />
                 </div>
-            </section> 
-            <WhyJoinUs/>
+            </section>
+            <WhyJoinUs />
 
             {/* Filters Section */}
             <section className="py-12 px-6 bg-[#f2f2f2] rounded-md">
@@ -356,6 +219,11 @@ const CareersPage = () => {
                                 onChange={(e) => setSelectedLocation(e.target.value)}
                                 className="w-full px-4 py-3 bg-white backdrop-blur-sm border border-black/20 rounded-xl text-black focus:outline-none focus:ring-2 ">
 
+                                {locations.map((dept) => (
+                                    <option key={dept} value={dept} className="bg-gray-100">
+                                        {dept}
+                                    </option>
+                                ))}
                             </select>
                         </div>
                     </div>
@@ -364,7 +232,7 @@ const CareersPage = () => {
                     <div className="space-y-6">
                         {filteredJobs.length > 0 ? (
                             filteredJobs.map((job, index) => (
-                                <JobCard key={index} {...job} />
+                                <JobCard key={index} {...job} allJobList={allJobList} />
                             ))
                         ) : (
                             <div className="text-center py-10 bg-white rounded-xl">
