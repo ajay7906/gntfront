@@ -66,7 +66,8 @@ export const ContactFormProvider = ({ children }) => {
 
 
   const addTaskData = async (taskData) =>{  
-
+   console.log(taskData);
+   
     try {
       const response = await fetch('https://gntindia.com:5000/api/v1/emplyeers/admins/createtask', {
         method: 'POST',

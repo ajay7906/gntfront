@@ -10,7 +10,7 @@ import AssignmentDialog from './AssignmentDialog';
 const INITIAL_TASK = {
   title: '',
   description: '',
-  priority: 'Medium',
+  priority: 'medium',
   dueDate: ''
 };
 
@@ -126,7 +126,9 @@ const AdminTaskTable = () => {
         priority: newTask.priority,
         dueDate: newTask.dueDate
 
-      })
+      }) 
+      console.log(newTask);
+      
 
       if (!response.ok) {
         throw new Error('Failed to create task');
@@ -234,9 +236,9 @@ const AdminTaskTable = () => {
               onChange={handleInputChange}
               className="p-2 border rounded focus:ring-2 focus:ring-blue-500 focus:border-blue-500 w-full"
             >
-              <option value="High">High</option>
-              <option value="Medium">Medium</option>
-              <option value="Low">Low</option>
+              <option value="High">high</option>
+              <option value="Medium">medium</option>
+              <option value="Low">low</option>
             </select>
             <input
               type="date"
