@@ -1,6 +1,3 @@
-
-
-
 import React, { useState } from 'react';
 import { Search, MapPin, Briefcase, Clock, ChevronRight, Users, Heart, X, Upload, FilePlus, User, Mail, FileText, Check, Linkedin, Globe, FileEdit } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';

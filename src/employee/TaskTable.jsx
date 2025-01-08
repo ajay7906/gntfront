@@ -108,7 +108,7 @@ const AdminTaskTable = () => {
     }
 
     try {
-      const response = await fetch('/api/tasks', {
+      const response = await fetch('https://gntindia.com:5000/api/v1/emplyeers/admins/createtask', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
