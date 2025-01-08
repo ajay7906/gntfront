@@ -64,6 +64,34 @@ export const ContactFormProvider = ({ children }) => {
     }
   };
 
+
+  const addTaskData = async (taskData) =>{  
+
+    try {
+      const response = await fetch('https://gntindia.com:5000/api/v1/emplyeers/admins/createtask', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': `Bearer ${token}`
+        },
+        body: JSON.stringify(taskData)
+      });
+      if (response.ok) {
+        await getAllTask();
+        return { success: true };
+      }
+      const error = await response.json();
+      return { success: false, error };
+    } catch (error) {
+      return { success: false, error: error.message };
+    }
+
+  }  
+
+
+
+
+
   const updateEmployee = async (id, employeeData) => {
     try {
       const response = await fetch(`https://gntindia.com:5000/api/v1/emplyeers/${id}`, {
@@ -194,6 +222,7 @@ export const ContactFormProvider = ({ children }) => {
     allTask,
     getAllTask,
     addEmployee,
+    addTaskData,
     updateEmployee,
     deleteEmployee
   };

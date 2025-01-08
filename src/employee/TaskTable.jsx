@@ -48,7 +48,7 @@ const AdminTaskTable = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const [isAssignmentOpen, setIsAssignmentOpen] = useState(false);
   const [selectedTaskForAssignment, setSelectedTaskForAssignment] = useState(null);
-  const {getAllTask, allTask, setAllTask} = useContactForm();
+  const {getAllTask, allTask, setAllTask, addTaskData} = useContactForm();
   useEffect(()=>{
     getAllTask();
 
@@ -108,18 +108,25 @@ const AdminTaskTable = () => {
     }
 
     try {
-      const response = await fetch('https://gntindia.com:5000/api/v1/emplyeers/admins/createtask', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          title: newTask.title,
-          description: newTask.description,
-          priority: newTask.priority,
-          dueDate: newTask.dueDate
-        }),
-      });
+      // const response = await fetch('https://gntindia.com:5000/api/v1/emplyeers/admins/createtask', {
+      //   method: 'POST',
+      //   headers: {
+      //     'Content-Type': 'application/json',
+      //   },
+      //   body: JSON.stringify({
+      //     title: newTask.title,
+      //     description: newTask.description,
+      //     priority: newTask.priority,
+      //     dueDate: newTask.dueDate
+      //   }),
+      // });
+      const response = await addTaskData({
+        title: newTask.title,
+        description: newTask.description,
+        priority: newTask.priority,
+        dueDate: newTask.dueDate
+
+      })
 
       if (!response.ok) {
         throw new Error('Failed to create task');
