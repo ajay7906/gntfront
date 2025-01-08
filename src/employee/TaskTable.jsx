@@ -144,7 +144,8 @@ const AdminTaskTable = () => {
       setTasks(prevTasks => [...prevTasks, taskToAdd]);
       handleResetForm();
     } catch (error) {
-      alert('Error creating task: ' + error.message);
+      console.log('Error creating task: ' + error.message);
+     
     }
   };
 
