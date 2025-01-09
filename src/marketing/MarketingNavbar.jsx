@@ -3,7 +3,7 @@ import LOGO from "./images/GNTIND.png";
 import { User } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
-const Navbar = () => {
+const MarketingNavbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isProfileOpen, setIsProfileOpen] = useState(false);
   const dropdownRef = useRef(null);
@@ -162,4 +162,4 @@ const Navbar = () => {
   );
 };
 
-export default Navbar;
+export default MarketingNavbar;

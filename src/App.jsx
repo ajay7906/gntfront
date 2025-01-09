@@ -44,6 +44,13 @@ import AdminDashboard from './employee/AdminDashboard';
 import EmployeeTable from './employee/EmployeeTable';
 import AdminTaskTable from './employee/TaskTable';
 import MarketingLoginForm from './marketing/LoginForm';
+import MarketingProtectedRoute from './marketing/protetiveRoute/MarketingProtectedRoute';
+import MarketingNavbar from './marketing/MarketingNavbar';
+import MarketingHome from './marketing/MarketingHome';
+import TaskInformationForm from './marketing/TaskInformation';
+import IncompletedTaskForm from './marketing/IncompletedForm';
+import RescheduleTaskForm from './marketing/RescheduleTaskForm';
+import RejectedTaskForm from './marketing/RejectedTaskForm';
 const ProtectedRoute = ({ children }) => {
   const adminToken = localStorage.getItem('adminToken');
   if (!adminToken) {
@@ -56,9 +63,10 @@ const App = () => {
   // Check if current path is admin route or login route
   const isAdminRoute = window.location.pathname.includes('/admin');
   const isEmployeeRoute = window.location.pathname.includes('/employee');
+  const isMarketingRoute = window.location.pathname.includes('/marketing');
   const isLoginRoute = window.location.pathname.includes('/login');
 
- 
+
 
 
 
@@ -67,12 +75,14 @@ const App = () => {
     <ContactFormProvider>
       <Router>
         {/* Conditionally render Navbar for non-admin routes */}
-        {!isAdminRoute && !isEmployeeRoute && !isLoginRoute && <Navbar />}
+         {/* Update navbar conditional render */}
+         {!isAdminRoute && !isEmployeeRoute && !isMarketingRoute && !isLoginRoute && <Navbar />}
         
+
         <ContactFormPopup />
-        
-        <Routes> 
-          <Route path='/form' element={<ApplicationForm/>}/>
+
+        <Routes>
+          <Route path='/form' element={<ApplicationForm />} />
           <Route path="/" element={<Hero />} />
           <Route path="/about/aboutus" element={<AboutUs />} />
           <Route path="/about/founder" element={<FounderMessage />} />
@@ -82,34 +92,34 @@ const App = () => {
           <Route path='/blog/education' element={<EducationBlog />} />
           <Route path='/blog/regular' element={<Regular />} />
           <Route path='/blog/seo' element={<Seo />} />
-          <Route path='/products/whatsapp' element={< WhatsAppChat/>} />
-          <Route path='/products/digitalmarketing' element={< DigitalMarketing/>} />
-          <Route path='/products/cybersecurity' element={< Cybersecurity/>} />
-          <Route path='/products/erp' element={< ErpSolution/>} />
-          <Route path='/products/ecom' element={< Ecommerse/>} /> 
-          <Route path='/services/cloud' element={< CloudPage/>} />
-          <Route path='/services/ai' element={< AiPowered/>} />
-          <Route path='/services/crm' element={< CRMPage/>} />
-          <Route path='/services/social' element={< SocialMedia/>} />
-          <Route path='/services/web' element={< WebDevelopment/>} />
-          <Route path='/services/custem' element={< CustomSoftwares/>} />
-          <Route path='/termsandconditions' element={< TermsAndConditions/>} />
-          <Route path='/policy' element={< PolicyPage/>} />
-          <Route path='/payment' element={< PaymentForm/>} />
-          <Route path='/success' element={< SuccessPaymentPage/>} />
-          <Route path='/failure' element={< FailurePaymentPage/>} />
+          <Route path='/products/whatsapp' element={< WhatsAppChat />} />
+          <Route path='/products/digitalmarketing' element={< DigitalMarketing />} />
+          <Route path='/products/cybersecurity' element={< Cybersecurity />} />
+          <Route path='/products/erp' element={< ErpSolution />} />
+          <Route path='/products/ecom' element={< Ecommerse />} />
+          <Route path='/services/cloud' element={< CloudPage />} />
+          <Route path='/services/ai' element={< AiPowered />} />
+          <Route path='/services/crm' element={< CRMPage />} />
+          <Route path='/services/social' element={< SocialMedia />} />
+          <Route path='/services/web' element={< WebDevelopment />} />
+          <Route path='/services/custem' element={< CustomSoftwares />} />
+          <Route path='/termsandconditions' element={< TermsAndConditions />} />
+          <Route path='/policy' element={< PolicyPage />} />
+          <Route path='/payment' element={< PaymentForm />} />
+          <Route path='/success' element={< SuccessPaymentPage />} />
+          <Route path='/failure' element={< FailurePaymentPage />} />
 
-          <Route path='*' element={< NotFound/>} />
+          <Route path='*' element={< NotFound />} />
 
 
           {/* Login Route */}
-          <Route path="/login" element={<LoginForm />} /> 
+          <Route path="/login" element={<LoginForm />} />
 
-          {/* employeer login page */} 
-          <Route path="/employeer/login" element={<EmployerSignin/>} />
+          {/* employeer login page */}
+          <Route path="/employeer/login" element={<EmployerSignin />} />
 
-          <Route path="/marketing/login" element={<MarketingLoginForm/>} />
-          
+
+
           {/* Protected Admin Route */}
           <Route
             path='/admin/home'
@@ -118,7 +128,7 @@ const App = () => {
                 <AdminPanel />
               </ProtectedRoute>
             }
-          />  
+          />
 
 
 
@@ -126,7 +136,7 @@ const App = () => {
 
 
 
-          {/* Employeer admin panel */} 
+          {/* Employeer admin panel */}
 
           <Route
             path="/employeer/home"
@@ -143,9 +153,9 @@ const App = () => {
           <Route
             path="/employeer/user"
             element={
-              <EmployeersProtectedRoute> 
+              <EmployeersProtectedRoute>
                 <>
-                <EmployeeNavbar />
+                  <EmployeeNavbar />
                   <EmployeeTable />
                 </>
               </EmployeersProtectedRoute>
@@ -157,10 +167,75 @@ const App = () => {
             element={
               <EmployeersProtectedRoute>
                 <>
-                <EmployeeNavbar />
+                  <EmployeeNavbar />
                   <AdminTaskTable />
                 </>
               </EmployeersProtectedRoute>
+            }
+          />
+
+          <Route path="/marketing/login" element={<MarketingLoginForm />} />
+
+          <Route
+            path="/marketing/dashboard"
+            element={
+              <MarketingProtectedRoute>
+                <>
+                  <MarketingNavbar />
+                  <MarketingHome />
+                </>
+              </MarketingProtectedRoute>
+            }
+          />
+
+          <Route
+            path="/marketing/completed"
+            element={
+              <MarketingProtectedRoute>
+                <>
+                  <MarketingNavbar />
+                  <TaskInformationForm />
+                </>
+              </MarketingProtectedRoute>
+            }
+          />
+
+
+          <Route
+            path="/marketing/incomplete"
+            element={
+              <MarketingProtectedRoute>
+                <>
+                  <MarketingNavbar />
+                  <IncompletedTaskForm />
+                </>
+              </MarketingProtectedRoute>
+            }
+          />
+
+
+          <Route
+            path="/marketing/reschedule"
+            element={
+              <MarketingProtectedRoute>
+                <>
+                  <MarketingNavbar />
+                  <RescheduleTaskForm />
+                </>
+              </MarketingProtectedRoute>
+            }
+          />
+
+
+          <Route
+            path="/marketing/reject"
+            element={
+              <MarketingProtectedRoute>
+                <>
+                  <MarketingNavbar />
+                  <RejectedTaskForm />
+                </>
+              </MarketingProtectedRoute>
             }
           />
 
@@ -177,13 +252,9 @@ const App = () => {
 
 
 
+        </Routes>
 
 
-
-
-        </Routes>  
-
-      
 
 
 
@@ -194,7 +265,9 @@ const App = () => {
             <Footer />
           </>
         )} */}
-         {!isAdminRoute && !isEmployeeRoute && !isLoginRoute && <Footer/>}
+       {/* Update navbar conditional render */}
+       {!isAdminRoute && !isEmployeeRoute && !isMarketingRoute && !isLoginRoute && <Footer/>}
+        
       </Router>
     </ContactFormProvider>
   );
