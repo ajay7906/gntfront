@@ -65,6 +65,7 @@ const JobCard = ({ title, location, type, experience, department, allJobList }) 
                 isOpen={isPopupOpen}
                 onClose={() => setIsPopupOpen(false)}
                 jobTitle={title}
+                location={Location}
             />
         </>
     );
