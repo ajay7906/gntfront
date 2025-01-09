@@ -43,6 +43,7 @@ import EmployeeNavbar from './employee/EmployeeNavbar';
 import AdminDashboard from './employee/AdminDashboard';
 import EmployeeTable from './employee/EmployeeTable';
 import AdminTaskTable from './employee/TaskTable';
+import MarketingLoginForm from './marketing/LoginForm';
 const ProtectedRoute = ({ children }) => {
   const adminToken = localStorage.getItem('adminToken');
   if (!adminToken) {
@@ -106,6 +107,8 @@ const App = () => {
 
           {/* employeer login page */} 
           <Route path="/employeer/login" element={<EmployerSignin/>} />
+
+          <Route path="/marketing/login" element={<MarketingLoginForm/>} />
           
           {/* Protected Admin Route */}
           <Route
