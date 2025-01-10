@@ -65,7 +65,7 @@ const JobCard = ({ title, location, type, experience, department, allJobList }) 
                 isOpen={isPopupOpen}
                 onClose={() => setIsPopupOpen(false)}
                 jobTitle={title}
-                location={Location}
+                jobLocation={location}
             />
         </>
     );
@@ -114,9 +114,13 @@ const CareersPage = () => {
 
         });
         if (response.ok) {
-            const data = await response.json();
+            const data = await response.json(); 
+            const trimmedData = data.map(job => ({
+                ...job,
+                location: job.location.trim()
+            }));
             console.log(data);
-            setAllJobList(data)
+            setAllJobList(trimmedData)
 
         }
         else {
@@ -124,16 +128,24 @@ const CareersPage = () => {
             throw new Error(errorData.message || 'Failed to get data');
         }
 
-    }
+    } 
+    const checkJob = allJobList.filter((job)=>(
+        (selectedLocation === job.location)
+
+    )) 
+    console.log('fileter Job', checkJob, allJobList[0].location === selectedLocation);
+    
     // Filter jobs based on department, location, and search query
     const filteredJobs = allJobList.filter(job =>
         (selectedDepartment === 'All' || job.department === selectedDepartment) &&
         (selectedLocation === 'All' || job.location === selectedLocation) &&
-        (searchQuery === '' || job.title.toLowerCase().includes(searchQuery.toLowerCase()))
+        (searchQuery === '' || job.title.toLowerCase().includes(searchQuery.toLowerCase())) 
+       
+        
     );
 
     // Function to scroll to top
-    const scrollToTop = () => {
+    const scrollToTop = () => { 
         window.scrollTo({
             top: 0,
             behavior: 'smooth'

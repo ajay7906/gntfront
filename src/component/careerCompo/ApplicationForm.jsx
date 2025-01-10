@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Search, MapPin, Briefcase, Clock, ChevronRight, Users, Heart, X, Upload, FilePlus, User, Mail, FileText, Check, Linkedin, Globe, FileEdit } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 
-const JobApplicationPopup = ({ isOpen, onClose, jobTitle, Location }) => {
+const JobApplicationPopup = ({ isOpen, onClose, jobTitle, jobLocation }) => {
     // set error for fotm validation for the resume type  like pdf, doc, docx
     const [resumeError, setResumeError] = useState(null);
 
@@ -46,7 +46,9 @@ const JobApplicationPopup = ({ isOpen, onClose, jobTitle, Location }) => {
             }))
         }
 
-    };
+    }; 
+    console.log(jobLocation);
+    
 
     const handleSubmit = async (e) => {
         e.preventDefault();
@@ -63,7 +65,7 @@ const JobApplicationPopup = ({ isOpen, onClose, jobTitle, Location }) => {
             formDataToSend.append('experience', formData.experience);
             formDataToSend.append('portfolio', formData.portfolio);
             formDataToSend.append('jobTitle', jobTitle);
-            formDataToSend.append('location', Location);
+            formDataToSend.append('jobLocation', jobLocation);
             formDataToSend.append('resume', formData.resume);
 
             // Send form data to backend
