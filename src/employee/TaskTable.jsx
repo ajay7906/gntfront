@@ -335,13 +335,14 @@ const AdminTaskTable = () => {
       </div>
 
       <AssignmentDialog
+        
         isOpen={isAssignmentOpen}
         onClose={() => {
           setIsAssignmentOpen(false);
           setSelectedTaskForAssignment(null);
         }}
         onAssign={handleAssignTask}
-        currentAssignee={selectedTaskForAssignment?.assignee}
+        currentAssignee={selectedTaskForAssignment}
       />
 
       {/* Pagination */}

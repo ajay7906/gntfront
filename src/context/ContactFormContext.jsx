@@ -161,7 +161,8 @@ export const ContactFormProvider = ({ children }) => {
 
 
   const login = async (email, password) => {
-    try {
+    try { 
+     // const employeeToken = localStorage.getItem('')
       const response = await fetch('https://gntindia.com:5000/api/v1/emplyeers/adminsemployee/login', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
@@ -182,7 +183,34 @@ export const ContactFormProvider = ({ children }) => {
       console.error('Login error:', error);
       throw error;
     }
-  };
+  }; 
+
+  const assignTaskToEmployee = async (task_id, employee_id)=>{
+    try { 
+      const response = await fetch('https://gntindia.com:5000/api/v1/emplyeers/admins/assigntask', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Authorization': `Bearer ${token}`
+        },
+        // body: JSON.stringify({ task_id, employee_ids }),
+        body: JSON.stringify({
+          task_id,
+          employee_ids: [employee_id],
+        }),
+      }); 
+      if (!response.ok) {
+        const errorData = await response.json();
+        throw new Error(errorData.message || 'Login failed');
+      }
+    return {success:true};
+      
+    } catch (error) {
+      console.error('Login error:', error);
+      throw error;
+      
+    }
+  }
 
   const EmployeerLogout = () => {
     localStorage.removeItem('token');
@@ -236,7 +264,8 @@ export const ContactFormProvider = ({ children }) => {
     addEmployee,
     addTaskData,
     updateEmployee,
-    deleteEmployee
+    deleteEmployee,
+    assignTaskToEmployee
   };
 
   return (
