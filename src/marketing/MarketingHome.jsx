@@ -72,25 +72,25 @@ const StatusModal = ({ isOpen, onClose, taskData }) => {
 
         <div className="grid grid-cols-2 gap-4">
           <Link
-            to="/completed"
+            to="/marketing/completed"
             className="flex items-center justify-center py-2 px-4 rounded-full bg-teal-500 text-white hover:bg-teal-600 transition-colors"
           >
             Completed
           </Link>
           <Link
-            to="/incomplete"
+            to="/marketing/incompleted"
             className="flex items-center justify-center py-2 px-4 rounded-full bg-teal-500 text-white hover:bg-teal-600 transition-colors"
           >
             Incompleted
           </Link>
           <Link
-            to="/reschedule"
+            to="/marketing/reschedule"
             className="flex items-center justify-center py-2 px-4 rounded-full bg-blue-500 text-white hover:bg-blue-600 transition-colors"
           >
             Reschedule
           </Link>
           <Link
-            to="/reject"
+            to="/marketing/rejected"
             className="flex items-center justify-center py-2 px-4 rounded-full bg-red-500 text-white hover:bg-red-600 transition-colors"
           >
             Rejected

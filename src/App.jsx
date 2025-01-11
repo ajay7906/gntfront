@@ -202,7 +202,7 @@ const App = () => {
 
 
           <Route
-            path="/marketing/incomplete"
+            path="/marketing/incompleted"
             element={
               <MarketingProtectedRoute>
                 <>
@@ -228,7 +228,7 @@ const App = () => {
 
 
           <Route
-            path="/marketing/reject"
+            path="/marketing/rejected"
             element={
               <MarketingProtectedRoute>
                 <>

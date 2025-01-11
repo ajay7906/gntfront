@@ -132,7 +132,7 @@ export const ContactFormProvider = ({ children }) => {
   };
   const getAllTask = async () =>{
     try {
-      const response = await fetch('https://gntindia.com:5000/api/v1/emplyeers/admins/getalltask', { 
+      const response = await fetch('https://gntindia.com:5000/api/v1/emplyeers/admins/getalltask?all===true', { 
         method:'GET',
         headers: { 'Authorization': `Bearer ${token}` } 
 

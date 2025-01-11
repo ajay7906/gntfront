@@ -28,7 +28,7 @@ const EmployeeNavbar = () => {
   ]);
 
   const navItems = [
-    { icon: <Home size={20} />, label: 'Dashboard', href: '/' },
+    { icon: <Home size={20} />, label: 'Dashboard', href: '/employeer/home' },
     { icon: <Users size={20} />, label: 'Users', href: '/employeer/user' },
     { icon: <FileText size={20} />, label: 'Tasks', href: '/employeer/task' }
   ];
