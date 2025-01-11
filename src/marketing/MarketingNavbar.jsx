@@ -39,7 +39,7 @@ const MarketingNavbar = () => {
 
           {/* Desktop Menu */}
           <div className="hidden md:flex space-x-4 items-center">
-            <Link to="/"  className={buttonStyle}>
+            <Link to="/marketing/dashboard"  className={buttonStyle}>
               Home
             </Link>
 
@@ -47,14 +47,14 @@ const MarketingNavbar = () => {
               Admin
             </Link> */}
 
-            <Link to="/loginAdmin"  className={buttonStyle}>
+            <Link to="/marketing/alltask"  className={buttonStyle}>
               All Task
             </Link>
 
-            <button className={buttonStyle}>
+            {/* <button className={buttonStyle}>
               Today Task
             </button>
-           
+            */}
             {/* Profile Dropdown */}
             <div className="relative" ref={dropdownRef}>
               <button

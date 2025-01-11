@@ -51,6 +51,7 @@ import TaskInformationForm from './marketing/TaskInformation';
 import IncompletedTaskForm from './marketing/IncompletedForm';
 import RescheduleTaskForm from './marketing/RescheduleTaskForm';
 import RejectedTaskForm from './marketing/RejectedTaskForm';
+import AllTasksList from './marketing/AllTaskList';
 const ProtectedRoute = ({ children }) => {
   const adminToken = localStorage.getItem('adminToken');
   if (!adminToken) {
@@ -75,9 +76,9 @@ const App = () => {
     <ContactFormProvider>
       <Router>
         {/* Conditionally render Navbar for non-admin routes */}
-         {/* Update navbar conditional render */}
-         {!isAdminRoute && !isEmployeeRoute && !isMarketingRoute && !isLoginRoute && <Navbar />}
-        
+        {/* Update navbar conditional render */}
+        {!isAdminRoute && !isEmployeeRoute && !isMarketingRoute && !isLoginRoute && <Navbar />}
+
 
         <ContactFormPopup />
 
@@ -241,6 +242,18 @@ const App = () => {
 
 
 
+          <Route
+            path="/marketing/alltask"
+            element={
+              <MarketingProtectedRoute>
+                <>
+                  <MarketingNavbar />
+                  <AllTasksList />
+                </>
+              </MarketingProtectedRoute>
+            }
+          />
+
 
 
 
@@ -265,9 +278,9 @@ const App = () => {
             <Footer />
           </>
         )} */}
-       {/* Update navbar conditional render */}
-       {!isAdminRoute && !isEmployeeRoute && !isMarketingRoute && !isLoginRoute && <Footer/>}
-        
+        {/* Update navbar conditional render */}
+        {!isAdminRoute && !isEmployeeRoute && !isMarketingRoute && !isLoginRoute && <Footer />}
+
       </Router>
     </ContactFormProvider>
   );

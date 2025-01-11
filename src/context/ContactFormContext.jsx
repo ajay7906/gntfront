@@ -130,6 +130,9 @@ export const ContactFormProvider = ({ children }) => {
       return { success: false, error: error.message };
     }
   };
+
+
+
   const getAllTask = async () =>{
     try {
       const response = await fetch('https://gntindia.com:5000/api/v1/emplyeers/admins/getalltask?all===true', { 
@@ -147,7 +150,13 @@ export const ContactFormProvider = ({ children }) => {
       console.error('Error fetching employees:', error);
       
     }
-  }
+  }  
+
+
+
+
+
+  
 
   const login = async (email, password) => {
     try {
