@@ -143,6 +143,8 @@ export const ContactFormProvider = ({ children }) => {
       });
       if (response.ok) {
         const data = await response.json();
+        console.log(data);
+        
         setAllTask(data);
       }
       
@@ -156,7 +158,7 @@ export const ContactFormProvider = ({ children }) => {
 
 
 
-  
+
 
   const login = async (email, password) => {
     try {

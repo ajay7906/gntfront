@@ -1,5 +1,6 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Search, Plus, Edit2, Trash2, ChevronLeft, ChevronRight, UserPlus, X } from 'lucide-react';
+import { useContactForm } from '../context/ContactFormContext';
 
 // Sample employees data - replace with your actual data source
 const SAMPLE_EMPLOYEES = [
@@ -9,15 +10,22 @@ const SAMPLE_EMPLOYEES = [
   { id: 4, name: 'Sarah Williams', department: 'Engineering', email: 'sarah@example.com' },
 ];
 
+
+
 const AssignmentDialog = ({ isOpen, onClose, onAssign, currentAssignee }) => {
   const [searchTerm, setSearchTerm] = useState('');
-  const [selectedEmployee, setSelectedEmployee] = useState(null);
+  const [selectedEmployee, setSelectedEmployee] = useState(null); 
+  const {employees, fetchEmployees} = useContactForm();
+console.log(employees);
+useEffect(()=>{
+  fetchEmployees();
+},[])
 
   if (!isOpen) return null;
 
-  const filteredEmployees = SAMPLE_EMPLOYEES.filter(employee =>
-    employee.name.toLowerCase().includes(searchTerm.toLowerCase()) ||
-    employee.department.toLowerCase().includes(searchTerm.toLowerCase())
+  const filteredEmployees = employees?.filter(employee =>
+    employee.first_name.toLowerCase().includes(searchTerm.toLowerCase()) 
+    // employee.department.toLowerCase().includes(searchTerm.toLowerCase())
   );
 
   const handleAssign = () => {
@@ -62,27 +70,27 @@ const AssignmentDialog = ({ isOpen, onClose, onAssign, currentAssignee }) => {
 
             {/* Employee List */}
             <div className="max-h-[300px] overflow-y-auto">
-              {filteredEmployees.map((employee) => (
+              {filteredEmployees?.map((employee) => (
                 <div
                   key={employee.id}
                   className={`flex items-center justify-between p-3 rounded-lg mb-2 cursor-pointer border transition-colors ${
-                    selectedEmployee?.id === employee.id 
+                    selectedEmployee?.id === employee.employee_id 
                       ? 'bg-blue-50 border-blue-200' 
                       : 'hover:bg-gray-50 border-gray-200'
                   }`}
                   onClick={() => setSelectedEmployee(employee)}
                 >
                   <div className="flex-1">
-                    <h4 className="font-medium text-sm text-gray-900">{employee.name}</h4>
+                    <h4 className="font-medium text-sm text-gray-900">{employee?.first_name} {employee?.last_name}</h4>
                     <div className="flex items-center gap-2 text-xs text-gray-500">
-                      <span>{employee.department}</span>
+                      {/* <span>{employee.department}</span> */}
                       <span>•</span>
-                      <span>{employee.email}</span>
+                      <span>{employee?.email}</span>
                     </div>
                   </div>
                   <button
                     className={`px-3 py-1 rounded text-sm font-medium transition-colors ${
-                      selectedEmployee?.id === employee.id
+                      selectedEmployee?.id === employee.employee_id
                         ? 'bg-blue-500 text-white'
                         : 'text-blue-500 border border-blue-500 hover:bg-blue-50'
                     }`}
@@ -91,7 +99,7 @@ const AssignmentDialog = ({ isOpen, onClose, onAssign, currentAssignee }) => {
                       setSelectedEmployee(employee);
                     }}
                   >
-                    {selectedEmployee?.id === employee.id ? 'Selected' : 'Select'}
+                    {selectedEmployee?.id === employee.employee_id ? 'Selected' : 'Select'}
                   </button>
                 </div>
               ))}

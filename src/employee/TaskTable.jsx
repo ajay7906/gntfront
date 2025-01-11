@@ -54,20 +54,22 @@ const AdminTaskTable = () => {
 
   }, [])
 
-  console.log(allTask);
+  console.log('All tasks',allTask);
   
   // Filter tasks based on search term
-  const filteredTasks = allTask?.filter(task =>
-    Object.values(task)
+  const filteredTasks = allTask?.tasks?.filter(task =>
+    Object.values(task)   
       .filter(value => typeof value === 'string')
       .some(value => value.toLowerCase().includes(searchTerm.toLowerCase()))
   );
-
+   
+  console.log(filteredTasks);
+  
   // Calculate pagination values
-  const totalPages = Math.ceil(filteredTasks.length / ITEMS_PER_PAGE);
+  const totalPages = Math.ceil(filteredTasks?.length / ITEMS_PER_PAGE);
   const startIndex = (currentPage - 1) * ITEMS_PER_PAGE;
   const endIndex = startIndex + ITEMS_PER_PAGE;
-  const currentTasks = filteredTasks.slice(startIndex, endIndex);
+  const currentTasks = filteredTasks?.slice(startIndex, endIndex);
 
   const handlePageChange = (page) => {
     setCurrentPage(page);
@@ -291,16 +293,16 @@ const AdminTaskTable = () => {
             </tr>
           </thead>
           <tbody className="bg-white divide-y divide-gray-200">
-            {currentTasks.map((task) => (
+            {currentTasks?.map((task) => (
               <tr key={task.id} className="hover:bg-gray-50">
-                <td className="px-4 md:px-6 py-4 text-sm">{task.title}</td>
-                <td className="px-4 md:px-6 py-4 text-sm">{task.description}</td>
+                <td className="px-4 md:px-6 py-4 text-sm">{task?.title}</td>
+                <td className="px-4 md:px-6 py-4 text-sm">{task?.description}</td>
                 <td className="px-4 md:px-6 py-4">
                   <span className={`inline-flex px-2 py-1 text-xs font-semibold rounded-full ${PRIORITY_COLORS[task.priority]}`}>
-                    {task.priority}
+                    {task?.priority}
                   </span>
                 </td>
-                <td className="px-4 md:px-6 py-4 text-sm">{task.dueDate}</td>
+                <td className="px-4 md:px-6 py-4 text-sm">{task?.dueDate}</td>
                 <td className="px-4 md:px-6 py-4">
                   <div className="flex gap-2">
                     <button
@@ -318,7 +320,7 @@ const AdminTaskTable = () => {
                       <Edit2 size={16} className="text-blue-600" />
                     </button>
                     <button
-                      onClick={() => handleDeleteTask(task.id)}
+                      onClick={() => handleDeleteTask(task?.id)}
                       className="p-1 hover:bg-gray-100 rounded transition-colors"
                       title="Delete task"
                     >
@@ -352,7 +354,7 @@ const AdminTaskTable = () => {
           >
             <ChevronLeft size={20} />
           </button>
-          {Array.from({ length: totalPages }, (_, i) => i + 1).map((page) => (
+          {Array.from({ length: totalPages }, (_, i) => i + 1)?.map((page) => (
             <button
               key={page}
               onClick={() => handlePageChange(page)}
