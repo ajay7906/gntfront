@@ -26,6 +26,10 @@ const MarketingLoginForm = () => {
       });
 
       const data = await response.json();
+    
+      localStorage.setItem('employeeId', data.user.id);
+      // console.log(data.user.id);
+      
       
       if (!response.ok) {
         throw new Error(data.message || 'Login failed');
@@ -47,6 +51,7 @@ const MarketingLoginForm = () => {
       
       if (token) {
         localStorage.setItem('marketingToken', token);
+      
         
         setTimeout(() => {
           navigate('/marketing/dashboard', { replace: true });
