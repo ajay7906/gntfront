@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Eye, X, Calendar } from 'lucide-react';
 import HERO from "./images/design1.png";
 import HERO1 from "./images/design2.png";
@@ -6,8 +6,17 @@ import HERO2 from "./images/design3.png";
 import HERO3 from "./images/design4.png";
 import HERO4 from "./images/design5.png";
 import { Link } from 'react-router-dom'                                           ;
+import { useContactForm } from '../context/ContactFormContext';
 
-const HeroSection = () => {
+const HeroSection = () => { 
+  const { allTask, getAllTask } = useContactForm();
+  console.log(allTask); 
+
+  useEffect(()=>{
+ getAllTask();
+
+  },[])
+  
   return (
     <div className="w-full">
       <div className="relative h-[50vh] min-h-[300px] max-h-[600px]">
