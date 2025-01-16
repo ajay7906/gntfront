@@ -251,7 +251,7 @@ const TaskInformationForm = ({ taskId = '1', taskName = 'xyz' }) => {
     setErrorMessage('');
 
     try {
-      const response = await fetch('/api/responses/complete', {
+      const response = await fetch('https://gntindia.com:5000/api/v1/emplyeers/admins/completetask', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -272,7 +272,7 @@ const TaskInformationForm = ({ taskId = '1', taskName = 'xyz' }) => {
 
       // Show success message or redirect
       alert('Task completed successfully!');
-      navigate('/tasks'); // Redirect to tasks page
+      // navigate('/tasks'); // Redirect to tasks page
     } catch (error) {
       setErrorMessage(error.message);
     } finally {
