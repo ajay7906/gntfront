@@ -52,6 +52,7 @@ import IncompletedTaskForm from './marketing/IncompletedForm';
 import RescheduleTaskForm from './marketing/RescheduleTaskForm';
 import RejectedTaskForm from './marketing/RejectedTaskForm';
 import AllTasksList from './marketing/AllTaskList';
+import DevelopersTable from './employee/DevelopersTable';
 const ProtectedRoute = ({ children }) => {
   const adminToken = localStorage.getItem('adminToken');
   if (!adminToken) {
@@ -173,7 +174,29 @@ const App = () => {
                 </>
               </EmployeersProtectedRoute>
             }
-          />
+          />  
+
+
+
+            <Route
+            path="/employeer/developers"
+            element={
+              <EmployeersProtectedRoute>
+                <>
+                  <EmployeeNavbar />
+                  <DevelopersTable />
+                </>
+              </EmployeersProtectedRoute>
+            }
+          /> 
+
+
+
+
+
+
+
+
 
           <Route path="/marketing/login" element={<MarketingLoginForm />} />
 

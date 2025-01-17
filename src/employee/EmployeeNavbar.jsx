@@ -13,7 +13,8 @@ import {
   LogOut,
   ChevronDown,
   Menu,
-  UserCircle  // Added import for user icon
+  UserCircle,  // Added import for user icon
+  CodeIcon
 } from 'lucide-react';
 import { Link } from "react-router-dom";
 
@@ -30,7 +31,8 @@ const EmployeeNavbar = () => {
   const navItems = [
     { icon: <Home size={20} />, label: 'Dashboard', href: '/employeer/home' },
     { icon: <Users size={20} />, label: 'Users', href: '/employeer/user' },
-    { icon: <FileText size={20} />, label: 'Tasks', href: '/employeer/task' }
+    { icon: <FileText size={20} />, label: 'Tasks', href: '/employeer/task' },
+    { icon: <CodeIcon size={20} />, label: 'Developers', href: '/employeer/developers' }
   ];
 
   return (
