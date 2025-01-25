@@ -3,7 +3,7 @@ import { Headset, DollarSign, Cloud, Calculator, Monitor, Users } from 'lucide-r
 import { Phone,Plus, Minus, MessageSquare, Badge, Bot, UserPlus, Inbox, ClipboardList } from 'lucide-react';
 
 import smple from "./images/automation.png";
-import smple1 from "./images/chatbot.png";
+import smple1 from "./images/chatbot.pngs";
 import smple2 from "./images/follow up.png";   
 import smple3 from "./images/INTEGRATION.jpg";
 import smple4 from "./images/live.jpeg.jpg";
